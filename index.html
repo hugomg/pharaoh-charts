@@ -59,11 +59,18 @@
             text-align: right;
         }
 
+        table.farm-production th:nth-child(1),
+        table.farm-production td:nth-child(1) { text-align: left; }
+        table.farm-production th:nth-child(2),
+        table.farm-production td:nth-child(2) { text-align: left; }
+
         .s200 { background-color: #ff5a48; }
         .s300 { background-color: #ff7e48; }
         .s400 { background-color: #ffa348; }
         .s500 { background-color: #ffc848; }
         .s600 { background-color: #ffec48; }
+
+
     </style>
 </head>
 <body>
@@ -4572,12 +4579,51 @@ Question: Some curses / cheat codes became natural disasters in the expansion?
 
 <hr>
 <h1 id="ProductionFarms">Farm Production</h1>
-<div class="messagebody">
-    Inspired by the work Nerdicus did on industrial production rates (see the thread called "Musings on production and walker speeds"), I decided to look at farm production rates.  Farms have an additional variable - the fertility level.  They also work a little differently in that harvest comes on particular dates regardless of whether production is complete, and floodplain farms do not operate year-round.<p>Using a similar method to Nerdicus, I built 4 meadow farms with different fertility levels and a clay pit to act as a calendar (a clay pit completes 4% of its production every "day" (one 16th of a month)).  I recorded the level of farm production every "day" for several months and then tried to come up with a simple and logical method that would explain the results.  The method I came up with leaves a little to be desired in the "simple and logical" departments, but I have successfully used it to predict results for 4 other farms (some meadow and some floodplain, different crops), so I think it may be correct.  This is how I think it works:<p>The basic farm production rate in units per month is 100 multiplied by the fertility level (so the basic rate for an 84% fertile farm is 84 units/month).  This is converted into a percentage per "day" by dividing by 16 ("days" in a month) and by 800 (the number of units a farm produces if it completes its production cycle) and rounding to the nearest 0.05%. Each day, this percentage is added to the production level, but when you right click on the farm, the percentage you see is rounded down to the next lower whole number. At harvest time, the number of units harvested is calculated by multiplying 800 by the DISPLAYED percentage complete (the one rounded down to a whole number).  Here is an example of an 84% fertile farm that operates for three days before being harvested.  Each day's production is 84/(16*800) = 0.65625% which is rounded to 0.65%.<p>Day 1: production is 0.65% which displays as 0%<br>Day 2: production is 1.30% which displays as 1%<br>Day 3: production is 1.95% which displays as 1%<br>After day 3, 800*1% = 8 units are harvested.<p>Using this method, you can calculate the production rates for any farm, here are some examples (ignoring Osiris' blessing):<p>Ferility _ Units/mth _ Time to produce 800 units <br>25% ________ 25.6 ______ 31 months 04 days<br>50% ________ 51.2 ______ 15 months 10 days<br>60% ________ 57.6 ______ 13 months 15 days<br>70% ________ 70.4 ______ 11 months 06 days<br>80% ________ 83.2 ______ 09 months 10 days<br>90% ________ 89.6 ______ 08 months 15 days<br>100% ______ 102.4 ______ 07 months 13 days<p>So floodplain farms should be able to max out production with about 80% fertility if the labourer reaches it as soon as the flood receeds.  <p>Meadow farms that have 1 harvest a year will max out production if the fertility is 68% or more.  They are Chickpea (Apr), Lettuce (Apr), Fig (Sep) and Flax(Dec).<p>Meadow farms that have 2 harvests a year are more complicated.  With 100% fertility, they can produce as follows:<p>Grain_: 800 in Jan, 408 in May (plus 100 straw each harvest)<br>Barley: 608 in Feb, 608 in Aug<br>Poms__: 712 in Jun, 512 in Nov<p>I'm assuming that the harvest date for meadow farms is the same for a particular crop regardless of what city you are in (unlike the floodplain farms) but I've only checked that on a couple of maps so I may be wrong.  Sorry I've been so longwinded.  If you're still awake, I invite your comments or corrections.<p><wbr>[This message has been edited by Nero Would (edited 01-16-2000).]
-</div>
-<div class="messagebody">
-  Hey NW,<p>To paraphrase another post that had been made here -- "DARN YOU!  DARN YOU TO HECK, NERO WOULD!"<p>I was planning on trying to do this as well and posting it, primarily to figure out whether has planted enough barley or flax farms to support breweries/weavers.  According to Nerdicus's exhaustive survey (For which major kudos should be awarded.) a brewery/weaver can produce .03 goods per day, which translates into .47 per month (Due to a wasted fraction upon completion) or approximately 5.65 per year.  So each brewer/weaver consumes 565 units of barley/flax per year as inputs.<p>Thus an optimal floodplain farm (appx 80% fertile with nearby work camp according to your measurements) will supply inputs for (roughly speaking) 1.4 workshops -- a ratio of five 'efficient' fields for seven workshops is optimal.  <p>Of course this requires a reasonably good inundation in order for the floodplain farm to operate at peak efficiency.  For this reason, I usually try to use meadows for barley when growing it for bear, and leave the floodplains for food crops -- I find it easier to deal with the vagaries of the flood in food storage rather than input storage.  Given that meadow farms produce 6.08 barley per 'efficiency percentage,' one needs a combination of meadow fields with about 92% efficiency in order to supply one brewery -- one would probably do just as well to substitute 100% as a fudge factor.  So 2 46% fertility fields will keep one brewery in operation -- assuming, of course, adequate placement of storage yards, etc.<p>Happy that I now have a 'rule' in my head that I can use when placing things at the outset, rather than just attempting to make adjustments on the fly.  Thanks for all your bean counting, NW and Nerdicus.<p>
-</div>
+
+<p> Reference <a href="https://caesar3.heavengames.com/cgi-bin/caeforumscgi/display.cgi?action=ct&f=25,679,,all">Farm production rates</a>
+
+<p>The table below lists the maximum production for each kind of farm.
+At harvest time the actual amount is that number multiplied by the
+production complete percentage.
+
+<table class="farm-production">
+    <tr>
+        <th>Foodplain</th>
+        <th>Production</th>
+    </tr>
+    <tr>
+        <td>Any</td>
+        <td>800 when it floods</td>
+    </tr>
+    <tr>
+        <th>Meadow</th>
+        <th>Production</th>
+    </tr>
+    <tr>
+        <td>Grain</td>
+        <td>800 in Jan, 408 in May</td>
+    </tr>
+    <tr>
+        <td>Barley</td>
+        <td>608 in Feb, 608 in Aug</td>
+    </tr>
+    <tr>
+        <td>Pomegr.</td>
+        <td>712 in Jun, 512 in Nov</td>
+    </tr>
+    <tr>
+        <td>Chickpea</td>
+        <td>800 in April</td>
+    </tr>
+    <tr>
+        <td>Lettuce</td>
+        <td>800 in April</td>
+    </tr>
+    <tr>
+        <td>Flax</td>
+        <td>800 in December</td>
+    </tr>
+</table>
 
 
 <hr>
