@@ -10,16 +10,40 @@
         .index a:visited { color:blue; }
 
         table#production1 td                { min-width: 70px; }
-        table#production1 th:nth-child(1)   { text-align:left; }
+        table#production1 th:nth-child(1),
         table#production1 td:nth-child(1)   { text-align:left; }
-        table#production1 th:nth-child(n+2) { text-align:right; }
+        table#production1 th:nth-child(n+2),
         table#production1 td:nth-child(n+2) { text-align:right; }
 
-        table#production2 td:nth-child(n+3) { min-width: 70px; }
-        table#production2 th:nth-child(1-2) { text-align:left; }
-        table#production2 td:nth-child(1-2) { text-align:left; }
-        table#production2 th:nth-child(n+3) { text-align:right; }
-        table#production2 td:nth-child(n+3) { text-align:right; }
+        table#production2 td:nth-child(n+3)  { min-width: 70px; }
+        table#production2 th:nth-child(-n+2),
+        table#production2 td:nth-child(-n+2) { text-align:left; }
+        table#production2 th:nth-child(n+3),
+        table#production2 td:nth-child(n+3)  { text-align:right; }
+
+        table#coverageidx th:nth-child(1),
+        table#coverageidx td:nth-child(1) { text-align: left;  }
+        table#coverageidx th:nth-child(2),
+        table#coverageidx td:nth-child(2) { text-align: right; }
+
+        table#entertainment-capacity th:nth-child(1),
+        table#entertainment-capacity td:nth-child(1)   { text-align: left; }
+        table#entertainment-capacity th:nth-child(n+2),
+        table#entertainment-capacity td:nth-child(n+2) { text-align: right; }
+
+        table#religion-capacity th:nth-child(1),
+        table#religion-capacity td:nth-child(1)   { text-align: left; }
+        table#religion-capacity th:nth-child(n+2),
+        table#religion-capacity td:nth-child(n+2) { text-align: right; }
+
+        table#education-capacity th:nth-child(1),
+        table#education-capacity td:nth-child(1)   { text-align: left; }
+        table#education-capacity th:nth-child(n+2),
+        table#education-capacity td:nth-child(n+2) { text-align: left; }
+
+        table#culture-rating th { vertical-align: top; }
+        table#culture-rating td:nth-child(1)   { text-align: right; padding-right: 15px;}
+        table#culture-rating td:nth-child(n+2) { text-align: right; }
 
         .s200 { background-color: #ff5a48; }
         .s300 { background-color: #ff7e48; }
@@ -35,7 +59,7 @@
 <div class="index">
 <h2>Charts</h2>
 <ul>
-    <li><a href="#StartPoints">Walker Start Pointsg</a>
+    <li><a href="#StartPoints">Walker Start Points</a>
     <li><a href="#Pavilions">Pavilion Configurations</a>
     <li><a href="#Culture">Culture Rating</a>
     <li><a href="#Monuments">Monuments</a>
@@ -95,7 +119,6 @@ Exceptions: Policemen, Magistratres, Tax Collectors (use the finish point as the
 <hr>
 <h1 id="Pavilions">Pavilion Configurations</h1>
 
-
 <h2>Normal</h2>
 <img src="./data/pavs-normal.png">
 
@@ -104,18 +127,376 @@ Exceptions: Policemen, Magistratres, Tax Collectors (use the finish point as the
 
 <hr>
 <h1 id="Culture">Culture Rating</h1>
-<div class="messagebody">
-  Sometimes when I play a mission, I try to get perfect coverage of all the culture services that are available. But if I'm try to win the mission in the shortest possible time, it helps to know the minimum level of coverage I need to meet the culture requirement. So I decided to run some tests and report the results. The tests also turned up some details on religion that I think are new.<p>This will be a long post, so I'll put it in the first reply.
-</div>
-<div class="messagebody">
-  <p>The Culture Rating depends on the level of citywide coverage of various entertainment, religious, education and health services. The rating goes from 0 to 100 in steps of 5 and the requirements are cumulative, so each advance in the rating requires some new services as well as those required for all the lower ratings.</p><p><wbr><strong>Citywide coverage </strong>is determined by a percentage that I call the Coverage Index. It is the fraction of your population that has access to a particular service. In the case of health services, this is the percentage of your population that lives in houses passed by the appropriate walker. In the other cases, each building services a given number of people, and the Coverage Index is the percentage of your population that can be serviced by the number of buildings in the city (I'll cover this in more detail later).</p><p>With the exception of religion (which is more complicated), the appropriate Overseer reports citywide coverage using one of eleven descriptions depending on the Coverage Index. Here they are (notice that the &quot;<wbr>Average&quot;<wbr> range is wider than the others).</p><wbr><table border="1" cellpadding="2">    <wbr><tr>        <wbr><th rowspan="2"><wbr><font size="2">Overseer's<br>        description</font></th>        <wbr><th colspan="2"><wbr><font size="2">Coverage Index</font></th>    </tr>    <wbr><tr>        <wbr><th><wbr><font size="2">At least</font></th>        <wbr><th><wbr><font size="2">Less than</font></th>    </tr>    <wbr><tr>        <wbr><td><wbr><font size="2">None</font></td>        <wbr><td align="right"><wbr><font size="2">-</font></td>        <wbr><td align="right"><wbr><font size="2">1%</font></td>    </tr>    <wbr><tr>        <wbr><td><wbr><font size="2">Sparse</font></td>        <wbr><td align="right"><wbr><font size="2">1%</font></td>        <wbr><td align="right"><wbr><font size="2">10%</font></td>    </tr>    <wbr><tr>        <wbr><td><wbr><font size="2">Very Poor</font></td>        <wbr><td align="right"><wbr><font size="2">10%</font></td>        <wbr><td align="right"><wbr><font size="2">20%</font></td>    </tr>    <wbr><tr>        <wbr><td><wbr><font size="2">Poor</font></td>        <wbr><td align="right"><wbr><font size="2">20%</font></td>        <wbr><td align="right"><wbr><font size="2">30%</font></td>    </tr>    <wbr><tr>        <wbr><td><wbr><font size="2">Below Average</font></td>        <wbr><td align="right"><wbr><font size="2">30%</font></td>        <wbr><td align="right"><wbr><font size="2">40%</font></td>    </tr>    <wbr><tr>        <wbr><td><wbr><font size="2">Average</font></td>        <wbr><td align="right"><wbr><font size="2">40%</font></td>        <wbr><td align="right"><wbr><font size="2">60%</font></td>    </tr>    <wbr><tr>        <wbr><td><wbr><font size="2">Above Average</font></td>        <wbr><td align="right"><wbr><font size="2">60%</font></td>        <wbr><td align="right"><wbr><font size="2">70%</font></td>    </tr>    <wbr><tr>        <wbr><td><wbr><font size="2">Good</font></td>        <wbr><td align="right"><wbr><font size="2">70%</font></td>        <wbr><td align="right"><wbr><font size="2">80%</font></td>    </tr>    <wbr><tr>        <wbr><td><wbr><font size="2">Very Good</font></td>        <wbr><td align="right"><wbr><font size="2">80%</font></td>        <wbr><td align="right"><wbr><font size="2">90%</font></td>    </tr>    <wbr><tr>        <wbr><td><wbr><font size="2">Excellent</font></td>        <wbr><td align="right"><wbr><font size="2">90%</font></td>        <wbr><td align="right"><wbr><font size="2">100%</font></td>    </tr>    <wbr><tr>        <wbr><td><wbr><font size="2">Perfect</font></td>        <wbr><td align="right"><wbr><font size="2">100%</font></td>        <wbr><td align="right"><wbr><font size="2">-</font></td>    </tr></table><p>I'll describe the calculation of the coverage index for each type of service and then move on to the requirements for each level of Culture Rating.</p><p>The <wbr><strong>Coverage Index for each entertainment service</strong> is calculated in the same way as it is for the bonus entertainment points for housing evolution. Unlike housing evolution though, you can't mix and match entertainment types for culture rating purposes. If the Ratings Overseer wants jugglers, no amount of Senet Houses will increase your Culture Rating. </p><p>For each entertainment type, you multiply the number of venues by the capacity of the venue and divide by the population of the city. The venues need to be staffed in order to be counted, but it doesn't matter whether there are any performances, so (as far as the Culture Rating is concerned), you don't need any entertainment schools and you don't need to supply Senet houses with beer or Zoos with game meat and straw (Zoos were added in the Cleopatra expansion, they don't exist in the original Pharaoh game).</p><p>For juggling, music and dancing, the number of venues is the number of stages (remember that a Bandstand has a stage for juggling as well as for music and a Pavilion has stages for juggling, music and dance). The capacity of each of the venues is:</p><wbr><table border="1" cellpadding="2">    <wbr><tr>        <wbr><th><wbr><font size="2">Venue</font></th>        <wbr><th><wbr><font size="2">Capacity</font></th>    </tr>    <wbr><tr>        <wbr><td><wbr><font size="2">Juggling stage</font></td>        <wbr><td align="right"><wbr><font size="2">400</font></td>    </tr>    <wbr><tr>        <wbr><td><wbr><font size="2">Music stage</font></td>        <wbr><td align="right"><wbr><font size="2">700</font></td>    </tr>    <wbr><tr>        <wbr><td><wbr><font size="2">Dance stage</font></td>        <wbr><td align="right"><wbr><font size="2">1200</font></td>    </tr>    <wbr><tr>        <wbr><td><wbr><font size="2">Senet House</font></td>        <wbr><td align="right"><wbr><font size="2">5000</font></td>    </tr>    <wbr><tr>        <wbr><td><wbr><font size="2">Zoo</font></td>        <wbr><td align="right"><wbr><font size="2">7500</font></td>    </tr></table><p>For example, if your city of 5000 people has two bandstands and a pavilion (three music stages) the Coverage Index for music is <br>3 * 700 / 5000 = 42% <br>which the Overseer will describe as Average.</p><p>The <wbr><strong>Coverage Index for religion</strong> is the average of the Coverage Indexes for all the gods known in the city. The Coverage Index for each god is calculated by adding the capacity of all the temples and shrines to that god and then dividing by the population of the city. Temples must be staffed in order to count, shrines must be within 2 squares of a road. As the average Coverage Index is used for the purposes of the Culture Rating, a high Coverage Index for one god can make up for a low one for another god (to a point, the Coverage Index for a given god can never exceed 100%).</p><p>The Overseer of Temples does not report the Coverage Index as the other Overseers do. The god's mood reported by the Overseer is related to the Coverage Index, but also to other factors such as the length of time since the last festival or blessing. I believe that 100% coverage is enough (without festivals) to keep the god's mood at Congenial. The capacity of religious buildings is:</p><wbr><table border="1" cellpadding="2">    <wbr><tr>        <wbr><th rowspan="2"><wbr><font size="2">Building<br>        type</font></th>        <wbr><th colspan="2"><wbr><font size="2">Capacity</font></th>    </tr>    <wbr><tr>        <wbr><th><wbr><font size="2">Patron god</font></th>        <wbr><th><wbr><font size="2">Local God</font></th>    </tr>    <wbr><tr>        <wbr><td><wbr><font size="2">Shrine</font></td>        <wbr><td align="right"><wbr><font size="2">150</font></td>        <wbr><td align="right"><wbr><font size="2">300</font></td>    </tr>    <wbr><tr>        <wbr><td><wbr><font size="2">Temple</font></td>        <wbr><td align="right"><wbr><font size="2">375</font></td>        <wbr><td align="right"><wbr><font size="2">750</font></td>    </tr>    <wbr><tr>        <wbr><td><wbr><font size="2">Temple Complex</font></td>        <wbr><td align="right"><wbr><font size="2">8000</font></td>        <wbr><td align="right"><wbr><font size="2">8000</font></td>    </tr></table><p>The Alter and Oracle add-ons to the Temple Complex have no effect on the Coverage Index.</p><p>The <wbr><strong>Coverage Index for each education service</strong> is calculated in a similar way to entertainment. This is simple for libraries, you multiply the number of libraries by 800 and divide by the population of the city.</p><p>It's harder for Scribal Schools because they only serve children so you need to divide the capacity of your schools by the number of children in the city. There is no way to accurately calculate the number of school age children in your city (I'm not even sure what ages go to school) although you can get an idea by looking at the census graph provided by the Overseer of Granaries. During my tests, the percentage of the population that were of school age varied between 32% and 38%, but in some of my real missions it was less than 20%. In any case, your demographics may vary. It looks as though 300 children implies somewhere between 800 and 2000 total population.</p><p>Buildings must be staffed in order to count, but don't have to be supplied with papyrus (although, of course you still need 500 papyrus just to be able to build a library).</p><wbr><table border="1" cellpadding="2">    <wbr><tr>        <wbr><th><wbr><font size="2">Building</font></th>        <wbr><th><wbr><font size="2">Capacity</font></th>    </tr>    <wbr><tr>        <wbr><td><wbr><font size="2">Scribal School</font></td>        <wbr><td><wbr><font size="2">300 children <br>        (maybe 800-2000 total population)</font></td>    </tr>    <wbr><tr>        <wbr><td><wbr><font size="2">Library</font></td>        <wbr><td><wbr><font size="2">800 total population</font></td>    </tr></table><p>The <wbr><strong>Coverage Index for each health service</strong> does not depend on the number of buildings, it is simply the percentage of your population that lives in houses passed by the appropriate walker. The walker has to pass within 2 squares to give the house access to his type of health service for 6 months. The types of health service that are used in the culture rating are Dentist, Physician and Mortuary. Since Mortuaries don't send out a walker unless supplied with linen, you will need linen in order achieve the Culture Ratings that require Mortuary coverage.</p><p>The requirements for each advance in <wbr><strong>Culture Rating</strong> is shown in the following table. To save space, I show the Coverage Index required rather than the overseer's description. You find the equivalent overseer's description by looking up the Coverage Index in the column headed &quot;<wbr>At least&quot;<wbr> in the table of overseers' descriptions near the beginning of this article. Don't forget that each level needs all the coverage required for the previous levels as well as the new ones listed.</p><wbr><table border="1" cellpadding="2">    <wbr><tr>        <wbr><th rowspan="2"><wbr><font size="1">Culture<br>        Rating</font></th>        <wbr><th colspan="5"><wbr><font size="1">Entertainment</font></th>        <wbr><th rowspan="2"><wbr><font size="1">Reli-<br>        gion</font></th>        <wbr><th colspan="2"><wbr><font size="1">Education</font></th>        <wbr><th colspan="3"><wbr><font size="1">Heath</font></th>    </tr>    <wbr><tr>        <wbr><th><wbr><font size="1">Juggler</font></th>        <wbr><th><wbr><font size="1">Music</font></th>        <wbr><th><wbr><font size="1">Dance</font></th>        <wbr><th><wbr><font size="1">Senet</font></th>        <wbr><th><wbr><font size="1">Zoo</font></th>        <wbr><th><wbr><font size="1">Sch</font></th>        <wbr><th><wbr><font size="1">Lib</font></th>        <wbr><th><wbr><font size="1">Den</font></th>        <wbr><th><wbr><font size="1">Phys</font></th>        <wbr><th><wbr><font size="1">Mort</font></th>    </tr>    <wbr><tr>        <wbr><td align="right"><wbr><font size="2">5</font></td>        <wbr><td align="right">-</td>        <wbr><td align="right">-</td>        <wbr><td align="right">-</td>        <wbr><td align="right">-</td>        <wbr><td align="right">-</td>        <wbr><td align="right"><wbr><font size="2">1%</font></td>        <wbr><td align="right">-</td>        <wbr><td align="right">-</td>        <wbr><td align="right">-</td>        <wbr><td align="right">-</td>        <wbr><td align="right">-</td>    </tr>    <wbr><tr>        <wbr><td align="right"><wbr><font size="2">10</font></td>        <wbr><td align="right"><wbr><font size="2">1%</font></td>        <wbr><td align="right">-</td>        <wbr><td align="right">-</td>        <wbr><td align="right">-</td>        <wbr><td align="right">-</td>        <wbr><td align="right">-</td>        <wbr><td align="right">-</td>        <wbr><td align="right">-</td>        <wbr><td align="right">-</td>        <wbr><td align="right">-</td>        <wbr><td align="right">-</td>    </tr>    <wbr><tr>        <wbr><td align="right"><wbr><font size="2">15</font></td>        <wbr><td align="right">-</td>        <wbr><td align="right"><wbr><font size="2">1%</font></td>        <wbr><td align="right">-</td>        <wbr><td align="right">-</td>        <wbr><td align="right">-</td>        <wbr><td align="right"><wbr><font size="2">20%</font></td>        <wbr><td align="right">-</td>        <wbr><td align="right">-</td>        <wbr><td align="right">-</td>        <wbr><td align="right">-</td>        <wbr><td align="right">-</td>    </tr>    <wbr><tr>        <wbr><td align="right"><wbr><font size="2">20</font></td>        <wbr><td align="right"><wbr><font size="2">20%</font></td>        <wbr><td align="right">-</td>        <wbr><td align="right"><wbr><font size="2">1%</font></td>        <wbr><td align="right">-</td>        <wbr><td align="right">-</td>        <wbr><td align="right">-</td>        <wbr><td align="right">-</td>        <wbr><td align="right">-</td>        <wbr><td align="right"><wbr><font size="2">1%</font></td>        <wbr><td align="right">-</td>        <wbr><td align="right">-</td>    </tr>    <wbr><tr>        <wbr><td align="right"><wbr><font size="2">25</font></td>        <wbr><td align="right">-</td>        <wbr><td align="right"><wbr><font size="2">20%</font></td>        <wbr><td align="right">-</td>        <wbr><td align="right">-</td>        <wbr><td align="right">-</td>        <wbr><td align="right">-</td>        <wbr><td align="right">-</td>        <wbr><td align="right">-</td>        <wbr><td align="right"><wbr><font size="2">20%</font></td>        <wbr><td align="right"><wbr><font size="2">1%</font></td>        <wbr><td align="right">-</td>    </tr>    <wbr><tr>        <wbr><td align="right"><wbr><font size="2">30</font></td>        <wbr><td align="right"><wbr><font size="2">40%</font></td>        <wbr><td align="right">-</td>        <wbr><td align="right"><wbr><font size="2">20%</font></td>        <wbr><td align="right">-</td>        <wbr><td align="right">-</td>        <wbr><td align="right"><wbr><font size="2">40%</font></td>        <wbr><td align="right">-</td>        <wbr><td align="right">-</td>        <wbr><td align="right"><wbr><font size="2">40%</font></td>        <wbr><td align="right"><wbr><font size="2">20%</font></td>        <wbr><td align="right">-</td>    </tr>    <wbr><tr>        <wbr><td align="right"><wbr><font size="2">35</font></td>        <wbr><td align="right">-</td>        <wbr><td align="right"><wbr><font size="2">40%</font></td>        <wbr><td align="right">-</td>        <wbr><td align="right">-</td>        <wbr><td align="right">-</td>        <wbr><td align="right">-</td>        <wbr><td align="right">-</td>        <wbr><td align="right">-</td>        <wbr><td align="right">-</td>        <wbr><td align="right"><wbr><font size="2">40%</font></td>        <wbr><td align="right">-</td>    </tr>    <wbr><tr>        <wbr><td align="right"><wbr><font size="2">40</font></td>        <wbr><td align="right">-</td>        <wbr><td align="right">-</td>        <wbr><td align="right"><wbr><font size="2">40%</font></td>        <wbr><td align="right">-</td>        <wbr><td align="right">-</td>        <wbr><td align="right">-</td>        <wbr><td align="right">-</td>        <wbr><td align="right">-</td>        <wbr><td align="right"><wbr><font size="2">60%</font></td>        <wbr><td align="right">-</td>        <wbr><td align="right"><wbr><font size="2">1%</font></td>    </tr>    <wbr><tr>        <wbr><td align="right"><wbr><font size="2">45</font></td>        <wbr><td align="right"><wbr><font size="2">60%</font></td>        <wbr><td align="right">-</td>        <wbr><td align="right">-</td>        <wbr><td align="right">-</td>        <wbr><td align="right">-</td>        <wbr><td align="right"><wbr><font size="2">60%</font></td>        <wbr><td align="right"><wbr><font size="2">1%</font></td>        <wbr><td align="right">-</td>        <wbr><td align="right">-</td>        <wbr><td align="right"><wbr><font size="2">60%</font></td>        <wbr><td align="right">-</td>    </tr>    <wbr><tr>        <wbr><td align="right"><wbr><font size="2">50</font></td>        <wbr><td align="right">-</td>        <wbr><td align="right"><wbr><font size="2">60%</font></td>        <wbr><td align="right">-</td>        <wbr><td align="right">-</td>        <wbr><td align="right">-</td>        <wbr><td align="right">-</td>        <wbr><td align="right"><wbr><font size="2">20%</font></td>        <wbr><td align="right">-</td>        <wbr><td align="right">-</td>        <wbr><td align="right">-</td>        <wbr><td align="right"><wbr><font size="2">20%</font></td>    </tr>    <wbr><tr>        <wbr><td align="right"><wbr><font size="2">55</font></td>        <wbr><td align="right">-</td>        <wbr><td align="right">-</td>        <wbr><td align="right"><wbr><font size="2">60%</font></td>        <wbr><td align="right"><wbr><font size="2">1%?</font></td>        <wbr><td align="right">-</td>        <wbr><td align="right">-</td>        <wbr><td align="right"><wbr><font size="2">40%</font></td>        <wbr><td align="right">-</td>        <wbr><td align="right"><wbr><font size="2">80%</font></td>        <wbr><td align="right">-</td>        <wbr><td align="right">-</td>    </tr>    <wbr><tr>        <wbr><td align="right"><wbr><font size="2">60</font></td>        <wbr><td align="right"><wbr><font size="2">80%</font></td>        <wbr><td align="right">-</td>        <wbr><td align="right">-</td>        <wbr><td align="right"><wbr><font size="2">20%?</font></td>        <wbr><td align="right">-</td>        <wbr><td align="right">-</td>        <wbr><td align="right">-</td>        <wbr><td align="right">-</td>        <wbr><td align="right">-</td>        <wbr><td align="right"><wbr><font size="2">80%</font></td>        <wbr><td align="right"><wbr><font size="2">40%</font></td>    </tr>    <wbr><tr>        <wbr><td align="right"><wbr><font size="2">65</font></td>        <wbr><td align="right">-</td>        <wbr><td align="right"><wbr><font size="2">80%</font></td>        <wbr><td align="right">-</td>        <wbr><td align="right">-</td>        <wbr><td align="right">-</td>        <wbr><td align="right"><wbr><font size="2">80%</font></td>        <wbr><td align="right"><wbr><font size="2">60%</font></td>        <wbr><td align="right"><wbr><font size="2">1%</font></td>        <wbr><td align="right">-</td>        <wbr><td align="right">-</td>        <wbr><td align="right">-</td>    </tr>    <wbr><tr>        <wbr><td align="right"><wbr><font size="2">70</font></td>        <wbr><td align="right">-</td>        <wbr><td align="right">-</td>        <wbr><td align="right"><wbr><font size="2">80%</font></td>        <wbr><td align="right"><wbr><font size="2">40%?</font></td>        <wbr><td align="right">-</td>        <wbr><td align="right">-</td>        <wbr><td align="right">-</td>        <wbr><td align="right"><wbr><font size="2">20%</font></td>        <wbr><td align="right"><wbr><font size="2">90%</font></td>        <wbr><td align="right">-</td>        <wbr><td align="right">-</td>    </tr>    <wbr><tr>        <wbr><td align="right"><wbr><font size="2">75</font></td>        <wbr><td align="right">-</td>        <wbr><td align="right">-</td>        <wbr><td align="right">-</td>        <wbr><td align="right">-</td>        <wbr><td align="right"><wbr><font size="2">1%?</font></td>        <wbr><td align="right">-</td>        <wbr><td align="right">-</td>        <wbr><td align="right"><wbr><font size="2">40%</font></td>        <wbr><td align="right">-</td>        <wbr><td align="right"><wbr><font size="2">90%</font></td>        <wbr><td align="right"><wbr><font size="2">60%</font></td>    </tr>    <wbr><tr>        <wbr><td align="right"><wbr><font size="2">80</font></td>        <wbr><td align="right"><wbr><font size="2">100%</font></td>        <wbr><td align="right">-</td>        <wbr><td align="right">-</td>        <wbr><td align="right"><wbr><font size="2">60%</font></td>        <wbr><td align="right"><wbr><font size="2">20%?</font></td>        <wbr><td align="right">-</td>        <wbr><td align="right"><wbr><font size="2">80%</font></td>        <wbr><td align="right"><wbr><font size="2">60%</font></td>        <wbr><td align="right">-</td>        <wbr><td align="right">-</td>        <wbr><td align="right">-</td>    </tr>    <wbr><tr>        <wbr><td align="right"><wbr><font size="2">85</font></td>        <wbr><td align="right"><wbr><font size="2">-</font></td>        <wbr><td align="right"><wbr><font size="2">100%</font></td>        <wbr><td align="right"><wbr><font size="2">-</font></td>        <wbr><td align="right"><wbr><font size="2">-</font></td>        <wbr><td align="right"><wbr><font size="2">40%?</font></td>        <wbr><td align="right"><wbr><font size="2">-</font></td>        <wbr><td align="right"><wbr><font size="2">-</font></td>        <wbr><td align="right"><wbr><font size="2">80%</font></td>        <wbr><td align="right"><wbr><font size="2">-</font></td>        <wbr><td align="right"><wbr><font size="2">-</font></td>        <wbr><td align="right"><wbr><font size="2">-</font></td>    </tr>    <wbr><tr>        <wbr><td align="right"><wbr><font size="2">90</font></td>        <wbr><td align="right"><wbr><font size="2">-</font></td>        <wbr><td align="right"><wbr><font size="2">-</font></td>        <wbr><td align="right"><wbr><font size="2">100%</font></td>        <wbr><td align="right"><wbr><font size="2">80%</font></td>        <wbr><td align="right"><wbr><font size="2">60%?</font></td>        <wbr><td align="right"><wbr><font size="2">100%</font></td>        <wbr><td align="right"><wbr><font size="2">100%</font></td>        <wbr><td align="right"><wbr><font size="2">-</font></td>        <wbr><td align="right"><wbr><font size="2">-</font></td>        <wbr><td align="right"><wbr><font size="2">-</font></td>        <wbr><td align="right"><wbr><font size="2">80%</font></td>    </tr>    <wbr><tr>        <wbr><td align="right"><wbr><font size="2">95</font></td>        <wbr><td align="right"><wbr><font size="2">-</font></td>        <wbr><td align="right"><wbr><font size="2">-</font></td>        <wbr><td align="right"><wbr><font size="2">-</font></td>        <wbr><td align="right"><wbr><font size="2">-</font></td>        <wbr><td align="right"><wbr><font size="2">80%</font></td>        <wbr><td align="right"><wbr><font size="2">-</font></td>        <wbr><td align="right"><wbr><font size="2">-</font></td>        <wbr><td align="right"><wbr><font size="2">100%</font></td>        <wbr><td align="right"><wbr><font size="2">-</font></td>        <wbr><td align="right"><wbr><font size="2">-</font></td>        <wbr><td align="right"><wbr><font size="2">-</font></td>    </tr>    <wbr><tr>        <wbr><td align="right"><wbr><font size="2">100</font></td>        <wbr><td align="right"><wbr><font size="2">-</font></td>        <wbr><td align="right"><wbr><font size="2">-</font></td>        <wbr><td align="right"><wbr><font size="2">-</font></td>        <wbr><td align="right"><wbr><font size="2">100%</font></td>        <wbr><td align="right"><wbr><font size="2">100%</font></td>        <wbr><td align="right"><wbr><font size="2">-</font></td>        <wbr><td align="right"><wbr><font size="2">-</font></td>        <wbr><td align="right"><wbr><font size="2">-</font></td>        <wbr><td align="right"><wbr><font size="2">-</font></td>        <wbr><td align="right"><wbr><font size="2">-</font></td>        <wbr><td align="right"><wbr><font size="2">-</font></td>    </tr></table><p>Some entries in the table for Senet House and Zoo coverage are marked with a question mark as I didn't build a big enough city to verify them. The ones shown as &quot;<wbr>1%?&quot;<wbr> are the rating levels at which those buildings are first required. The remainder of the entries with question marks are guesses based on the overall pattern.</p><p>Finally, a couple of disclaimers. First, these tests were all run with the Cleopatra expansion installed. I doubt if that affected anything except to add the requirements for Zoo coverage, but I haven't verified that. Second, I ran the tests with the entire population housed in Huts and using a version of the Very Easy difficulty level modified to remove fire and damage risk (to make it simpler to manage the test city). I checked some of the results on Hard difficulty and found no differences, but you never know.</p><p>If you've read this far, congratulations! You are now a Culture Vulture. Thanks for reading.</p><p>Nero Would</p><p><font size="1">[This message has been edited by Nero Would (edited 09-20-2000).]</font>
-</div>
 
-<hr>
-<h1 id="Monuments">Monuments Chart</h1>
-<div class="messagebody">
-    <wbr><b>Updated 11-05-2001</b>: Introduced the Sun Temple on the Chart (I forgot it on the first version), and introduced an HTML table with the correct legend, on <wbr><b>Post #2</b>. Also, I have corrected <wbr><b>Post #4</b>. <wbr><b>Future Updates will be reported here (Post #1)</b>.<p><wbr><b>Updated 11-06-2001</b>: In the last version of the Chart, I have included Mastabas as needing wood, but actually they don't need it. That was already corrected. Thanks to <wbr><b>pharaohcris</b> for noticing this awful mistake.<p><wbr><b>Introduction:</b><p>Sometimes, when playing a mission in Pharaoh/Cleopatra, you need to build one or even more monuments to achieve the victory. I find very useful, for pre-planning purposes, to know the size of the footprint and what I need to build them.<p>There is a very good chart on the subject, made by <wbr><b><wbr><font color='orange'>Angel Reckless Rodent</font></b>, on the <wbr><b><wbr><a href="http://pharaoh.heavengames.com/strategy/index.shtml" target=_blank URL>Strategy Section</a></b> of <wbr><b><wbr><a href="http://pharaoh.heavengames.com/" target=_blank URL>Pharaoh Heaven</a></b>. Unfortunately, some of the information on the chart is wrong. It also lacks information (only on some monuments) on the amount of each good needed for completing the monument, which I find very useful and some tips on placing the monuments (particularly the Pyramid Complexes' Causeway), for beginners and general troubleshooting, as well.<p>What I have been trying to accomplish here is to develop a kind of chart that included all the information above. I hope that you find this chart as useful as I do.<p><wbr><div align="center"><br><wbr><TABLE BORDER="1" CELLSPACING="1" CELLPADDING="1" WIDTH="95%"><br>  <wbr><td bgcolor="#C0C0C0"><wbr><font size="2"><wbr><b>Credits:</b><br>  Most of the information here is based on the work of <wbr><b><wbr><font color='orange'>Angel<br>  Reckless Rodent</font></b>, plus some information obtained by myself. There<br>  are some monuments that I have never built, particularly most the new<br>  monuments introduced with <wbr><b>Cleopatra</b>, but I did read some posts on<br>  Pharaoh Heaven's Forums, where I found some of the information/tips here.</font></TABLE><br></div><p><font size="1">[This message has been edited by Ben The Vizier (edited 11-07-2001 @ 02:06 AM).]</font>
-</div>
+<p>Reference: Nero Would's <a href="https://caesar3.heavengames.com/cgi-bin/caeforumscgi/display.cgi?action=ct&f=25,2054,,all=">Got your Culture right here!</a>
+
+<p>The culture rating is based on the access to education, entertainment,
+health, and religion. Several formulas depend on a <emph>coverage
+percentage</emph>, which is computed differently for each category. These
+percentages are reflected by the messages in the various overseer windows. Note
+that the “Average” rating covers a wider band than the others.
+
+<p>The coverage percentage for health (physician, dentist, mortuary)
+is the simplest. It refers to the percentages of houses that have access to that
+service. The other coverages (entertainment, religion, education) take into
+account the number of service buildings built and don't care about how many houses
+have access to the service.
+
+<table id=coverageidx>
+    <tr><th>Overseer</th><th>Coverage</th></tr>
+    <tr><td>None</td><td>0%</td></tr>
+    <tr><td>Sparse</td><td>1%</td></tr>
+    <tr><td>Very Poor</td><td>10%</td></tr>
+    <tr><td>Poor</td><td>20%</td></tr>
+    <tr><td>Below Average</td><td>30%</td></tr>
+    <tr><td>Average</td><td>40%</td></tr>
+    <tr><td>Above Average</td><td>60%</td></tr>
+    <tr><td>Good</td><td>70%</td></tr>
+    <tr><td>Very Good</td><td>80%</td></tr>
+    <tr><td>Excellent</td><td>90%</td></tr>
+    <tr><td>Perfect</td><td>100%</td></tr>
+</table>
+
+<p>For entertainment, add up the individual venues. For example, the number of
+musician stages is the number of bandstands plus the number of pavilions.
+
+<table id="entertainment-capacity">
+    <tr><th>Venue</th><th>Capacity</th></tr>
+    <tr><td>Juggling</td><td>400</td></tr>
+    <tr><td>Music</td><td>700</td></tr>
+    <tr><td>Dance</td><td>1200</td></tr>
+    <tr><td>Senet</td><td>5000</td></tr>
+    <tr><td>Zoo</td><td>7500</td></tr>
+</table>
+
+<p>For religion, the coverage requirement for the patron god is higher. The
+final coverage number is the average of the coverage for each god.
+
+<table id="religion-capacity">
+    <tr><th>Building</th><th>Patron</th><th>Local</th></tr>
+    <tr><td>Shrine</td><td>150</td><td>300</td></tr>
+    <tr><td>Temple</td><td>375</td><td>750</td></tr>
+    <tr><td>T. Complex</td><td>8000</td><td>8000</td></tr>
+</table>
+
+<p>For education, the library requirements are calculated based on the population
+total while the school requirements are based on the number of children,
+which can vary based on your city's age distribution. Education buildings still
+count for culture rating even if they are out of papyrus.
+
+<table id="education-capacity">
+    <tr><th>Building</th><th>Capacity</th></tr>
+    <tr><td>School</td><td>300 children</td></tr>
+    <tr><td>Library</td><td>800 people</td></tr>
+</table>
+
+
+<p>The final culture rating is is governed by the various coverage index.
+Each rating level has a series of coverage requirements that must all be met.
+The religion coverage is the average of the coverages for all the gods.
+
+<table id="culture-rating">
+    <tr>
+        <th rowspan="2">Rating</th>
+        <th colspan="5">Entertainment</th>
+        <th rowspan="2">Rel.</th>
+        <th colspan="2">Educ.</th>
+        <th colspan="3">Health</th>
+    </tr>
+    <tr>
+        <th>Jug.</th>
+        <th>Mus.</th>
+        <th>Dan.</th>
+        <th>Sen.</th>
+        <th>Zoo</th>
+        <th>Sch.</th>
+        <th>Lib.</th>
+        <th>Den.</th>
+        <th>Phy.</th>
+        <th>Mor.</th>
+    </tr>
+    <tr>
+        <td>5</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>1%</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+    </tr>
+    <tr>
+        <td>10</td>
+        <td>1%</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+    </tr>
+    <tr>
+        <td>15</td>
+        <td>-</td>
+        <td>1%</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>20%</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+    </tr>
+    <tr>
+        <td>20</td>
+        <td>20%</td>
+        <td>-</td>
+        <td>1%</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>1%</td>
+        <td>-</td>
+        <td>-</td>
+    </tr>
+    <tr>
+        <td>25</td>
+        <td>-</td>
+        <td>20%</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>20%</td>
+        <td>1%</td>
+        <td>-</td>
+    </tr>
+    <tr>
+        <td>30</td>
+        <td>40%</td>
+        <td>-</td>
+        <td>20%</td>
+        <td>-</td>
+        <td>-</td>
+        <td>40%</td>
+        <td>-</td>
+        <td>-</td>
+        <td>40%</td>
+        <td>20%</td>
+        <td>-</td>
+    </tr>
+    <tr>
+        <td>35</td>
+        <td>-</td>
+        <td>40%</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>40%</td>
+        <td>-</td>
+    </tr>
+    <tr>
+        <td>40</td>
+        <td>-</td>
+        <td>-</td>
+        <td>40%</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>60%</td>
+        <td>-</td>
+        <td>1%</td>
+    </tr>
+    <tr>
+        <td>45</td>
+        <td>60%</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>60%</td>
+        <td>1%</td>
+        <td>-</td>
+        <td>-</td>
+        <td>60%</td>
+        <td>-</td>
+    </tr>
+    <tr>
+        <td>50</td>
+        <td>-</td>
+        <td>60%</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>20%</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>20%</td>
+    </tr>
+    <tr>
+        <td>55</td>
+        <td>-</td>
+        <td>-</td>
+        <td>60%</td>
+        <td>1%?</td>
+        <td>-</td>
+        <td>-</td>
+        <td>40%</td>
+        <td>-</td>
+        <td>80%</td>
+        <td>-</td>
+        <td>-</td>
+    </tr>
+    <tr>
+        <td>60</td>
+        <td>80%</td>
+        <td>-</td>
+        <td>-</td>
+        <td>20%?</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>80%</td>
+        <td>40%</td>
+    </tr>
+    <tr>
+        <td>65</td>
+        <td>-</td>
+        <td>80%</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>80%</td>
+        <td>60%</td>
+        <td>1%</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+    </tr>
+    <tr>
+        <td>70</td>
+        <td>-</td>
+        <td>-</td>
+        <td>80%</td>
+        <td>40%?</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>20%</td>
+        <td>90%</td>
+        <td>-</td>
+        <td>-</td>
+    </tr>
+    <tr>
+        <td>75</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>1%?</td>
+        <td>-</td>
+        <td>-</td>
+        <td>40%</td>
+        <td>-</td>
+        <td>90%</td>
+        <td>60%</td>
+    </tr>
+    <tr>
+        <td>80</td>
+        <td>100%</td>
+        <td>-</td>
+        <td>-</td>
+        <td>60%</td>
+        <td>20%?</td>
+        <td>-</td>
+        <td>80%</td>
+        <td>60%</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+    </tr>
+    <tr>
+        <td>85</td>
+        <td>-</td>
+        <td>100%</td>
+        <td>-</td>
+        <td>-</td>
+        <td>40%?</td>
+        <td>-</td>
+        <td>-</td>
+        <td>80%</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+    </tr>
+    <tr>
+        <td>90</td>
+        <td>-</td>
+        <td>-</td>
+        <td>100%</td>
+        <td>80%</td>
+        <td>60%?</td>
+        <td>100%</td>
+        <td>100%</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>80%</td>
+    </tr>
+    <tr>
+        <td>95</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>80%</td>
+        <td>-</td>
+        <td>-</td>
+        <td>100%</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+    </tr>
+    <tr>
+        <td>100</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>100%</td>
+        <td>100%</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+    </tr>
+</table>
+
 <div class="messagebody">
   <p align="center"><wbr><b><wbr><font size="3">PHARAOH/CLEOPATRA MONUMENTS CHART - PAGE 2</font></b></p><wbr><div align="center"><wbr><table border="1" width="500">    <wbr><tr>      <wbr><td colspan="2" align="center" width="500"><wbr><b><wbr><font size="2">Legend of        Page 3</font></b></td>    </tr>    <wbr><tr>      <wbr><td align="right" width="250" bgcolor="#FFD700"><wbr><font size="2">M</font></td>      <wbr><td align="left" width="250" bgcolor="#FFD700"><wbr><font size="2">Marble *</font></td>    </tr>    <wbr><tr>      <wbr><td align="right" width="250" bgcolor="#87CEEB"><wbr><font size="2">C</font></td>      <wbr><td align="left" width="250" bgcolor="#87CEEB"><wbr><font size="2">Copper</font></td>    </tr>    <wbr><tr>      <wbr><td align="right" width="250" bgcolor="#FFB6C1"><wbr><font size="2">G</font></td>      <wbr><td align="left" width="250" bgcolor="#FFB6C1"><wbr><font size="2">Granite</font></td>    </tr>    <wbr><tr>      <wbr><td align="right" width="250" bgcolor="#DDA0DD"><wbr><font size="2">PS</font></td>      <wbr><td align="left" width="250" bgcolor="#DDA0DD"><wbr><font size="2">Plainstone</font></td>    </tr>    <wbr><tr>      <wbr><td align="right" width="250" bgcolor="#ADD8E6"><wbr><font size="2">LS</font></td>      <wbr><td align="left" width="250" bgcolor="#ADD8E6"><wbr><font size="2">Limestone</font></td>    </tr>    <wbr><tr>      <wbr><td align="right" width="250" bgcolor="#FFA500"><wbr><font size="2">SS</font></td>      <wbr><td align="left" width="250" bgcolor="#FFA500"><wbr><font size="2">Sandstone</font></td>    </tr>    <wbr><tr>      <wbr><td align="right" width="250" bgcolor="#00FFFF"><wbr><font size="2">B</font></td>      <wbr><td align="left" width="250" bgcolor="#00FFFF"><wbr><font size="2">Bricks</font></td>    </tr>    <wbr><tr>      <wbr><td align="right" width="250" bgcolor="#FFFF00"><wbr><font size="2">W</font></td>      <wbr><td align="left" width="250" bgcolor="#FFFF00"><wbr><font size="2">Wood **</font></td>    </tr>    <wbr><tr>      <wbr><td align="right" width="250" bgcolor="#00FF00"><wbr><font size="2">P</font></td>      <wbr><td align="left" width="250" bgcolor="#00FF00"><wbr><font size="2">Paint ***</font></td>    </tr>    <wbr><tr>      <wbr><td align="right" width="250" bgcolor="#F5DEB3"><wbr><font size="2">L</font></td>      <wbr><td align="left" width="250" bgcolor="#F5DEB3"><wbr><font size="2">Lamps ****</font></td>    </tr>    <wbr><tr>      <wbr><td align="left" width="500" bgcolor="#C0C0C0" colspan="2"><wbr><font size="1">*        Introduced with <wbr><b>Cleopatra</b>. Marble must be imported from a trade        partner.</font></td>    </tr>    <wbr><tr>      <wbr><td align="left" width="500" bgcolor="#C0C0C0" colspan="2"><wbr><font size="1">**        Needed only by Carpenters' Guild(s).</font></td>    </tr>    <wbr><tr>      <wbr><td align="left" width="500" bgcolor="#C0C0C0" colspan="2"><wbr><font size="1">***        Introduced with <wbr><b>Cleopatra</b>. Needed only by Artisans' Guild(s)</font></td>    </tr>    <wbr><tr>      <wbr><td align="left" width="500" bgcolor="#C0C0C0" colspan="2"><wbr><font size="1">****        Introduced with <wbr><b>Cleopatra</b>. Lamps are transported by peasants from        Work Camps to the construction site.</font></td>    </tr>  </table></div><p><font size="1">[This message has been edited by Ben The Vizier (edited 11-06-2001 @ 02:20 AM).]</font>
 </div>
