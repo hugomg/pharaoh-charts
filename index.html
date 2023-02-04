@@ -47,6 +47,18 @@
                                                  padding-right: 15px;}
         table#culture-rating td:nth-child(n+2) { text-align: right; }
 
+        table.map {
+            border-collapse: collapse;
+            font-size:small;
+        }
+        table.map td {
+            border: 1px solid;
+            width:  16px;
+            height: 16px;
+            padding: 3px;
+            text-align: right;
+        }
+
         .s200 { background-color: #ff5a48; }
         .s300 { background-color: #ff7e48; }
         .s400 { background-color: #ffa348; }
@@ -67,7 +79,7 @@
     <li><a href="#Monuments">Monuments</a>
     <li><a href="#Housing">Housing Chart (Evolve) </a>
     <li><a href="#Structures1">Structures Chart (Risks, Desirability)</a>
-    <li><a href="#Structures2">Structures Chart (Weird Buildings)</a>
+    <li><a href="#Structures2">Structures Chart (Weird Desirabilities)</a>
     <li><a href="#Cheats">Cheats</a>
 </ul>
 <h2>Production</h2>
@@ -102,7 +114,7 @@
 both start and end their walk at the finish point.
 
 <h2>Start Point</h2>
-<table border=1px>
+<table class="map">
 <tr><td>↖</td><td>N</td><td> </td><td> </td></tr>
 <tr><td> </td><td>1</td><td>2</td><td> </td></tr>
 <tr><td>8</td><td> </td><td> </td><td>3</td></tr>
@@ -111,7 +123,7 @@ both start and end their walk at the finish point.
 </table>
 
 <h2>Finish Point</h2>
-<table border=1px>
+<table class="map">
 <tr><td>↖</td><td>N</td><td> </td><td> </td></tr>
 <tr><td>1</td><td>2</td><td>3</td><td>4</td></tr>
 <tr><td>5</td><td> </td><td> </td><td>6</td></tr>
@@ -1669,11 +1681,10 @@ Each rating level must meet all the coverage requirements.
 
 <hr>
 <h1 id="Structures1">Structures Chart (Risks, Desirability)</h1>
-<div style="overflow-x: auto">
-  <table border="1" cellspacing="1" cellpadding="1" width="626" style="font-size: 10px;border-collapse: collapse;">
-    <caption>
-      <strong>PHARAOH/CLEOPATRA STRUCTURES CHART &#8211; Page 1</strong>
-    </caption>
+
+<p>Reference: <a href="https://pharaoh.heavengames.com/strategy/charts/struct1/">Pharaoh Heaven Structure Charts</a>
+
+<table border="1" cellspacing="1" cellpadding="1" width="626" style="font-size: 10px;border-collapse: collapse;">
     <tr>
       <td align="left" valign="top" bgcolor="lightgreen" rowspan="2">
         <strong>Structure</strong>
@@ -3687,477 +3698,823 @@ Each rating level must meet all the coverage requirements.
       <td align="center" bgcolor="wheat" colspan="5">none</td>
     </tr>
     <tr>
-      <td align="left" bgcolor="silver" colspan="24">* This structure is only available if you have the Cleopatra Expansion installed.</td>
+      <td align="left" bgcolor="silver" colspan="24">*
+      Only available inthe Cleopatra Expansion.</td>
     </tr>
     <tr>
-      <td align="left" bgcolor="silver" colspan="24">** This is the cost for placing a housing tile (typically referred to as a &#8220;Vacant Lot&#8221; or &#8220;For Sale&#8221; sign).</td>
+      <td align="left" bgcolor="silver" colspan="24">**
+      This is the cost for placing a housing tile (typically referred to as a &#8220;Vacant Lot&#8221; or &#8220;For Sale&#8221; sign).</td>
     </tr>
-  </table>
-</div>
+</table>
 
+<p><strong>Desirability</strong>: The number in the &#8220;D1&#8221; column
+represents the desirability effect (positive or negative) that the Structure
+has on adjacent squares. The number in the &#8220;D2&#8221; column represents
+the desirability effect 2 tiles from the Structure. &#8220;D3&#8221; = 3 tiles,
+etc. 6 tiles is the maximum range that the desirability effect extends for any
+Structure. These values are the same for all difficulty levels.</p>
 
-
-<p><strong>Colors</strong>: The vertical bands of color have been used to distinguish the various Difficulty Levels. VH=Very Hard, H=Hard, N=Normal, E=Easy and VE=Very Easy. The horizontal bands of color are to aid in reading across the chart.</p>
-
-
-
-<p><strong>Size</strong>: Size of the Structure in tiles.<br>Emp (Employees): The number of workers that it takes to fully staff the Structure. The number of workers required is the same for all difficulty levels.</p>
-
-
-
-<p><strong>Cost</strong>: The cost of the Structure, listed for all difficulty levels. As the level of difficulty increases, so does the cost of the structure.</p>
-
-
-
-<p><strong>Desirability</strong>: The number in the &#8220;D1&#8221; column represents the desirability effect (positive or negative) that the Structure has on adjacent squares. The number in the &#8220;D2&#8221; column represents the desirability effect 2 tiles from the Structure. &#8220;D3&#8221; = 3 tiles, etc. 6 tiles is the maximum range that the desirability effect extends for any Structure. These values are the same for all difficulty levels.</p>
-
-
-
-<p><strong>Risk of Fire</strong>: As the difficulty level increases, so does the possibility that the Structure will catch fire. The higher the number is, the greater the chance that the Structure will catch fire. The protection provided by a Fire Marshal does not last as long, and the decrease in the risk is not as great each time the Fire Marshal passes by.</p>
-
-
-
-<p><strong>Risk of Damage</strong>: As the difficulty level increases, so does the possibility that the Structure will collapse. The higher the number is, the greater the chance that the Structure will collapse. The protection provided by an Architect does not last as long, and the decrease in the risk is not as great each time the Architect passes by.</p>
-
-
-
-<p><strong>Note</strong>: There is one more factor that increases as the difficulty level increases. The rate at which goods are consumed by Structures that require goods to function is greater at higher difficulty levels. For example, Libraries use more papyrus and Senet Houses consume more beer. The complete list is as follows: Mortuary, Library, Scribe School, Senet House and Zoo.</p>
-
-
-
-<p><strong>Credits</strong>: Most of the information contained in this Chart was taken from posts in Pharaoh Heaven made by <strong>Nero Would</strong>. Additional information was obtained from my review of the Pharaoh_Model.txt files. <strong>HG Cherub Brugle</strong> provided the information on Desirability for the Temple Complex and Entertainment Venues. The original concept and format of the Chart was derived from the work of <strong>Grumpus The Elder</strong> on his site &#8220;Which Way To Thebes&#8221;. If there are any errors in the Chart, they are entirely by own. <strong>VitruviusAIA</strong></p>
 
 <hr>
-<h1 id="Structures2">Structures Chart (Weird Buildings)</h1>
-<div style="overflow-x: auto">
-  <table border="1" cellspacing="1" cellpadding="6" width="626" style="font-size: 12px;">
-    <caption>
-      <strong>PHARAOH/CLEOPATRA STRUCTURES CHART &#8211; Page 3</strong>
-    </caption>
+<h1 id="Structures2">Weird desirabilities</h1>
+
+Some buildings are coded as if they were the sum of multiple
+sub-components, each contributing a separate desirability.
+
+<h2>Temple Complex</h2>
+
+<p>The only desirable part of the temple complex is the inner structure.
+It consists act as three 3×3 units, each providing a desirability effect of
+(+20, +20, +16, +16, +12, +12).
+
+<table class="map">
     <tr>
-      <td bgcolor="silver">A chart with the desirability values of structures would not be complete without the following information taken from <strong>Brugle&#8217;s</strong> post Temple Complex Desirability Effect.</td>
+        <td>12</td>
+        <td>12</td>
+        <td>12</td>
+        <td>24</td>
+        <td>24</td>
+        <td>24</td>
+        <td>36</td>
+        <td>36</td>
+        <td>36</td>
+        <td>36</td>
+        <td>36</td>
+        <td>36</td>
+        <td>36</td>
+        <td>36</td>
+        <td>36</td>
+        <td>24</td>
+        <td>24</td>
+        <td>24</td>
+        <td>12</td>
+        <td>12</td>
+        <td>12</td>
     </tr>
     <tr>
-      <td>In that post, <strong>Brugle</strong> had this to say about the Temple Complex: &#8220;From the Pharaoh_Model_*.txt files, it appears that a temple complex has a desirability effect of (+20, +20, +16, +16, +12, +12), which is not true. The desirability effect of a temple complex is more complex than that&#8211;in some places higher, in some places lower. I did a few experiments, and the desirability effect of a temple complex appears to be generated by the 3&#215;9 &#8220;built up&#8221; part, as if it consists of three side-by-side 3&#215;3 objects that each has a desirability effect of (+20, +20, +16, +16, +12, +12). The &#8220;low&#8221; part, extending out for 2 tiles on each side and 4 tiles on one end, apparently has no desirability effect. This means that the desirability adjacent to a temple complex is +36 at one end, +12 at the other end, and varies (with a high of +48) along the sides.&#8221; Based on <strong>Brugle&#8217;s</strong> information, I have made the following diagram: The yellow &#8220;O&#8221; squares are the areas of the Temple Complex that do not generate desirability. The blue &#8220;X&#8221;, &#8220;Y&#8221; and &#8220;Z&#8221; squares are the three areas of the Temple Complex that generate the desirability effect. (All of the &#8220;X&#8221;, &#8220;Y&#8221;, &#8220;Z&#8221;, and &#8220;O&#8221; squares together make up the footprint of the Temple Complex.)<br/><br/><table border="1" cellpadding="2" width="440" style="font-size: 10px;"><tr><td>12</td><td>12</td><td>12</td><td>24</td><td>24</td><td>24</td><td>36</td><td>36</td><td>36</td><td>36</td><td>36</td><td>36</td><td>36</td><td>36</td><td>36</td><td>24</td><td>24</td><td>24</td><td>12</td><td>12</td><td>12</td></tr><tr><td>12</td><td>12</td><td>12</td><td>24</td><td>24</td><td>24</td><td>36</td><td>36</td><td>36</td><td>36</td><td>36</td><td>36</td><td>36</td><td>36</td><td>36</td><td>24</td><td>24</td><td>24</td><td>12</td><td>12</td><td>12</td></tr><tr><td>12</td><td>12</td><td>16</td><td>28</td><td>28</td><td>32</td><td>44</td><td>44</td><td>48</td><td>48</td><td>48</td><td>48</td><td>48</td><td>44</td><td>44</td><td>32</td><td>28</td><td>28</td><td>16</td><td>12</td><td>12</td></tr><tr><td>12</td><td>12</td><td>16</td><td>28</td><td>28</td><td>32</td><td>44</td><td>44</td><td>48</td><td>48</td><td>48</td><td>48</td><td>48</td><td>44</td><td>44</td><td>32</td><td>28</td><td>28</td><td>16</td><td>12</td><td>12</td></tr><tr><td>12</td><td>12</td><td bgcolor="yellow">O</td><td bgcolor="yellow">O</td><td bgcolor="yellow">O</td><td bgcolor="yellow">O</td><td bgcolor="yellow">O</td><td bgcolor="yellow">O</td><td bgcolor="yellow">O</td><td bgcolor="yellow">O</td><td bgcolor="yellow">O</td><td bgcolor="yellow">O</td><td bgcolor="yellow">O</td><td bgcolor="yellow">O</td><td bgcolor="yellow">O</td><td>36</td><td>32</td><td>28</td><td>16</td><td>12</td><td>12</td></tr><tr><td>12</td><td>12</td><td bgcolor="yellow">O</td><td bgcolor="yellow">O</td><td bgcolor="yellow">O</td><td bgcolor="yellow">O</td><td bgcolor="yellow">O</td><td bgcolor="yellow">O</td><td bgcolor="yellow">O</td><td bgcolor="yellow">O</td><td bgcolor="yellow">O</td><td bgcolor="yellow">O</td><td bgcolor="yellow">O</td><td bgcolor="yellow">O</td><td bgcolor="yellow">O</td><td>36</td><td>32</td><td>28</td><td>16</td><td>12</td><td>12</td></tr><tr><td>12</td><td>12</td><td bgcolor="yellow">O</td><td bgcolor="yellow">O</td><td bgcolor="yellow">O</td><td bgcolor="yellow">O</td><td bgcolor="lightblue">X</td><td bgcolor="lightblue">X</td><td bgcolor="lightblue">X</td><td bgcolor="lightblue">Y</td><td bgcolor="lightblue">Y</td><td bgcolor="lightblue">Y</td><td bgcolor="lightblue">Z</td><td bgcolor="lightblue">Z</td><td bgcolor="lightblue">Z</td><td>36</td><td>32</td><td>28</td><td>16</td><td>12</td><td>12</td></tr><tr><td>12</td><td>12</td><td bgcolor="yellow">O</td><td bgcolor="yellow">O</td><td bgcolor="yellow">O</td><td bgcolor="yellow">O</td><td bgcolor="lightblue">X</td><td bgcolor="lightblue">X</td><td bgcolor="lightblue">X</td><td bgcolor="lightblue">Y</td><td bgcolor="lightblue">Y</td><td bgcolor="lightblue">Y</td><td bgcolor="lightblue">Z</td><td bgcolor="lightblue">Z</td><td bgcolor="lightblue">Z</td><td>36</td><td>32</td><td>28</td><td>16</td><td>12</td><td>12</td></tr><tr><td>12</td><td>12</td><td bgcolor="yellow">O</td><td bgcolor="yellow">O</td><td bgcolor="yellow">O</td><td bgcolor="yellow">O</td><td bgcolor="lightblue">X</td><td bgcolor="lightblue">X</td><td bgcolor="lightblue">X</td><td bgcolor="lightblue">Y</td><td bgcolor="lightblue">Y</td><td bgcolor="lightblue">Y</td><td bgcolor="lightblue">Z</td><td bgcolor="lightblue">Z</td><td bgcolor="lightblue">Z</td><td>36</td><td>32</td><td>28</td><td>16</td><td>12</td><td>12</td></tr><tr><td>12</td><td>12</td><td bgcolor="yellow">O</td><td bgcolor="yellow">O</td><td bgcolor="yellow">O</td><td bgcolor="yellow">O</td><td bgcolor="yellow">O</td><td bgcolor="yellow">O</td><td bgcolor="yellow">O</td><td bgcolor="yellow">O</td><td bgcolor="yellow">O</td><td bgcolor="yellow">O</td><td bgcolor="yellow">O</td><td bgcolor="yellow">O</td><td bgcolor="yellow">O</td><td>36</td><td>32</td><td>28</td><td>16</td><td>12</td><td>12</td></tr><tr><td>12</td><td>12</td><td bgcolor="yellow">O</td><td bgcolor="yellow">O</td><td bgcolor="yellow">O</td><td bgcolor="yellow">O</td><td bgcolor="yellow">O</td><td bgcolor="yellow">O</td><td bgcolor="yellow">O</td><td bgcolor="yellow">O</td><td bgcolor="yellow">O</td><td bgcolor="yellow">O</td><td bgcolor="yellow">O</td><td bgcolor="yellow">O</td><td bgcolor="yellow">O</td><td>36</td><td>32</td><td>28</td><td>16</td><td>12</td><td>12</td></tr><tr><td>12</td><td>12</td><td>16</td><td>28</td><td>28</td><td>32</td><td>44</td><td>44</td><td>48</td><td>48</td><td>48</td><td>48</td><td>48</td><td>44</td><td>44</td><td>32</td><td>28</td><td>28</td><td>16</td><td>12</td><td>12</td></tr><tr><td>12</td><td>12</td><td>16</td><td>28</td><td>28</td><td>32</td><td>44</td><td>44</td><td>48</td><td>48</td><td>48</td><td>48</td><td>48</td><td>44</td><td>44</td><td>32</td><td>28</td><td>28</td><td>16</td><td>12</td><td>12</td></tr><tr><td>12</td><td>12</td><td>12</td><td>24</td><td>24</td><td>24</td><td>36</td><td>36</td><td>36</td><td>36</td><td>36</td><td>36</td><td>36</td><td>36</td><td>36</td><td>24</td><td>24</td><td>24</td><td>12</td><td>12</td><td>12</td></tr><tr><td>12</td><td>12</td><td>12</td><td>24</td><td>24</td><td>24</td><td>36</td><td>36</td><td>36</td><td>36</td><td>36</td><td>36</td><td>36</td><td>36</td><td>36</td><td>24</td><td>24</td><td>24</td><td>12</td><td>12</td><td>12</td></tr></table></td>
+        <td>12</td>
+        <td>12</td>
+        <td>12</td>
+        <td>24</td>
+        <td>24</td>
+        <td>24</td>
+        <td>36</td>
+        <td>36</td>
+        <td>36</td>
+        <td>36</td>
+        <td>36</td>
+        <td>36</td>
+        <td>36</td>
+        <td>36</td>
+        <td>36</td>
+        <td>24</td>
+        <td>24</td>
+        <td>24</td>
+        <td>12</td>
+        <td>12</td>
+        <td>12</td>
     </tr>
     <tr>
-      <td style="font-size: 12px;">In that thread, <strong>Nero Would</strong> posted this about the Storage Yard: &#8220;A building that does not generate desirability the way you might think is the storage yard. Its desirability (-5, -5, -3) is generated only by the square on the north corner (the one where you see the worker animation). As the storage yard is 3&#215;3, this means it can be directly across the road from houses and have no effect on them as long as the storage yard is on the northeast or northwest side of the road. To illustrate my point about the storage yard, here is a diagram of the desirablity it generates. <p/><table border="1" cellpadding="2" width="150" style="font-size: 10px;"><tr><td width="20">-3</td><td width="20">-3</td><td width="20">-3</td><td width="20">-3</td><td width="20">-3</td><td width="20">-3</td><td width="20">-3</td></tr><tr><td width="20">-3</td><td width="20">-5</td><td width="20">-5</td><td width="20">-5</td><td width="20">-5</td><td width="20">-5</td><td width="20">-3</td></tr><tr><td width="20">-3</td><td width="20">-5</td><td width="20">-5</td><td width="20">-5</td><td width="20">-5</td><td width="20">-5</td><td width="20">-3</td></tr><tr><td width="20">-3</td><td width="20">-5</td><td width="20">-5</td><td rowspan="3" colspan="3" width="60" bgcolor="lightblue" align="left" valign="top">N Storage Yard&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; </td><td width="20">-3</td></tr><tr><td width="20">-3</td><td width="20">-5</td><td width="20">-5</td><td width="20">-3</td></tr><tr><td width="20">-3</td><td width="20">-5</td><td width="20">-5</td><td width="20">-3</td></tr><tr><td width="20">-3</td><td width="20">-3</td><td width="20">-3</td><td width="20">-3</td><td width="20">-3</td><td width="20">-3</td><td width="20">-3</td></tr></table><br/> The &#8220;N&#8221; in the top left of the storage yard indicates the north corner where the worker stands under his little roof.&#8221; </td>
-    </tr>
-  </table>
-</div>
-<div style="overflow-x: auto">
-  <table border="1" cellspacing="1" cellpadding="6" width="626">
-    <caption>
-      <strong>PHARAOH/CLEOPATRA STRUCTURES CHART &#8211; Page 4</strong>
-    </caption>
-    <tr>
-      <td colspan="2" bgcolor="silver" style="font-size: 12px;"><strong>Entertainment Venues</strong>: <strong>Brugle</strong> has discovered that Pavilions and Bandstands provide more desirability than previously suspected. The 2&#215;2 Dance Stage of a Pavilion generates a +6, +5, +4, +3, +2, +1 effect. <strong>Each tile</strong> of a 1&#215;2 Music Stage produces a +4, +3, +2, +1 effect. The Juggler&#8217;s Stage has a +2, +1 desirability effect. Each garden tile creates desirability the same way it usually does (+3, +2, +1). The roads tiles have no effect on desirability. When all of these factors are added together, Pavilions and Bandstands become very desirable structures. To illustrate the desirability effect of typical Entertainment Venues, I have made the following charts.</td>
-    </tr>
-    <tr>
-      <td align="left" valign="top" style="font-size: 12px;"><strong>Pavilions</strong>: There are many configurations for a Pavilion. I will not attempt to chart all of them. The diagram on the right charts the desirability of one &#8220;standard&#8221; pavilion layout. The light blue <strong>D</strong> squares represent a Dance Stage. Yellow <strong>M</strong>&#8216;s are a Music Stage. The pink &#8220;J&#8221; is a Juggler&#8217;s Stage. Gardens are shown as light green <strong>G</strong>&#8216;s and Roads are purple <strong>R</strong>&#8216;s.</td>
-      <td align="center" width="300">
-        <table border="1" cellpadding="2" width="280" style="font-size: 10px;">
-          <tr>
-            <td width="14">1</td>
-            <td width="14">1</td>
-            <td width="14">1</td>
-            <td width="14">1</td>
-            <td width="14">1</td>
-            <td width="14">1</td>
-            <td width="14">1</td>
-            <td width="14">1</td>
-            <td width="14">1</td>
-            <td width="14">1</td>
-            <td width="14">1</td>
-            <td width="14">1</td>
-            <td width="14">1</td>
-            <td width="14">1</td>
-          </tr>
-          <tr>
-            <td width="14">1</td>
-            <td width="14">2</td>
-            <td width="14">2</td>
-            <td width="14">2</td>
-            <td width="14">2</td>
-            <td width="14">2</td>
-            <td width="14">2</td>
-            <td width="14">2</td>
-            <td width="14">2</td>
-            <td width="14">2</td>
-            <td width="14">2</td>
-            <td width="14">2</td>
-            <td width="14">2</td>
-            <td width="14">1</td>
-          </tr>
-          <tr>
-            <td width="14">1</td>
-            <td width="14">2</td>
-            <td width="14">3</td>
-            <td width="14">3</td>
-            <td width="14">3</td>
-            <td width="14">3</td>
-            <td width="14">3</td>
-            <td width="14">3</td>
-            <td width="14">3</td>
-            <td width="14">3</td>
-            <td width="14">3</td>
-            <td width="14">3</td>
-            <td width="14">2</td>
-            <td width="14">1</td>
-          </tr>
-          <tr>
-            <td width="14">1</td>
-            <td width="14">2</td>
-            <td width="14">3</td>
-            <td width="14">4</td>
-            <td width="14">4</td>
-            <td width="14">4</td>
-            <td width="14">4</td>
-            <td width="14">4</td>
-            <td width="14">4</td>
-            <td width="14">4</td>
-            <td width="14">4</td>
-            <td width="14">3</td>
-            <td width="14">2</td>
-            <td width="14">1</td>
-          </tr>
-          <tr>
-            <td width="14">1</td>
-            <td width="14">3</td>
-            <td width="14">6</td>
-            <td width="14">8</td>
-            <td width="14">9</td>
-            <td width="14">9</td>
-            <td width="14">9</td>
-            <td width="14">8</td>
-            <td width="14">7</td>
-            <td width="14">7</td>
-            <td width="14">6</td>
-            <td width="14">4</td>
-            <td width="14">2</td>
-            <td width="14">1</td>
-          </tr>
-          <tr>
-            <td width="14">1</td>
-            <td width="14">4</td>
-            <td width="14">8</td>
-            <td width="14">12</td>
-            <td width="14">14</td>
-            <td width="14">15</td>
-            <td width="14">14</td>
-            <td width="14">12</td>
-            <td width="14">10</td>
-            <td width="14">9</td>
-            <td width="14">7</td>
-            <td width="14">4</td>
-            <td width="14">2</td>
-            <td width="14">1</td>
-          </tr>
-          <tr>
-            <td width="14">1</td>
-            <td width="14">4</td>
-            <td width="14">9</td>
-            <td width="14">14</td>
-            <td bgcolor="pink" width="14">J</td>
-            <td bgcolor="plum" width="14">R</td>
-            <td bgcolor="lightblue" width="14">D</td>
-            <td bgcolor="lightblue" width="14">D</td>
-            <td width="14">12</td>
-            <td width="14">10</td>
-            <td width="14">7</td>
-            <td width="14">4</td>
-            <td width="14">2</td>
-            <td width="14">1</td>
-          </tr>
-          <tr>
-            <td width="14">1</td>
-            <td width="14">4</td>
-            <td width="14">9</td>
-            <td width="14">15</td>
-            <td bgcolor="lightgreen" width="14">G</td>
-            <td bgcolor="plum" width="14">R</td>
-            <td bgcolor="lightblue" width="14">D</td>
-            <td bgcolor="lightblue" width="14">D</td>
-            <td width="14">13</td>
-            <td width="14">10</td>
-            <td width="14">7</td>
-            <td width="14">4</td>
-            <td width="14">2</td>
-            <td width="14">1</td>
-          </tr>
-          <tr>
-            <td width="14">1</td>
-            <td width="14">4</td>
-            <td width="14">9</td>
-            <td width="14">14</td>
-            <td bgcolor="lightgreen" width="14">G</td>
-            <td bgcolor="plum" width="14">R</td>
-            <td bgcolor="yellow" width="14">M</td>
-            <td bgcolor="yellow" width="14">M</td>
-            <td width="14">13</td>
-            <td width="14">10</td>
-            <td width="14">7</td>
-            <td width="14">4</td>
-            <td width="14">2</td>
-            <td width="14">1</td>
-          </tr>
-          <tr>
-            <td width="14">1</td>
-            <td width="14">4</td>
-            <td width="14">8</td>
-            <td width="14">12</td>
-            <td bgcolor="plum" width="14">R</td>
-            <td bgcolor="plum" width="14">R</td>
-            <td bgcolor="plum" width="14">R</td>
-            <td bgcolor="plum" width="14">R</td>
-            <td width="14">12</td>
-            <td width="14">10</td>
-            <td width="14">7</td>
-            <td width="14">4</td>
-            <td width="14">2</td>
-            <td width="14">1</td>
-          </tr>
-          <tr>
-            <td width="14">1</td>
-            <td width="14">4</td>
-            <td width="14">7</td>
-            <td width="14">10</td>
-            <td width="14">12</td>
-            <td width="14">13</td>
-            <td width="14">13</td>
-            <td width="14">12</td>
-            <td width="14">10</td>
-            <td width="14">9</td>
-            <td width="14">7</td>
-            <td width="14">4</td>
-            <td width="14">2</td>
-            <td width="14">1</td>
-          </tr>
-          <tr>
-            <td width="14">1</td>
-            <td width="14">3</td>
-            <td width="14">5</td>
-            <td width="14">7</td>
-            <td width="14">8</td>
-            <td width="14">8</td>
-            <td width="14">8</td>
-            <td width="14">8</td>
-            <td width="14">7</td>
-            <td width="14">7</td>
-            <td width="14">6</td>
-            <td width="14">4</td>
-            <td width="14">2</td>
-            <td width="14">1</td>
-          </tr>
-          <tr>
-            <td width="14">1</td>
-            <td width="14">2</td>
-            <td width="14">3</td>
-            <td width="14">4</td>
-            <td width="14">4</td>
-            <td width="14">4</td>
-            <td width="14">4</td>
-            <td width="14">4</td>
-            <td width="14">4</td>
-            <td width="14">4</td>
-            <td width="14">4</td>
-            <td width="14">3</td>
-            <td width="14">2</td>
-            <td width="14">1</td>
-          </tr>
-          <tr>
-            <td width="14">1</td>
-            <td width="14">1</td>
-            <td width="14">1</td>
-            <td width="14">1</td>
-            <td width="14">1</td>
-            <td width="14">1</td>
-            <td width="14">1</td>
-            <td width="14">1</td>
-            <td width="14">1</td>
-            <td width="14">1</td>
-            <td width="14">1</td>
-            <td width="14">1</td>
-            <td width="14">1</td>
-            <td width="14">1</td>
-          </tr>
-        </table>
-      </td>
+        <td>12</td>
+        <td>12</td>
+        <td>16</td>
+        <td>28</td>
+        <td>28</td>
+        <td>32</td>
+        <td>44</td>
+        <td>44</td>
+        <td>48</td>
+        <td>48</td>
+        <td>48</td>
+        <td>48</td>
+        <td>48</td>
+        <td>44</td>
+        <td>44</td>
+        <td>32</td>
+        <td>28</td>
+        <td>28</td>
+        <td>16</td>
+        <td>12</td>
+        <td>12</td>
     </tr>
     <tr>
-      <td align="left" valign="top" style="font-size: 12px;"><strong>Bandstands</strong>: The color key is the same as for the Pavilion. Yellow <strong>M</strong>&#8216;s are the Music Stage. The pink &#8220;J&#8221; is a Juggler&#8217;s Stage. The Garden is shown as a light green <strong>G</strong> and Roads are purple <strong>R</strong>&#8216;s.</td>
-      <td align="center">
-        <table border="1" cellpadding="2" width="200" style="font-size: 10px;">
-          <tr>
-            <td width="20">0</td>
-            <td width="20">1</td>
-            <td width="20">1</td>
-            <td width="20">1</td>
-            <td width="20">1</td>
-            <td width="20">1</td>
-            <td width="20">1</td>
-            <td width="20">1</td>
-            <td width="20">1</td>
-            <td width="20">1</td>
-          </tr>
-          <tr>
-            <td width="20">1</td>
-            <td width="20">3</td>
-            <td width="20">4</td>
-            <td width="20">4</td>
-            <td width="20">4</td>
-            <td width="20">4</td>
-            <td width="20">4</td>
-            <td width="20">3</td>
-            <td width="20">3</td>
-            <td width="20">2</td>
-          </tr>
-          <tr>
-            <td width="20">1</td>
-            <td width="20">4</td>
-            <td width="20">6</td>
-            <td width="20">7</td>
-            <td width="20">7</td>
-            <td width="20">7</td>
-            <td width="20">6</td>
-            <td width="20">5</td>
-            <td width="20">4</td>
-            <td width="20">2</td>
-          </tr>
-          <tr>
-            <td width="20">1</td>
-            <td width="20">5</td>
-            <td width="20">8</td>
-            <td width="20">10</td>
-            <td width="20">11</td>
-            <td width="20">10</td>
-            <td width="20">8</td>
-            <td width="20">6</td>
-            <td width="20">4</td>
-            <td width="20">2</td>
-          </tr>
-          <tr>
-            <td width="20">1</td>
-            <td width="20">5</td>
-            <td width="20">9</td>
-            <td bgcolor="lightgreen" width="20">G</td>
-            <td bgcolor="plum" width="20">R</td>
-            <td bgcolor="yellow" width="20">M</td>
-            <td width="20">9</td>
-            <td width="20">6</td>
-            <td width="20">4</td>
-            <td width="20">2</td>
-          </tr>
-          <tr>
-            <td width="20">1</td>
-            <td width="20">5</td>
-            <td width="20">9</td>
-            <td bgcolor="pink" width="20">J</td>
-            <td bgcolor="plum" width="20">R</td>
-            <td bgcolor="yellow" width="20">M</td>
-            <td width="20">9</td>
-            <td width="20">6</td>
-            <td width="20">4</td>
-            <td width="20">2</td>
-          </tr>
-          <tr>
-            <td width="20">1</td>
-            <td width="20">5</td>
-            <td width="20">8</td>
-            <td bgcolor="plum" width="20">R</td>
-            <td bgcolor="plum" width="20">R</td>
-            <td bgcolor="plum" width="20">R</td>
-            <td width="20">8</td>
-            <td width="20">6</td>
-            <td width="20">4</td>
-            <td width="20">2</td>
-          </tr>
-          <tr>
-            <td width="20">1</td>
-            <td width="20">4</td>
-            <td width="20">6</td>
-            <td width="20">7</td>
-            <td width="20">7</td>
-            <td width="20">7</td>
-            <td width="20">6</td>
-            <td width="20">5</td>
-            <td width="20">4</td>
-            <td width="20">2</td>
-          </tr>
-          <tr>
-            <td width="20">0</td>
-            <td width="20">2</td>
-            <td width="20">3</td>
-            <td width="20">3</td>
-            <td width="20">3</td>
-            <td width="20">3</td>
-            <td width="20">3</td>
-            <td width="20">3</td>
-            <td width="20">3</td>
-            <td width="20">2</td>
-          </tr>
-          <tr>
-            <td width="20">0</td>
-            <td width="20">1</td>
-            <td width="20">1</td>
-            <td width="20">1</td>
-            <td width="20">1</td>
-            <td width="20">1</td>
-            <td width="20">1</td>
-            <td width="20">1</td>
-            <td width="20">1</td>
-            <td width="20">1</td>
-          </tr>
-        </table>
-      </td>
+        <td>12</td>
+        <td>12</td>
+        <td>16</td>
+        <td>28</td>
+        <td>28</td>
+        <td>32</td>
+        <td>44</td>
+        <td>44</td>
+        <td>48</td>
+        <td>48</td>
+        <td>48</td>
+        <td>48</td>
+        <td>48</td>
+        <td>44</td>
+        <td>44</td>
+        <td>32</td>
+        <td>28</td>
+        <td>28</td>
+        <td>16</td>
+        <td>12</td>
+        <td>12</td>
     </tr>
     <tr>
-      <td align="left" valign="top" style="font-size: 12px;"><strong>Booths</strong>: It is only the 1&#215;1 Juggler&#8217;s Stage of a Booth that generates desirability, not the entire 2&#215;2 footprint. This actually makes a Booth a little less desirable than what would be expected. Again, the pink &#8220;J&#8221; is the Juggler&#8217;s Stage and Roads are purple <strong>R</strong>&#8216;s.</td>
-      <td align="center">
-        <table border="1" cellpadding="2" width="100" style="font-size: 10px;">
-          <tr>
-            <td width="20">1</td>
-            <td width="20">1</td>
-            <td width="20">1</td>
-            <td width="20">1</td>
-            <td width="20">1</td>
-          </tr>
-          <tr>
-            <td width="20">1</td>
-            <td width="20">2</td>
-            <td bgcolor="plum" width="20">R</td>
-            <td bgcolor="plum" width="20">R</td>
-            <td width="20">1</td>
-          </tr>
-          <tr>
-            <td width="20">1</td>
-            <td width="20">2</td>
-            <td bgcolor="pink" width="20">J</td>
-            <td bgcolor="plum" width="20">R</td>
-            <td width="20">1</td>
-          </tr>
-          <tr>
-            <td width="20">1</td>
-            <td width="20">2</td>
-            <td width="20">2</td>
-            <td width="20">2</td>
-            <td width="20">1</td>
-          </tr>
-          <tr>
-            <td width="20">1</td>
-            <td width="20">1</td>
-            <td width="20">1</td>
-            <td width="20">1</td>
-            <td width="20">1</td>
-          </tr>
-        </table>
-      </td>
+        <td>12</td>
+        <td>12</td>
+        <td bgcolor="yellow"></td>
+        <td bgcolor="yellow"></td>
+        <td bgcolor="yellow"></td>
+        <td bgcolor="yellow"></td>
+        <td bgcolor="yellow"></td>
+        <td bgcolor="yellow"></td>
+        <td bgcolor="yellow"></td>
+        <td bgcolor="yellow"></td>
+        <td bgcolor="yellow"></td>
+        <td bgcolor="yellow"></td>
+        <td bgcolor="yellow"></td>
+        <td bgcolor="yellow"></td>
+        <td bgcolor="yellow"></td>
+        <td>36</td>
+        <td>32</td>
+        <td>28</td>
+        <td>16</td>
+        <td>12</td>
+        <td>12</td>
     </tr>
     <tr>
-      <td colspan="2" bgcolor="silver" style="font-size: 12px;">I want to emphasize again that it was <strong>Brugle</strong> that made this discovery. I just made the charts. This information was first posted in <strong>Jimhotep&#8217;s</strong> Puzzling Pavilions thread.</td>
+        <td>12</td>
+        <td>12</td>
+        <td bgcolor="yellow"></td>
+        <td bgcolor="yellow"></td>
+        <td bgcolor="yellow"></td>
+        <td bgcolor="yellow"></td>
+        <td bgcolor="yellow"></td>
+        <td bgcolor="yellow"></td>
+        <td bgcolor="yellow"></td>
+        <td bgcolor="yellow"></td>
+        <td bgcolor="yellow"></td>
+        <td bgcolor="yellow"></td>
+        <td bgcolor="yellow"></td>
+        <td bgcolor="yellow"></td>
+        <td bgcolor="yellow"></td>
+        <td>36</td>
+        <td>32</td>
+        <td>28</td>
+        <td>16</td>
+        <td>12</td>
+        <td>12</td>
     </tr>
-  </table>
-</div>
+    <tr>
+        <td>12</td>
+        <td>12</td>
+        <td bgcolor="yellow"></td>
+        <td bgcolor="yellow"></td>
+        <td bgcolor="yellow"></td>
+        <td bgcolor="yellow"></td>
+        <td bgcolor="lightblue" rowspan="3" colspan="3"></td>
+        <td bgcolor="lightblue" rowspan="3" colspan="3"></td>
+        <td bgcolor="lightblue" rowspan="3" colspan="3"></td>
+        <td>36</td>
+        <td>32</td>
+        <td>28</td>
+        <td>16</td>
+        <td>12</td>
+        <td>12</td>
+    </tr>
+    <tr>
+        <td>12</td>
+        <td>12</td>
+        <td bgcolor="yellow"></td>
+        <td bgcolor="yellow"></td>
+        <td bgcolor="yellow"></td>
+        <td bgcolor="yellow"></td>
+        <td>36</td>
+        <td>32</td>
+        <td>28</td>
+        <td>16</td>
+        <td>12</td>
+        <td>12</td>
+    </tr>
+    <tr>
+        <td>12</td>
+        <td>12</td>
+        <td bgcolor="yellow"></td>
+        <td bgcolor="yellow"></td>
+        <td bgcolor="yellow"></td>
+        <td bgcolor="yellow"></td>
+        <td>36</td>
+        <td>32</td>
+        <td>28</td>
+        <td>16</td>
+        <td>12</td>
+        <td>12</td>
+    </tr>
+    <tr>
+        <td>12</td>
+        <td>12</td>
+        <td bgcolor="yellow"></td>
+        <td bgcolor="yellow"></td>
+        <td bgcolor="yellow"></td>
+        <td bgcolor="yellow"></td>
+        <td bgcolor="yellow"></td>
+        <td bgcolor="yellow"></td>
+        <td bgcolor="yellow"></td>
+        <td bgcolor="yellow"></td>
+        <td bgcolor="yellow"></td>
+        <td bgcolor="yellow"></td>
+        <td bgcolor="yellow"></td>
+        <td bgcolor="yellow"></td>
+        <td bgcolor="yellow"></td>
+        <td>36</td>
+        <td>32</td>
+        <td>28</td>
+        <td>16</td>
+        <td>12</td>
+        <td>12</td>
+    </tr>
+    <tr>
+        <td>12</td>
+        <td>12</td>
+        <td bgcolor="yellow"></td>
+        <td bgcolor="yellow"></td>
+        <td bgcolor="yellow"></td>
+        <td bgcolor="yellow"></td>
+        <td bgcolor="yellow"></td>
+        <td bgcolor="yellow"></td>
+        <td bgcolor="yellow"></td>
+        <td bgcolor="yellow"></td>
+        <td bgcolor="yellow"></td>
+        <td bgcolor="yellow"></td>
+        <td bgcolor="yellow"></td>
+        <td bgcolor="yellow"></td>
+        <td bgcolor="yellow"></td>
+        <td>36</td>
+        <td>32</td>
+        <td>28</td>
+        <td>16</td>
+        <td>12</td>
+        <td>12</td>
+    </tr>
+    <tr>
+        <td>12</td>
+        <td>12</td>
+        <td>16</td>
+        <td>28</td>
+        <td>28</td>
+        <td>32</td>
+        <td>44</td>
+        <td>44</td>
+        <td>48</td>
+        <td>48</td>
+        <td>48</td>
+        <td>48</td>
+        <td>48</td>
+        <td>44</td>
+        <td>44</td>
+        <td>32</td>
+        <td>28</td>
+        <td>28</td>
+        <td>16</td>
+        <td>12</td>
+        <td>12</td>
+    </tr>
+    <tr>
+        <td>12</td>
+        <td>12</td>
+        <td>16</td>
+        <td>28</td>
+        <td>28</td>
+        <td>32</td>
+        <td>44</td>
+        <td>44</td>
+        <td>48</td>
+        <td>48</td>
+        <td>48</td>
+        <td>48</td>
+        <td>48</td>
+        <td>44</td>
+        <td>44</td>
+        <td>32</td>
+        <td>28</td>
+        <td>28</td>
+        <td>16</td>
+        <td>12</td>
+        <td>12</td>
+    </tr>
+    <tr>
+        <td>12</td>
+        <td>12</td>
+        <td>12</td>
+        <td>24</td>
+        <td>24</td>
+        <td>24</td>
+        <td>36</td>
+        <td>36</td>
+        <td>36</td>
+        <td>36</td>
+        <td>36</td>
+        <td>36</td>
+        <td>36</td>
+        <td>36</td>
+        <td>36</td>
+        <td>24</td>
+        <td>24</td>
+        <td>24</td>
+        <td>12</td>
+        <td>12</td>
+        <td>12</td>
+    </tr>
+    <tr>
+        <td>12</td>
+        <td>12</td>
+        <td>12</td>
+        <td>24</td>
+        <td>24</td>
+        <td>24</td>
+        <td>36</td>
+        <td>36</td>
+        <td>36</td>
+        <td>36</td>
+        <td>36</td>
+        <td>36</td>
+        <td>36</td>
+        <td>36</td>
+        <td>36</td>
+        <td>24</td>
+        <td>24</td>
+        <td>24</td>
+        <td>12</td>
+        <td>12</td>
+        <td>12</td></tr>
+</table>
+
+<h2>Storage Yard</h2>
+
+<p>The only part of the storage yard that matters for desirability is the 1×1
+square in the north corner (where the worker stands).
+As the storage yard is 3×3, this means it can be directly across the road from houses
+without hurting the desirability, if the storage yard is north side of the road.
+<table class="map">
+<tr><td width="20">-3</td>
+        <td>-3</td>
+        <td>-3</td>
+        <td>-3</td>
+        <td>-3</td>
+        <td>-3</td>
+        <td>-3</td>
+    </tr>
+    <tr>
+        <td>-3</td>
+        <td>-5</td>
+        <td>-5</td>
+        <td>-5</td>
+        <td>-5</td>
+        <td>-5</td>
+        <td>-3</td>
+    </tr>
+    <tr>
+        <td>-3</td>
+        <td>-5</td>
+        <td>-5</td>
+        <td>-5</td>
+        <td>-5</td>
+        <td>-5</td>
+        <td>-3</td>
+    </tr>
+    <tr>
+        <td>-3</td>
+        <td>-5</td>
+        <td>-5</td>
+        <td
+            rowspan="3"
+            colspan="3"
+            bgcolor="lightblue"
+            style="text-align:left; vertical-align:top">
+            N</td>
+        <td>-3</td>
+    </tr>
+    <tr>
+        <td>-3</td>
+        <td>-5</td>
+        <td>-5</td>
+        <td>-3</td>
+    </tr>
+    <tr>
+        <td>-3</td>
+        <td>-5</td>
+        <td>-5</td>
+        <td>-3</td>
+    </tr>
+    <tr>
+        <td>-3</td>
+        <td>-3</td>
+        <td>-3</td>
+        <td>-3</td>
+        <td>-3</td>
+        <td>-3</td>
+        <td>-3</td>
+    </tr>
+</table>
+
+<h2>Pavilions and Bandstands</h2>
+
+<p>Reference: <a href="https://caesar3.heavengames.com/cgi-bin/caeforumscgi/display.cgi?action=ct&f=25,1503,,all">Puzzling Pavilions</a>
+<p>Pavilions and Bandstands act as a combination of several smaller parts.
+The 2×2 dance stage provides a (+6,+5,+4,+3,+2+1) effect.
+Each tile of the music stage produces a (+4,+3,+2,+1) effect.
+The juggler's stage has a (+2,+1) effect and
+the gardens provide (+3,+2,+1).
+The roads provide no desirability, as if they were not plazas.
+
+<table class="map">
+    <tr>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>2</td>
+        <td>2</td>
+        <td>2</td>
+        <td>2</td>
+        <td>2</td>
+        <td>2</td>
+        <td>2</td>
+        <td>2</td>
+        <td>2</td>
+        <td>2</td>
+        <td>2</td>
+        <td>2</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+        <td>3</td>
+        <td>3</td>
+        <td>3</td>
+        <td>3</td>
+        <td>3</td>
+        <td>3</td>
+        <td>3</td>
+        <td>3</td>
+        <td>3</td>
+        <td>2</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+        <td>4</td>
+        <td>4</td>
+        <td>4</td>
+        <td>4</td>
+        <td>4</td>
+        <td>4</td>
+        <td>4</td>
+        <td>3</td>
+        <td>2</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>3</td>
+        <td>6</td>
+        <td>8</td>
+        <td>9</td>
+        <td>9</td>
+        <td>9</td>
+        <td>8</td>
+        <td>7</td>
+        <td>7</td>
+        <td>6</td>
+        <td>4</td>
+        <td>2</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>4</td>
+        <td>8</td>
+        <td>12</td>
+        <td>14</td>
+        <td>15</td>
+        <td>14</td>
+        <td>12</td>
+        <td>10</td>
+        <td>9</td>
+        <td>7</td>
+        <td>4</td>
+        <td>2</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>4</td>
+        <td>9</td>
+        <td>14</td>
+        <td bgcolor="pink">J</td>
+        <td bgcolor="plum"></td>
+        <td bgcolor="lightblue">D</td>
+        <td bgcolor="lightblue">D</td>
+        <td>12</td>
+        <td>10</td>
+        <td>7</td>
+        <td>4</td>
+        <td>2</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>4</td>
+        <td>9</td>
+        <td>15</td>
+        <td bgcolor="lightgreen">G</td>
+        <td bgcolor="plum"></td>
+        <td bgcolor="lightblue">D</td>
+        <td bgcolor="lightblue">D</td>
+        <td>13</td>
+        <td>10</td>
+        <td>7</td>
+        <td>4</td>
+        <td>2</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>4</td>
+        <td>9</td>
+        <td>14</td>
+        <td bgcolor="lightgreen">G</td>
+        <td bgcolor="plum"></td>
+        <td bgcolor="yellow">M</td>
+        <td bgcolor="yellow">M</td>
+        <td>13</td>
+        <td>10</td>
+        <td>7</td>
+        <td>4</td>
+        <td>2</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>4</td>
+        <td>8</td>
+        <td>12</td>
+        <td bgcolor="plum"></td>
+        <td bgcolor="plum"></td>
+        <td bgcolor="plum"></td>
+        <td bgcolor="plum"></td>
+        <td>12</td>
+        <td>10</td>
+        <td>7</td>
+        <td>4</td>
+        <td>2</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>4</td>
+        <td>7</td>
+        <td>10</td>
+        <td>12</td>
+        <td>13</td>
+        <td>13</td>
+        <td>12</td>
+        <td>10</td>
+        <td>9</td>
+        <td>7</td>
+        <td>4</td>
+        <td>2</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>3</td>
+        <td>5</td>
+        <td>7</td>
+        <td>8</td>
+        <td>8</td>
+        <td>8</td>
+        <td>8</td>
+        <td>7</td>
+        <td>7</td>
+        <td>6</td>
+        <td>4</td>
+        <td>2</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+        <td>4</td>
+        <td>4</td>
+        <td>4</td>
+        <td>4</td>
+        <td>4</td>
+        <td>4</td>
+        <td>4</td>
+        <td>3</td>
+        <td>2</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+    </tr>
+</table>
+<br>
+<table class="map">
+  <tr>
+    <td>0</td>
+    <td>1</td>
+    <td>1</td>
+    <td>1</td>
+    <td>1</td>
+    <td>1</td>
+    <td>1</td>
+    <td>1</td>
+    <td>1</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>3</td>
+    <td>4</td>
+    <td>4</td>
+    <td>4</td>
+    <td>4</td>
+    <td>4</td>
+    <td>3</td>
+    <td>3</td>
+    <td>2</td>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>4</td>
+    <td>6</td>
+    <td>7</td>
+    <td>7</td>
+    <td>7</td>
+    <td>6</td>
+    <td>5</td>
+    <td>4</td>
+    <td>2</td>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>5</td>
+    <td>8</td>
+    <td>10</td>
+    <td>11</td>
+    <td>10</td>
+    <td>8</td>
+    <td>6</td>
+    <td>4</td>
+    <td>2</td>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>5</td>
+    <td>9</td>
+    <td bgcolor="lightgreen">G</td>
+    <td bgcolor="plum"></td>
+    <td bgcolor="yellow">M</td>
+    <td>9</td>
+    <td>6</td>
+    <td>4</td>
+    <td>2</td>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>5</td>
+    <td>9</td>
+    <td bgcolor="pink">J</td>
+    <td bgcolor="plum"></td>
+    <td bgcolor="yellow">M</td>
+    <td>9</td>
+    <td>6</td>
+    <td>4</td>
+    <td>2</td>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>5</td>
+    <td>8</td>
+    <td bgcolor="plum"></td>
+    <td bgcolor="plum"></td>
+    <td bgcolor="plum"></td>
+    <td>8</td>
+    <td>6</td>
+    <td>4</td>
+    <td>2</td>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>4</td>
+    <td>6</td>
+    <td>7</td>
+    <td>7</td>
+    <td>7</td>
+    <td>6</td>
+    <td>5</td>
+    <td>4</td>
+    <td>2</td>
+  </tr>
+  <tr>
+    <td>0</td>
+    <td>2</td>
+    <td>3</td>
+    <td>3</td>
+    <td>3</td>
+    <td>3</td>
+    <td>3</td>
+    <td>3</td>
+    <td>3</td>
+    <td>2</td>
+  </tr>
+  <tr>
+    <td>0</td>
+    <td>1</td>
+    <td>1</td>
+    <td>1</td>
+    <td>1</td>
+    <td>1</td>
+    <td>1</td>
+    <td>1</td>
+    <td>1</td>
+    <td>1</td>
+  </tr>
+</table>
+<br>
+<table class="map">
+  <tr>
+    <td>1</td>
+    <td>1</td>
+    <td>1</td>
+    <td>1</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>2</td>
+    <td bgcolor="plum"></td>
+    <td bgcolor="plum"></td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>2</td>
+    <td bgcolor="pink">J</td>
+    <td bgcolor="plum"></td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>2</td>
+    <td>2</td>
+    <td>2</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>1</td>
+    <td>1</td>
+    <td>1</td>
+    <td>1</td>
+  </tr>
+</table>
 
 <hr>
 <h1 id="Cheats">Cheats</h1>
