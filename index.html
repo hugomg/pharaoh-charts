@@ -3750,8 +3750,10 @@ Structure. These values are the same for all difficulty levels.</p>
 <hr>
 <h1 id="Structures2">Weird desirabilities</h1>
 
-Some buildings are coded as if they were the sum of multiple
-sub-components, each contributing a separate desirability.
+Desirability works strangely for buildings that are not square-shaped.
+These buildings often behave as if they were built as a collection
+of square sub-buildings, each with a separate contribution to desirability.
+In this section we cover the more common examples.
 
 <h2>Temple Complex</h2>
 
@@ -4119,24 +4121,27 @@ houses on the south side don't have their desirability affected.
         <td>-3</td>
         <td>-5</td>
         <td>-5</td>
-        <td
-            rowspan="3"
-            colspan="3"
-            bgcolor="lightblue"
-            style="text-align:left; vertical-align:top">
-            N</td>
+        <td bgcolor="red">N</td>
+        <td bgcolor="yellow"></td>
+        <td bgcolor="yellow"></td>
         <td>-3</td>
     </tr>
     <tr>
         <td>-3</td>
         <td>-5</td>
         <td>-5</td>
+        <td bgcolor="yellow"></td>
+        <td bgcolor="yellow"></td>
+        <td bgcolor="yellow"></td>
         <td>-3</td>
     </tr>
     <tr>
         <td>-3</td>
         <td>-5</td>
         <td>-5</td>
+        <td bgcolor="yellow"></td>
+        <td bgcolor="yellow"></td>
+        <td bgcolor="yellow"></td>
         <td>-3</td>
     </tr>
     <tr>
@@ -4153,12 +4158,14 @@ houses on the south side don't have their desirability affected.
 <h2>Pavilions and Bandstands</h2>
 
 <p>Reference: <a href="https://caesar3.heavengames.com/cgi-bin/caeforumscgi/display.cgi?action=ct&f=25,1503,,all">Puzzling Pavilions</a>
-<p>Pavilions and Bandstands act as a combination of several smaller parts.
+<p>For the desirability computations,
+the individual performance venues act as separate buildings.
 The 2×2 dance stage provides a (+6,+5,+4,+3,+2+1) effect.
-Each tile of the music stage produces a (+4,+3,+2,+1) effect.
+The rectangular music stage is broken into two 1×1 tiles,
+each giving a (+4,+3,+2,+1) effect.
 The juggler's stage has a (+2,+1) effect and
 the gardens provide (+3,+2,+1).
-The roads provide no desirability, as if they were not plazas.
+The roads provide no desirability.
 
 <table class="map">
     <tr>
