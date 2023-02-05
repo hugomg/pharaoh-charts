@@ -9,6 +9,11 @@
         .index a:link    { color:blue; }
         .index a:visited { color:blue; }
 
+        table th, table td {
+            padding-left: 4px;
+            padding-right: 4px;
+        }
+
          /* Difficulty colors */
         .d1 { background-color: cyan; }
         .d2 { background-color: plum; }
@@ -23,44 +28,61 @@
         .s500 { background-color: #ffc848; }
         .s600 { background-color: #ffec48; }
 
+        /* Table colors */
+        .c0 { background-color: silver; }
+        .c1 { background-color: lightgreen; }
+        .c2 { background-color: wheat; }
 
+        /* Individual tables */
         table#production1 td                { min-width: 70px; }
-        table#production1 th:nth-child(1),
+        table#production1 th:nth-child(1)   { text-aligh:left; }
         table#production1 td:nth-child(1)   { text-align:left; }
-        table#production1 th:nth-child(n+2),
+        table#production1 th:nth-child(n+2) { text-align:right; }
         table#production1 td:nth-child(n+2) { text-align:right; }
 
         table#production2 td:nth-child(n+3)  { min-width: 70px; }
-        table#production2 th:nth-child(-n+2),
+        table#production2 th:nth-child(-n+2) { text-aligh:left; }
         table#production2 td:nth-child(-n+2) { text-align:left; }
-        table#production2 th:nth-child(n+3),
+        table#production2 th:nth-child(n+3)  { text-align:right; }
         table#production2 td:nth-child(n+3)  { text-align:right; }
 
-        table#coverageidx th:nth-child(1),
-        table#coverageidx td:nth-child(1) { text-align: left;  }
-        table#coverageidx th:nth-child(2),
+        table#coverageidx th:nth-child(1) { text-aligh: left; }
+        table#coverageidx td:nth-child(1) { text-align: left; }
+        table#coverageidx th:nth-child(2) { text-align: right; }
         table#coverageidx td:nth-child(2) { text-align: right; }
 
-        table#entertainment-capacity th:nth-child(1),
+        table#entertainment-capacity th:nth-child(1)   { text-aligh: left; }
         table#entertainment-capacity td:nth-child(1)   { text-align: left; }
-        table#entertainment-capacity th:nth-child(n+2),
+        table#entertainment-capacity th:nth-child(n+2) { text-aligh: right; }
         table#entertainment-capacity td:nth-child(n+2) { text-align: right; }
 
-        table#religion-capacity th:nth-child(1),
+        table#religion-capacity th:nth-child(1)   { text-align: left; }
         table#religion-capacity td:nth-child(1)   { text-align: left; }
-        table#religion-capacity th:nth-child(n+2),
+        table#religion-capacity th:nth-child(n+2) { text-align: right; }
         table#religion-capacity td:nth-child(n+2) { text-align: right; }
 
-        table#education-capacity th:nth-child(1),
+        table#education-capacity th:nth-child(1)   { text-align: left; }
         table#education-capacity td:nth-child(1)   { text-align: left; }
-        table#education-capacity th:nth-child(n+2),
+        table#education-capacity th:nth-child(n+2) { text-align: left; }
         table#education-capacity td:nth-child(n+2) { text-align: left; }
 
-        table#culture-rating th { vertical-align: top; }
-        table#culture-rating td { min-width: 45px }
-        table#culture-rating td:nth-child(1)   { text-align: right;
-                                                 padding-right: 15px;}
+        table#culture-rating th                { vertical-align: top; }
+        table#culture-rating td                { min-width: 45px }
+        table#culture-rating td:nth-child(1)   { text-align: right; padding-right: 15px;}
         table#culture-rating td:nth-child(n+2) { text-align: right; }
+
+        table.farm-production th:nth-child(1) { text-aligh: left; }
+        table.farm-production td:nth-child(1) { text-align: left; }
+        table.farm-production th:nth-child(2) { text-aligh: left; }
+        table.farm-production td:nth-child(2) { text-align: left; }
+
+        table#consumption-goods .d1,
+        table#consumption-goods .d2,
+        table#consumption-goods .d3,
+        table#consumption-goods .d4,
+        table#consumption-goods .d5 { text-align: right; }
+
+        table#consumption-goods .oracle { color: #444444; }
 
         table.map {
             border-collapse: collapse;
@@ -74,10 +96,6 @@
             text-align: right;
         }
 
-        table.farm-production th:nth-child(1),
-        table.farm-production td:nth-child(1) { text-align: left; }
-        table.farm-production th:nth-child(2),
-        table.farm-production td:nth-child(2) { text-align: left; }
     </style>
 </head>
 <body>
@@ -542,13 +560,13 @@ Each rating level must meet all the coverage requirements.
 
 <table border="1" cellspacing="1" cellpadding="1" width="700" style="font-size: 10px;border-collapse: collapse;">
     <tr>
-      <td align="left" valign="top" bgcolor="wheat" rowspan="2" width="120">House</td>
-      <td align="center" valign="top" bgcolor="silver" rowspan="2" width="20">Pop</td>
-      <td align="center" valign="top" bgcolor="wheat" rowspan="2" width="120">Services</td>
-      <td align="center" bgcolor="silver" colspan="5" width="120">Entertainment</td>
-      <td align="center" bgcolor="wheat" colspan="5" width="120">Desirability</td>
-      <td align="center" bgcolor="silver" colspan="5" width="130">Prosperity</td>
-      <td align="center" bgcolor="wheat" colspan="5" width="130">Tax Multiplier</td>
+      <td align="left" valign="top" class="c2" rowspan="2" width="120">House</td>
+      <td align="center" valign="top" class="c0" rowspan="2" width="20">Pop</td>
+      <td align="center" valign="top" class="c2" rowspan="2" width="120">Services</td>
+      <td align="center" class="c0" colspan="5" width="120">Entertainment</td>
+      <td align="center" class="c2" colspan="5" width="120">Desirability</td>
+      <td align="center" class="c0" colspan="5" width="130">Prosperity</td>
+      <td align="center" class="c2" colspan="5" width="130">Tax Multiplier</td>
     </tr>
     <tr>
       <td align="center" class="d5">VH</td>
@@ -573,9 +591,9 @@ Each rating level must meet all the coverage requirements.
       <td align="center" class="d1">VE</td>
     </tr>
     <tr>
-      <td bgcolor="lightgreen">Crude Hut</td>
-      <td align="right" bgcolor="lightgreen">20</td>
-      <td bgcolor="lightgreen"></td>
+      <td class="c1">Crude Hut</td>
+      <td align="right" class="c1">20</td>
+      <td class="c1"></td>
       <td align="right" class="d5">0</td>
       <td align="right" class="d4">0</td>
       <td align="right" class="d3">0</td>
@@ -598,9 +616,9 @@ Each rating level must meet all the coverage requirements.
       <td align="right" class="d1">2</td>
     </tr>
     <tr>
-      <td bgcolor="lightgreen">Sturdy Hut</td>
-      <td align="right" bgcolor="lightgreen">28</td>
-      <td bgcolor="lightgreen">Well</td>
+      <td class="c1">Sturdy Hut</td>
+      <td align="right" class="c1">28</td>
+      <td class="c1">Well</td>
       <td align="right" class="d5">0</td>
       <td align="right" class="d4">0</td>
       <td align="right" class="d3">0</td>
@@ -623,9 +641,9 @@ Each rating level must meet all the coverage requirements.
       <td align="right" class="d1">2</td>
     </tr>
     <tr>
-      <td bgcolor="wheat">Meager Shanty</td>
-      <td align="right" bgcolor="wheat">36</td>
-      <td bgcolor="wheat">Food</td>
+      <td class="c2">Meager Shanty</td>
+      <td align="right" class="c2">36</td>
+      <td class="c2">Food</td>
       <td align="right" class="d5">0</td>
       <td align="right" class="d4">0</td>
       <td align="right" class="d3">0</td>
@@ -648,9 +666,9 @@ Each rating level must meet all the coverage requirements.
       <td align="right" class="d1">3</td>
     </tr>
     <tr>
-      <td bgcolor="wheat">Common Shanty</td>
-      <td align="right" bgcolor="wheat">44</td>
-      <td bgcolor="wheat">One God</td>
+      <td class="c2">Common Shanty</td>
+      <td align="right" class="c2">44</td>
+      <td class="c2">One God</td>
       <td align="right" class="d5">0</td>
       <td align="right" class="d4">0</td>
       <td align="right" class="d3">0</td>
@@ -673,9 +691,9 @@ Each rating level must meet all the coverage requirements.
       <td align="right" class="d1">3</td>
     </tr>
     <tr>
-      <td bgcolor="lightgreen">Rough Cottage</td>
-      <td align="right" bgcolor="lightgreen">52</td>
-      <td bgcolor="lightgreen">Water Supply</td>
+      <td class="c1">Rough Cottage</td>
+      <td align="right" class="c1">52</td>
+      <td class="c1">Water Supply</td>
       <td align="right" class="d5">0</td>
       <td align="right" class="d4">0</td>
       <td align="right" class="d3">0</td>
@@ -698,9 +716,9 @@ Each rating level must meet all the coverage requirements.
       <td align="right" class="d1">3</td>
     </tr>
     <tr>
-      <td bgcolor="lightgreen">Ordinary Cottage</td>
-      <td align="right" bgcolor="lightgreen">60</td>
-      <td bgcolor="lightgreen">Entertainment</td>
+      <td class="c1">Ordinary Cottage</td>
+      <td align="right" class="c1">60</td>
+      <td class="c1">Entertainment</td>
       <td align="right" class="d5">10</td>
       <td align="right" class="d4">10</td>
       <td align="right" class="d3">10</td>
@@ -723,9 +741,9 @@ Each rating level must meet all the coverage requirements.
       <td align="right" class="d1">3</td>
     </tr>
     <tr>
-      <td bgcolor="wheat">Modest Homestead</td>
-      <td align="right" bgcolor="wheat">64</td>
-      <td bgcolor="wheat">Pottery</td>
+      <td class="c2">Modest Homestead</td>
+      <td align="right" class="c2">64</td>
+      <td class="c2">Pottery</td>
       <td align="right" class="d5">20</td>
       <td align="right" class="d4">15</td>
       <td align="right" class="d3">13</td>
@@ -748,9 +766,9 @@ Each rating level must meet all the coverage requirements.
       <td align="right" class="d1">4</td>
     </tr>
     <tr>
-      <td bgcolor="wheat">Spacious Homestead</td>
-      <td align="right" bgcolor="wheat">68</td>
-      <td bgcolor="wheat">Physician</td>
+      <td class="c2">Spacious Homestead</td>
+      <td align="right" class="c2">68</td>
+      <td class="c2">Physician</td>
       <td align="right" class="d5">25</td>
       <td align="right" class="d4">20</td>
       <td align="right" class="d3">16</td>
@@ -773,9 +791,9 @@ Each rating level must meet all the coverage requirements.
       <td align="right" class="d1">4</td>
     </tr>
     <tr>
-      <td bgcolor="lightgreen">Modest Apartment</td>
-      <td align="right" bgcolor="lightgreen">72</td>
-      <td bgcolor="lightgreen">Beer</td>
+      <td class="c1">Modest Apartment</td>
+      <td align="right" class="c1">72</td>
+      <td class="c1">Beer</td>
       <td align="right" class="d5">30</td>
       <td align="right" class="d4">25</td>
       <td align="right" class="d3">20</td>
@@ -798,9 +816,9 @@ Each rating level must meet all the coverage requirements.
       <td align="right" class="d1">4</td>
     </tr>
     <tr>
-      <td bgcolor="lightgreen">Spacious Apartment</td>
-      <td align="right" bgcolor="lightgreen">76</td>
-      <td bgcolor="lightgreen">Courthouse</td>
+      <td class="c1">Spacious Apartment</td>
+      <td align="right" class="c1">76</td>
+      <td class="c1">Courthouse</td>
       <td align="right" class="d5">35</td>
       <td align="right" class="d4">30</td>
       <td align="right" class="d3">25</td>
@@ -823,9 +841,9 @@ Each rating level must meet all the coverage requirements.
       <td align="right" class="d1">4</td>
     </tr>
     <tr>
-      <td bgcolor="wheat">Common Residence</td>
-      <td align="right" bgcolor="wheat">80</td>
-      <td bgcolor="wheat">Scribe School</td>
+      <td class="c2">Common Residence</td>
+      <td align="right" class="c2">80</td>
+      <td class="c2">Scribe School</td>
       <td align="right" class="d5">40</td>
       <td align="right" class="d4">35</td>
       <td align="right" class="d3">30</td>
@@ -848,9 +866,9 @@ Each rating level must meet all the coverage requirements.
       <td align="right" class="d1">5</td>
     </tr>
     <tr>
-      <td bgcolor="wheat">Spacious Residence</td>
-      <td align="right" bgcolor="wheat">84</td>
-      <td bgcolor="wheat">Dentist &amp; 2 Foods</td>
+      <td class="c2">Spacious Residence</td>
+      <td align="right" class="c2">84</td>
+      <td class="c2">Dentist &amp; 2 Foods</td>
       <td align="right" class="d5">45</td>
       <td align="right" class="d4">40</td>
       <td align="right" class="d3">35</td>
@@ -873,9 +891,9 @@ Each rating level must meet all the coverage requirements.
       <td align="right" class="d1">5</td>
     </tr>
     <tr>
-      <td bgcolor="wheat">Elegant Residence</td>
-      <td align="right" bgcolor="wheat">88</td>
-      <td bgcolor="wheat">Linen</td>
+      <td class="c2">Elegant Residence</td>
+      <td align="right" class="c2">88</td>
+      <td class="c2">Linen</td>
       <td align="right" class="d5">50</td>
       <td align="right" class="d4">45</td>
       <td align="right" class="d3">40</td>
@@ -898,9 +916,9 @@ Each rating level must meet all the coverage requirements.
       <td align="right" class="d1">6</td>
     </tr>
     <tr>
-      <td bgcolor="wheat">Fancy Residence</td>
-      <td align="right" bgcolor="wheat">92</td>
-      <td bgcolor="wheat">Two Gods</td>
+      <td class="c2">Fancy Residence</td>
+      <td align="right" class="c2">92</td>
+      <td class="c2">Two Gods</td>
       <td align="right" class="d5">55</td>
       <td align="right" class="d4">50</td>
       <td align="right" class="d3">45</td>
@@ -923,9 +941,9 @@ Each rating level must meet all the coverage requirements.
       <td align="right" class="d1">6</td>
     </tr>
     <tr>
-      <td bgcolor="lightgreen">Common Manor</td>
-      <td align="right" bgcolor="lightgreen">100</td>
-      <td bgcolor="lightgreen">Luxury Goods</td>
+      <td class="c1">Common Manor</td>
+      <td align="right" class="c1">100</td>
+      <td class="c1">Luxury Goods</td>
       <td align="right" class="d5">60</td>
       <td align="right" class="d4">55</td>
       <td align="right" class="d3">50</td>
@@ -948,9 +966,9 @@ Each rating level must meet all the coverage requirements.
       <td align="right" class="d1">13</td>
     </tr>
     <tr>
-      <td bgcolor="lightgreen">Spacious Manor</td>
-      <td align="right" bgcolor="lightgreen">108</td>
-      <td bgcolor="lightgreen">Mortuary</td>
+      <td class="c1">Spacious Manor</td>
+      <td align="right" class="c1">108</td>
+      <td class="c1">Mortuary</td>
       <td align="right" class="d5">65</td>
       <td align="right" class="d4">60</td>
       <td align="right" class="d3">55</td>
@@ -973,9 +991,9 @@ Each rating level must meet all the coverage requirements.
       <td align="right" class="d1">14</td>
     </tr>
     <tr>
-      <td bgcolor="lightgreen">Elegant Manor</td>
-      <td align="right" bgcolor="lightgreen">116</td>
-      <td bgcolor="lightgreen">Library &amp; 3 Gods*</td>
+      <td class="c1">Elegant Manor</td>
+      <td align="right" class="c1">116</td>
+      <td class="c1">Library &amp; 3 Gods*</td>
       <td align="right" class="d5">70</td>
       <td align="right" class="d4">65</td>
       <td align="right" class="d3">60</td>
@@ -998,9 +1016,9 @@ Each rating level must meet all the coverage requirements.
       <td align="right" class="d1">15</td>
     </tr>
     <tr>
-      <td bgcolor="lightgreen">Stately Manor</td>
-      <td align="right" bgcolor="lightgreen">124</td>
-      <td bgcolor="lightgreen">Senet***</td>
+      <td class="c1">Stately Manor</td>
+      <td align="right" class="c1">124</td>
+      <td class="c1">Senet***</td>
       <td align="right" class="d5">80</td>
       <td align="right" class="d4">75</td>
       <td align="right" class="d3">70</td>
@@ -1023,9 +1041,9 @@ Each rating level must meet all the coverage requirements.
       <td align="right" class="d1">16</td>
     </tr>
     <tr>
-      <td bgcolor="wheat">Modest Estate</td>
-      <td align="right" bgcolor="wheat">184</td>
-      <td bgcolor="wheat">Two Luxury Goods</td>
+      <td class="c2">Modest Estate</td>
+      <td align="right" class="c2">184</td>
+      <td class="c2">Two Luxury Goods</td>
       <td align="right" class="d5">90</td>
       <td align="right" class="d4">85</td>
       <td align="right" class="d3">80</td>
@@ -1048,9 +1066,9 @@ Each rating level must meet all the coverage requirements.
       <td align="right" class="d1">17</td>
     </tr>
     <tr>
-      <td bgcolor="wheat">Palatial Estate</td>
-      <td align="right" bgcolor="wheat">200</td>
-      <td bgcolor="wheat">Three Foods**</td>
+      <td class="c2">Palatial Estate</td>
+      <td align="right" class="c2">200</td>
+      <td class="c2">Three Foods**</td>
       <td align="right" class="d5">100</td>
       <td align="right" class="d4">95</td>
       <td align="right" class="d3">90</td>
@@ -1073,15 +1091,15 @@ Each rating level must meet all the coverage requirements.
       <td align="right" class="d1">18</td>
     </tr>
     <tr>
-      <td bgcolor="silver" align="left" colspan="25">*
+      <td class="c0" align="left" colspan="25">*
       On Easy difficulty, 3 Gods are not required until Stately Manor.</td>
     </tr>
     <tr>
-      <td bgcolor="silver" align="left" colspan="25">**
+      <td class="c0" align="left" colspan="25">**
       For the Very Easy Level, 3 types of food are not required.</td>
     </tr>
     <tr>
-      <td bgcolor="silver" align="left" colspan="25">***
+      <td class="c0" align="left" colspan="25">***
       Actually, to evolve to Stately Manor you just need enough entertainment points.
       Depending on the difficulty, it might be possible without a Senet House.
     </tr>
@@ -1091,12 +1109,12 @@ Each rating level must meet all the coverage requirements.
 
 <table border="1" cellspacing="1" cellpadding="1" width="700" style="font-size: 10px;border-collapse: collapse;">
     <tr>
-      <td align="left" valign="top" bgcolor="wheat" rowspan="2">Housing Level</td>
-      <td align="center" bgcolor="silver" colspan="5" width="120">Devolve</td>
-      <td align="center" valign="top" bgcolor="wheat" colspan="5" width="120">Fire Risk</td>
-      <td align="center" valign="top" bgcolor="silver" colspan="5" width="120">Crime Risk</td>
-      <td align="center" valign="top" bgcolor="wheat" colspan="5" width="120">Disease Risk</td>
-      <td align="center" valign="top" bgcolor="silver" colspan="5" width="120">Malaria Risk</td>
+      <td align="left" valign="top" class="c2" rowspan="2">Housing Level</td>
+      <td align="center" class="c0" colspan="5" width="120">Devolve</td>
+      <td align="center" valign="top" class="c2" colspan="5" width="120">Fire Risk</td>
+      <td align="center" valign="top" class="c0" colspan="5" width="120">Crime Risk</td>
+      <td align="center" valign="top" class="c2" colspan="5" width="120">Disease Risk</td>
+      <td align="center" valign="top" class="c0" colspan="5" width="120">Malaria Risk</td>
     </tr>
     <tr>
       <td align="center" class="d5">VH</td>
@@ -1126,7 +1144,7 @@ Each rating level must meet all the coverage requirements.
       <td align="center" class="d1">VE</td>
     </tr>
     <tr>
-      <td bgcolor="lightgreen">Crude Hut</td>
+      <td class="c1">Crude Hut</td>
       <td align="right" class="d5">-98</td>
       <td align="right" class="d4">-98</td>
       <td align="right" class="d3">-98</td>
@@ -1154,7 +1172,7 @@ Each rating level must meet all the coverage requirements.
       <td align="right" class="d1">-130</td>
     </tr>
     <tr>
-      <td bgcolor="lightgreen">Sturdy Hut</td>
+      <td class="c1">Sturdy Hut</td>
       <td align="right" class="d5">-10</td>
       <td align="right" class="d4">-10</td>
       <td align="right" class="d3">-10</td>
@@ -1182,7 +1200,7 @@ Each rating level must meet all the coverage requirements.
       <td align="right" class="d1">-130</td>
     </tr>
     <tr>
-      <td bgcolor="wheat">Meager Shanty</td>
+      <td class="c2">Meager Shanty</td>
       <td align="right" class="d5">-5</td>
       <td align="right" class="d4">-5</td>
       <td align="right" class="d3">-5</td>
@@ -1210,7 +1228,7 @@ Each rating level must meet all the coverage requirements.
       <td align="right" class="d1">-130</td>
     </tr>
     <tr>
-      <td bgcolor="wheat">Common Shanty</td>
+      <td class="c2">Common Shanty</td>
       <td align="right" class="d5">0</td>
       <td align="right" class="d4">0</td>
       <td align="right" class="d3">0</td>
@@ -1238,7 +1256,7 @@ Each rating level must meet all the coverage requirements.
       <td align="right" class="d1">-130</td>
     </tr>
     <tr>
-      <td bgcolor="lightgreen">Rough Cottage</td>
+      <td class="c1">Rough Cottage</td>
       <td align="right" class="d5">4</td>
       <td align="right" class="d4">4</td>
       <td align="right" class="d3">4</td>
@@ -1266,7 +1284,7 @@ Each rating level must meet all the coverage requirements.
       <td align="right" class="d1">-130</td>
     </tr>
     <tr>
-      <td bgcolor="lightgreen">Ordinary Cottage</td>
+      <td class="c1">Ordinary Cottage</td>
       <td align="right" class="d5">9</td>
       <td align="right" class="d4">8</td>
       <td align="right" class="d3">8</td>
@@ -1294,7 +1312,7 @@ Each rating level must meet all the coverage requirements.
       <td align="right" class="d1">-130</td>
     </tr>
     <tr>
-      <td bgcolor="wheat">Modest Homestead</td>
+      <td class="c2">Modest Homestead</td>
       <td align="right" class="d5">13</td>
       <td align="right" class="d4">12</td>
       <td align="right" class="d3">12</td>
@@ -1322,7 +1340,7 @@ Each rating level must meet all the coverage requirements.
       <td align="right" class="d1">-130</td>
     </tr>
     <tr>
-      <td bgcolor="wheat">Spacious Homestead</td>
+      <td class="c2">Spacious Homestead</td>
       <td align="right" class="d5">17</td>
       <td align="right" class="d4">16</td>
       <td align="right" class="d3">16</td>
@@ -1350,7 +1368,7 @@ Each rating level must meet all the coverage requirements.
       <td align="right" class="d1">-130</td>
     </tr>
     <tr>
-      <td bgcolor="lightgreen">Modest Apartment</td>
+      <td class="c1">Modest Apartment</td>
       <td align="right" class="d5">21</td>
       <td align="right" class="d4">20</td>
       <td align="right" class="d3">20</td>
@@ -1378,7 +1396,7 @@ Each rating level must meet all the coverage requirements.
       <td align="right" class="d1">-130</td>
     </tr>
     <tr>
-      <td bgcolor="lightgreen">Spacious Apartment</td>
+      <td class="c1">Spacious Apartment</td>
       <td align="right" class="d5">26</td>
       <td align="right" class="d4">25</td>
       <td align="right" class="d3">25</td>
@@ -1406,7 +1424,7 @@ Each rating level must meet all the coverage requirements.
       <td align="right" class="d1">-130</td>
     </tr>
     <tr>
-      <td bgcolor="wheat">Common Residence</td>
+      <td class="c2">Common Residence</td>
       <td align="right" class="d5">33</td>
       <td align="right" class="d4">32</td>
       <td align="right" class="d3">32</td>
@@ -1434,7 +1452,7 @@ Each rating level must meet all the coverage requirements.
       <td align="right" class="d1">-130</td>
     </tr>
     <tr>
-      <td bgcolor="wheat">Spacious Residence</td>
+      <td class="c2">Spacious Residence</td>
       <td align="right" class="d5">41</td>
       <td align="right" class="d4">40</td>
       <td align="right" class="d3">40</td>
@@ -1462,7 +1480,7 @@ Each rating level must meet all the coverage requirements.
       <td align="right" class="d1">-130</td>
     </tr>
     <tr>
-      <td bgcolor="wheat">Elegant Residence</td>
+      <td class="c2">Elegant Residence</td>
       <td align="right" class="d5">50</td>
       <td align="right" class="d4">48</td>
       <td align="right" class="d3">48</td>
@@ -1490,7 +1508,7 @@ Each rating level must meet all the coverage requirements.
       <td align="right" class="d1">-130</td>
     </tr>
     <tr>
-      <td bgcolor="wheat">Fancy Residence</td>
+      <td class="c2">Fancy Residence</td>
       <td align="right" class="d5">55</td>
       <td align="right" class="d4">53</td>
       <td align="right" class="d3">53</td>
@@ -1518,7 +1536,7 @@ Each rating level must meet all the coverage requirements.
       <td align="right" class="d1">-130</td>
     </tr>
     <tr>
-      <td bgcolor="lightgreen">Common Manor</td>
+      <td class="c1">Common Manor</td>
       <td align="right" class="d5">60</td>
       <td align="right" class="d4">58</td>
       <td align="right" class="d3">58</td>
@@ -1546,7 +1564,7 @@ Each rating level must meet all the coverage requirements.
       <td align="right" class="d1">-130</td>
     </tr>
     <tr>
-      <td bgcolor="lightgreen">Spacious Manor</td>
+      <td class="c1">Spacious Manor</td>
       <td align="right" class="d5">65</td>
       <td align="right" class="d4">63</td>
       <td align="right" class="d3">63</td>
@@ -1574,7 +1592,7 @@ Each rating level must meet all the coverage requirements.
       <td align="right" class="d1">-130</td>
     </tr>
     <tr>
-      <td bgcolor="lightgreen">Elegant Manor</td>
+      <td class="c1">Elegant Manor</td>
       <td align="right" class="d5">70</td>
       <td align="right" class="d4">68</td>
       <td align="right" class="d3">68</td>
@@ -1602,7 +1620,7 @@ Each rating level must meet all the coverage requirements.
       <td align="right" class="d1">-130</td>
     </tr>
     <tr>
-      <td bgcolor="lightgreen">Stately Manor</td>
+      <td class="c1">Stately Manor</td>
       <td align="right" class="d5">76</td>
       <td align="right" class="d4">74</td>
       <td align="right" class="d3">74</td>
@@ -1630,7 +1648,7 @@ Each rating level must meet all the coverage requirements.
       <td align="right" class="d1">-130</td>
     </tr>
     <tr>
-      <td bgcolor="wheat">Modest Estate</td>
+      <td class="c2">Modest Estate</td>
       <td align="right" class="d5">82</td>
       <td align="right" class="d4">80</td>
       <td align="right" class="d3">80</td>
@@ -1658,7 +1676,7 @@ Each rating level must meet all the coverage requirements.
       <td align="right" class="d1">-130</td>
     </tr>
     <tr>
-      <td bgcolor="wheat">Palatial Estate</td>
+      <td class="c2">Palatial Estate</td>
       <td align="right" class="d5">92</td>
       <td align="right" class="d4">90</td>
       <td align="right" class="d3">90</td>
@@ -1700,25 +1718,25 @@ Each rating level must meet all the coverage requirements.
 
 <table border="1" cellspacing="1" cellpadding="1" width="626" style="font-size: 10px;border-collapse: collapse;">
     <tr>
-      <td align="left" valign="top" bgcolor="lightgreen" rowspan="2">
+      <td align="left" valign="top" class="c1" rowspan="2">
         <strong>Structure</strong>
       </td>
-      <td align="center" valign="top" bgcolor="silver" rowspan="2" width="26">
+      <td align="center" valign="top" class="c0" rowspan="2" width="26">
         <strong>Size</strong>
       </td>
-      <td align="center" valign="top" bgcolor="lightgreen" rowspan="2" width="26">
+      <td align="center" valign="top" class="c1" rowspan="2" width="26">
         <strong>Emp</strong>
       </td>
-      <td align="center" bgcolor="silver" colspan="5" width="130">
+      <td align="center" class="c0" colspan="5" width="130">
         <strong>Cost</strong>
       </td>
-      <td align="center" bgcolor="lightgreen" colspan="6" width="120">
+      <td align="center" class="c1" colspan="6" width="120">
         <strong>Desirability</strong>
       </td>
-      <td align="center" bgcolor="silver" colspan="5" width="100">
+      <td align="center" class="c0" colspan="5" width="100">
         <strong>Risk of Fire</strong>
       </td>
-      <td align="center" bgcolor="lightgreen" colspan="5" width="100">
+      <td align="center" class="c1" colspan="5" width="100">
         <strong>Risk of Damage</strong>
       </td>
     </tr>
@@ -1728,12 +1746,12 @@ Each rating level must meet all the coverage requirements.
       <td align="center" class="d3">N</td>
       <td align="center" class="d2">E</td>
       <td align="center" class="d1">VE</td>
-      <td align="center" bgcolor="lightgreen">D1</td>
-      <td align="center" bgcolor="lightgreen">D2</td>
-      <td align="center" bgcolor="lightgreen">D3</td>
-      <td align="center" bgcolor="lightgreen">D4</td>
-      <td align="center" bgcolor="lightgreen">D5</td>
-      <td align="center" bgcolor="lightgreen">D6</td>
+      <td align="center" class="c1">D1</td>
+      <td align="center" class="c1">D2</td>
+      <td align="center" class="c1">D3</td>
+      <td align="center" class="c1">D4</td>
+      <td align="center" class="c1">D5</td>
+      <td align="center" class="c1">D6</td>
       <td align="center" class="d5">VH</td>
       <td align="center" class="d4">H</td>
       <td align="center" class="d3">N</td>
@@ -1746,20 +1764,20 @@ Each rating level must meet all the coverage requirements.
       <td align="center" class="d1">VE</td>
     </tr>
     <tr>
-      <td align="left" bgcolor="wheat">Academy</td>
-      <td align="center" bgcolor="wheat">4&#215;4</td>
-      <td align="right" bgcolor="wheat">20</td>
+      <td align="left" class="c2">Academy</td>
+      <td align="center" class="c2">4&#215;4</td>
+      <td align="right" class="c2">20</td>
       <td align="right" class="d5">1500</td>
       <td align="right" class="d4">1200</td>
       <td align="right" class="d3">1000</td>
       <td align="right" class="d2">800</td>
       <td align="right" class="d1">200</td>
-      <td align="right" bgcolor="wheat">-3</td>
-      <td align="right" bgcolor="wheat">-2</td>
-      <td align="right" bgcolor="wheat">-1</td>
-      <td align="right" bgcolor="wheat">0</td>
-      <td align="right" bgcolor="wheat">0</td>
-      <td align="right" bgcolor="wheat">0</td>
+      <td align="right" class="c2">-3</td>
+      <td align="right" class="c2">-2</td>
+      <td align="right" class="c2">-1</td>
+      <td align="right" class="c2">0</td>
+      <td align="right" class="c2">0</td>
+      <td align="right" class="c2">0</td>
       <td align="right" class="d5">30</td>
       <td align="right" class="d4">24</td>
       <td align="right" class="d3">20</td>
@@ -1772,43 +1790,43 @@ Each rating level must meet all the coverage requirements.
       <td align="right" class="d1">1</td>
     </tr>
     <tr>
-      <td align="left" bgcolor="lightgreen">Apothecary</td>
-      <td align="center" bgcolor="lightgreen">1&#215;1</td>
-      <td align="right" bgcolor="lightgreen">5</td>
+      <td align="left" class="c1">Apothecary</td>
+      <td align="center" class="c1">1&#215;1</td>
+      <td align="right" class="c1">5</td>
       <td align="right" class="d5">45</td>
       <td align="right" class="d4">36</td>
       <td align="right" class="d3">30</td>
       <td align="right" class="d2">24</td>
       <td align="right" class="d1">6</td>
-      <td align="right" bgcolor="lightgreen">1</td>
-      <td align="right" bgcolor="lightgreen">0</td>
-      <td align="right" bgcolor="lightgreen">0</td>
-      <td align="right" bgcolor="lightgreen">0</td>
-      <td align="right" bgcolor="lightgreen">0</td>
-      <td align="right" bgcolor="lightgreen">0</td>
+      <td align="right" class="c1">1</td>
+      <td align="right" class="c1">0</td>
+      <td align="right" class="c1">0</td>
+      <td align="right" class="c1">0</td>
+      <td align="right" class="c1">0</td>
+      <td align="right" class="c1">0</td>
       <td align="right" class="d5">30</td>
       <td align="right" class="d4">24</td>
       <td align="right" class="d3">20</td>
       <td align="right" class="d2">17</td>
       <td align="right" class="d1">4</td>
-      <td align="center" bgcolor="lightgreen" colspan="5">none</td>
+      <td align="center" class="c1" colspan="5">none</td>
     </tr>
     <tr>
-      <td align="left" bgcolor="wheat">Architect&#8217;s Post</td>
-      <td align="center" bgcolor="wheat">1&#215;1</td>
-      <td align="right" bgcolor="wheat">5</td>
+      <td align="left" class="c2">Architect&#8217;s Post</td>
+      <td align="center" class="c2">1&#215;1</td>
+      <td align="right" class="c2">5</td>
       <td align="right" class="d5">45</td>
       <td align="right" class="d4">36</td>
       <td align="right" class="d3">30</td>
       <td align="right" class="d2">24</td>
       <td align="right" class="d1">6</td>
-      <td align="right" bgcolor="wheat">0</td>
-      <td align="right" bgcolor="wheat">0</td>
-      <td align="right" bgcolor="wheat">0</td>
-      <td align="right" bgcolor="wheat">0</td>
-      <td align="right" bgcolor="wheat">0</td>
-      <td align="right" bgcolor="wheat">0</td>
-      <td align="center" bgcolor="wheat" colspan="5">none</td>
+      <td align="right" class="c2">0</td>
+      <td align="right" class="c2">0</td>
+      <td align="right" class="c2">0</td>
+      <td align="right" class="c2">0</td>
+      <td align="right" class="c2">0</td>
+      <td align="right" class="c2">0</td>
+      <td align="center" class="c2" colspan="5">none</td>
       <td align="right" class="d5">3</td>
       <td align="right" class="d4">2</td>
       <td align="right" class="d3">2</td>
@@ -1816,183 +1834,183 @@ Each rating level must meet all the coverage requirements.
       <td align="right" class="d1">0</td>
     </tr>
     <tr>
-      <td align="left" bgcolor="lightgreen">Bandstand</td>
-      <td align="center" bgcolor="lightgreen">3&#215;3</td>
-      <td align="right" bgcolor="lightgreen">12</td>
+      <td align="left" class="c1">Bandstand</td>
+      <td align="center" class="c1">3&#215;3</td>
+      <td align="right" class="c1">12</td>
       <td align="right" class="d5">225</td>
       <td align="right" class="d4">180</td>
       <td align="right" class="d3">150</td>
       <td align="right" class="d2">130</td>
       <td align="right" class="d1">30</td>
-      <td align="center" bgcolor="lightgreen" colspan="6">See Diagram on Page 4</td>
+      <td align="center" class="c1" colspan="6">See Diagram on Page 4</td>
       <td align="right" class="d5">30</td>
       <td align="right" class="d4">24</td>
       <td align="right" class="d3">20</td>
       <td align="right" class="d2">17</td>
       <td align="right" class="d1">4</td>
-      <td align="center" bgcolor="lightgreen" colspan="5">none</td>
+      <td align="center" class="c1" colspan="5">none</td>
     </tr>
     <tr>
-      <td align="left" bgcolor="wheat">Bazaar</td>
-      <td align="center" bgcolor="wheat">2&#215;2</td>
-      <td align="right" bgcolor="wheat">5</td>
+      <td align="left" class="c2">Bazaar</td>
+      <td align="center" class="c2">2&#215;2</td>
+      <td align="right" class="c2">5</td>
       <td align="right" class="d5">60</td>
       <td align="right" class="d4">48</td>
       <td align="right" class="d3">40</td>
       <td align="right" class="d2">32</td>
       <td align="right" class="d1">8</td>
-      <td align="right" bgcolor="wheat">-2</td>
-      <td align="right" bgcolor="wheat">-1</td>
-      <td align="right" bgcolor="wheat">0</td>
-      <td align="right" bgcolor="wheat">1</td>
-      <td align="right" bgcolor="wheat">2</td>
-      <td align="right" bgcolor="wheat">3</td>
+      <td align="right" class="c2">-2</td>
+      <td align="right" class="c2">-1</td>
+      <td align="right" class="c2">0</td>
+      <td align="right" class="c2">1</td>
+      <td align="right" class="c2">2</td>
+      <td align="right" class="c2">3</td>
       <td align="right" class="d5">30</td>
       <td align="right" class="d4">24</td>
       <td align="right" class="d3">20</td>
       <td align="right" class="d2">15</td>
       <td align="right" class="d1">4</td>
-      <td align="center" bgcolor="wheat" colspan="5">none</td>
+      <td align="center" class="c2" colspan="5">none</td>
     </tr>
     <tr>
-      <td align="left" bgcolor="lightgreen">Booth</td>
-      <td align="center" bgcolor="lightgreen">2&#215;2</td>
-      <td align="right" bgcolor="lightgreen">8</td>
+      <td align="left" class="c1">Booth</td>
+      <td align="center" class="c1">2&#215;2</td>
+      <td align="right" class="c1">8</td>
       <td align="right" class="d5">75</td>
       <td align="right" class="d4">60</td>
       <td align="right" class="d3">50</td>
       <td align="right" class="d2">40</td>
       <td align="right" class="d1">10</td>
-      <td align="center" bgcolor="lightgreen" colspan="6">See Diagram on Page 4</td>
+      <td align="center" class="c1" colspan="6">See Diagram on Page 4</td>
       <td align="right" class="d5">30</td>
       <td align="right" class="d4">24</td>
       <td align="right" class="d3">20</td>
       <td align="right" class="d2">17</td>
       <td align="right" class="d1">4</td>
-      <td align="center" bgcolor="lightgreen" colspan="5">none</td>
+      <td align="center" class="c1" colspan="5">none</td>
     </tr>
     <tr>
-      <td align="left" bgcolor="wheat">Brewery</td>
-      <td align="center" bgcolor="wheat">2&#215;2</td>
-      <td align="right" bgcolor="wheat">12</td>
+      <td align="left" class="c2">Brewery</td>
+      <td align="center" class="c2">2&#215;2</td>
+      <td align="right" class="c2">12</td>
       <td align="right" class="d5">112</td>
       <td align="right" class="d4">90</td>
       <td align="right" class="d3">75</td>
       <td align="right" class="d2">60</td>
       <td align="right" class="d1">15</td>
-      <td align="right" bgcolor="wheat">-5</td>
-      <td align="right" bgcolor="wheat">-4</td>
-      <td align="right" bgcolor="wheat">-3</td>
-      <td align="right" bgcolor="wheat">-2</td>
-      <td align="right" bgcolor="wheat">-1</td>
-      <td align="right" bgcolor="wheat">0</td>
+      <td align="right" class="c2">-5</td>
+      <td align="right" class="c2">-4</td>
+      <td align="right" class="c2">-3</td>
+      <td align="right" class="c2">-2</td>
+      <td align="right" class="c2">-1</td>
+      <td align="right" class="c2">0</td>
       <td align="right" class="d5">30</td>
       <td align="right" class="d4">24</td>
       <td align="right" class="d3">20</td>
       <td align="right" class="d2">15</td>
       <td align="right" class="d1">4</td>
-      <td align="center" bgcolor="wheat" colspan="5">none</td>
+      <td align="center" class="c2" colspan="5">none</td>
     </tr>
     <tr>
-      <td align="left" bgcolor="lightgreen">Brickworks</td>
-      <td align="center" bgcolor="lightgreen">2&#215;2</td>
-      <td align="right" bgcolor="lightgreen">12</td>
+      <td align="left" class="c1">Brickworks</td>
+      <td align="center" class="c1">2&#215;2</td>
+      <td align="right" class="c1">12</td>
       <td align="right" class="d5">90</td>
       <td align="right" class="d4">72</td>
       <td align="right" class="d3">60</td>
       <td align="right" class="d2">48</td>
       <td align="right" class="d1">12</td>
-      <td align="right" bgcolor="lightgreen">-4</td>
-      <td align="right" bgcolor="lightgreen">-3</td>
-      <td align="right" bgcolor="lightgreen">-2</td>
-      <td align="right" bgcolor="lightgreen">-1</td>
-      <td align="right" bgcolor="lightgreen">0</td>
-      <td align="right" bgcolor="lightgreen">0</td>
+      <td align="right" class="c1">-4</td>
+      <td align="right" class="c1">-3</td>
+      <td align="right" class="c1">-2</td>
+      <td align="right" class="c1">-1</td>
+      <td align="right" class="c1">0</td>
+      <td align="right" class="c1">0</td>
       <td align="right" class="d5">15</td>
       <td align="right" class="d4">12</td>
       <td align="right" class="d3">10</td>
       <td align="right" class="d2">8</td>
       <td align="right" class="d1">2</td>
-      <td align="center" bgcolor="lightgreen" colspan="5">none</td>
+      <td align="center" class="c1" colspan="5">none</td>
     </tr>
     <tr>
-      <td align="left" bgcolor="wheat">Bridge</td>
-      <td align="center" bgcolor="wheat">1x</td>
-      <td align="right" bgcolor="wheat">0</td>
+      <td align="left" class="c2">Bridge</td>
+      <td align="center" class="c2">1x</td>
+      <td align="right" class="c2">0</td>
       <td align="right" class="d5">60</td>
       <td align="right" class="d4">48</td>
       <td align="right" class="d3">40</td>
       <td align="right" class="d2">32</td>
       <td align="right" class="d1">8</td>
-      <td align="right" bgcolor="wheat">0</td>
-      <td align="right" bgcolor="wheat">0</td>
-      <td align="right" bgcolor="wheat">0</td>
-      <td align="right" bgcolor="wheat">0</td>
-      <td align="right" bgcolor="wheat">0</td>
-      <td align="right" bgcolor="wheat">0</td>
-      <td align="center" bgcolor="wheat" colspan="5">none</td>
-      <td align="center" bgcolor="wheat" colspan="5">none</td>
+      <td align="right" class="c2">0</td>
+      <td align="right" class="c2">0</td>
+      <td align="right" class="c2">0</td>
+      <td align="right" class="c2">0</td>
+      <td align="right" class="c2">0</td>
+      <td align="right" class="c2">0</td>
+      <td align="center" class="c2" colspan="5">none</td>
+      <td align="center" class="c2" colspan="5">none</td>
     </tr>
     <tr>
-      <td align="left" bgcolor="lightgreen">Cattle Ranch</td>
-      <td align="center" bgcolor="lightgreen">3&#215;3</td>
-      <td align="right" bgcolor="lightgreen">12</td>
+      <td align="left" class="c1">Cattle Ranch</td>
+      <td align="center" class="c1">3&#215;3</td>
+      <td align="right" class="c1">12</td>
       <td align="right" class="d5">112</td>
       <td align="right" class="d4">90</td>
       <td align="right" class="d3">75</td>
       <td align="right" class="d2">60</td>
       <td align="right" class="d1">15</td>
-      <td align="right" bgcolor="lightgreen">-4</td>
-      <td align="right" bgcolor="lightgreen">-3</td>
-      <td align="right" bgcolor="lightgreen">-2</td>
-      <td align="right" bgcolor="lightgreen">-1</td>
-      <td align="right" bgcolor="lightgreen">0</td>
-      <td align="right" bgcolor="lightgreen">0</td>
+      <td align="right" class="c1">-4</td>
+      <td align="right" class="c1">-3</td>
+      <td align="right" class="c1">-2</td>
+      <td align="right" class="c1">-1</td>
+      <td align="right" class="c1">0</td>
+      <td align="right" class="c1">0</td>
       <td align="right" class="d5">7</td>
       <td align="right" class="d4">6</td>
       <td align="right" class="d3">5</td>
       <td align="right" class="d2">4</td>
       <td align="right" class="d1">1</td>
-      <td align="center" bgcolor="lightgreen" colspan="5">none</td>
+      <td align="center" class="c1" colspan="5">none</td>
     </tr>
     <tr>
-      <td align="left" bgcolor="wheat">Chariot Maker</td>
-      <td align="center" bgcolor="wheat">4&#215;4</td>
-      <td align="right" bgcolor="wheat">30</td>
+      <td align="left" class="c2">Chariot Maker</td>
+      <td align="center" class="c2">4&#215;4</td>
+      <td align="right" class="c2">30</td>
       <td align="right" class="d5">375</td>
       <td align="right" class="d4">300</td>
       <td align="right" class="d3">250</td>
       <td align="right" class="d2">200</td>
       <td align="right" class="d1">50</td>
-      <td align="right" bgcolor="wheat">-6</td>
-      <td align="right" bgcolor="wheat">-5</td>
-      <td align="right" bgcolor="wheat">-4</td>
-      <td align="right" bgcolor="wheat">-3</td>
-      <td align="right" bgcolor="wheat">-2</td>
-      <td align="right" bgcolor="wheat">-1</td>
+      <td align="right" class="c2">-6</td>
+      <td align="right" class="c2">-5</td>
+      <td align="right" class="c2">-4</td>
+      <td align="right" class="c2">-3</td>
+      <td align="right" class="c2">-2</td>
+      <td align="right" class="c2">-1</td>
       <td align="right" class="d5">30</td>
       <td align="right" class="d4">24</td>
       <td align="right" class="d3">20</td>
       <td align="right" class="d2">15</td>
       <td align="right" class="d1">4</td>
-      <td align="center" bgcolor="wheat" colspan="5">none</td>
+      <td align="center" class="c2" colspan="5">none</td>
     </tr>
     <tr>
-      <td align="left" bgcolor="lightgreen">Clay Pit</td>
-      <td align="center" bgcolor="lightgreen">2&#215;2</td>
-      <td align="right" bgcolor="lightgreen">8</td>
+      <td align="left" class="c1">Clay Pit</td>
+      <td align="center" class="c1">2&#215;2</td>
+      <td align="right" class="c1">8</td>
       <td align="right" class="d5">60</td>
       <td align="right" class="d4">48</td>
       <td align="right" class="d3">40</td>
       <td align="right" class="d2">32</td>
       <td align="right" class="d1">8</td>
-      <td align="right" bgcolor="lightgreen">-3</td>
-      <td align="right" bgcolor="lightgreen">-2</td>
-      <td align="right" bgcolor="lightgreen">0</td>
-      <td align="right" bgcolor="lightgreen">0</td>
-      <td align="right" bgcolor="lightgreen">0</td>
-      <td align="right" bgcolor="lightgreen">0</td>
-      <td align="center" bgcolor="lightgreen" colspan="5">none</td>
+      <td align="right" class="c1">-3</td>
+      <td align="right" class="c1">-2</td>
+      <td align="right" class="c1">0</td>
+      <td align="right" class="c1">0</td>
+      <td align="right" class="c1">0</td>
+      <td align="right" class="c1">0</td>
+      <td align="center" class="c1" colspan="5">none</td>
       <td align="right" class="d5">7</td>
       <td align="right" class="d4">6</td>
       <td align="right" class="d3">5</td>
@@ -2000,43 +2018,43 @@ Each rating level must meet all the coverage requirements.
       <td align="right" class="d1">1</td>
     </tr>
     <tr>
-      <td align="left" bgcolor="wheat">Conservatory</td>
-      <td align="center" bgcolor="wheat">3&#215;3</td>
-      <td align="right" bgcolor="wheat">8</td>
+      <td align="left" class="c2">Conservatory</td>
+      <td align="center" class="c2">3&#215;3</td>
+      <td align="right" class="c2">8</td>
       <td align="right" class="d5">150</td>
       <td align="right" class="d4">120</td>
       <td align="right" class="d3">100</td>
       <td align="right" class="d2">80</td>
       <td align="right" class="d1">20</td>
-      <td align="right" bgcolor="wheat">-3</td>
-      <td align="right" bgcolor="wheat">-2</td>
-      <td align="right" bgcolor="wheat">-1</td>
-      <td align="right" bgcolor="wheat">0</td>
-      <td align="right" bgcolor="wheat">0</td>
-      <td align="right" bgcolor="wheat">0</td>
+      <td align="right" class="c2">-3</td>
+      <td align="right" class="c2">-2</td>
+      <td align="right" class="c2">-1</td>
+      <td align="right" class="c2">0</td>
+      <td align="right" class="c2">0</td>
+      <td align="right" class="c2">0</td>
       <td align="right" class="d5">30</td>
       <td align="right" class="d4">24</td>
       <td align="right" class="d3">20</td>
       <td align="right" class="d2">17</td>
       <td align="right" class="d1">4</td>
-      <td align="center" bgcolor="wheat" colspan="5">none</td>
+      <td align="center" class="c2" colspan="5">none</td>
     </tr>
     <tr>
-      <td align="left" bgcolor="lightgreen">Courthouse</td>
-      <td align="center" bgcolor="lightgreen">3&#215;3</td>
-      <td align="right" bgcolor="lightgreen">10</td>
+      <td align="left" class="c1">Courthouse</td>
+      <td align="center" class="c1">3&#215;3</td>
+      <td align="right" class="c1">10</td>
       <td align="right" class="d5">225</td>
       <td align="right" class="d4">180</td>
       <td align="right" class="d3">150</td>
       <td align="right" class="d2">120</td>
       <td align="right" class="d1">30</td>
-      <td align="right" bgcolor="lightgreen">8</td>
-      <td align="right" bgcolor="lightgreen">8</td>
-      <td align="right" bgcolor="lightgreen">6</td>
-      <td align="right" bgcolor="lightgreen">0</td>
-      <td align="right" bgcolor="lightgreen">0</td>
-      <td align="right" bgcolor="lightgreen">0</td>
-      <td align="center" bgcolor="lightgreen" colspan="5">none</td>
+      <td align="right" class="c1">8</td>
+      <td align="right" class="c1">8</td>
+      <td align="right" class="c1">6</td>
+      <td align="right" class="c1">0</td>
+      <td align="right" class="c1">0</td>
+      <td align="right" class="c1">0</td>
+      <td align="center" class="c1" colspan="5">none</td>
       <td align="right" class="d5">7</td>
       <td align="right" class="d4">6</td>
       <td align="right" class="d3">5</td>
@@ -2044,64 +2062,64 @@ Each rating level must meet all the coverage requirements.
       <td align="right" class="d1">1</td>
     </tr>
     <tr>
-      <td align="left" bgcolor="wheat">Dance School</td>
-      <td align="center" bgcolor="wheat">4&#215;4</td>
-      <td align="right" bgcolor="wheat">10</td>
+      <td align="left" class="c2">Dance School</td>
+      <td align="center" class="c2">4&#215;4</td>
+      <td align="right" class="c2">10</td>
       <td align="right" class="d5">225</td>
       <td align="right" class="d4">180</td>
       <td align="right" class="d3">150</td>
       <td align="right" class="d2">120</td>
       <td align="right" class="d1">30</td>
-      <td align="right" bgcolor="wheat">-3</td>
-      <td align="right" bgcolor="wheat">-2</td>
-      <td align="right" bgcolor="wheat">-1</td>
-      <td align="right" bgcolor="wheat">0</td>
-      <td align="right" bgcolor="wheat">0</td>
-      <td align="right" bgcolor="wheat">0</td>
+      <td align="right" class="c2">-3</td>
+      <td align="right" class="c2">-2</td>
+      <td align="right" class="c2">-1</td>
+      <td align="right" class="c2">0</td>
+      <td align="right" class="c2">0</td>
+      <td align="right" class="c2">0</td>
       <td align="right" class="d5">30</td>
       <td align="right" class="d4">24</td>
       <td align="right" class="d3">20</td>
       <td align="right" class="d2">17</td>
       <td align="right" class="d1">4</td>
-      <td align="center" bgcolor="wheat" colspan="5">none</td>
+      <td align="center" class="c2" colspan="5">none</td>
     </tr>
     <tr>
-      <td align="left" bgcolor="lightgreen">Dentist</td>
-      <td align="center" bgcolor="lightgreen">1&#215;1</td>
-      <td align="right" bgcolor="lightgreen">2</td>
+      <td align="left" class="c1">Dentist</td>
+      <td align="center" class="c1">1&#215;1</td>
+      <td align="right" class="c1">2</td>
       <td align="right" class="d5">75</td>
       <td align="right" class="d4">60</td>
       <td align="right" class="d3">50</td>
       <td align="right" class="d2">40</td>
       <td align="right" class="d1">10</td>
-      <td align="right" bgcolor="lightgreen">2</td>
-      <td align="right" bgcolor="lightgreen">1</td>
-      <td align="right" bgcolor="lightgreen">0</td>
-      <td align="right" bgcolor="lightgreen">0</td>
-      <td align="right" bgcolor="lightgreen">0</td>
-      <td align="right" bgcolor="lightgreen">0</td>
+      <td align="right" class="c1">2</td>
+      <td align="right" class="c1">1</td>
+      <td align="right" class="c1">0</td>
+      <td align="right" class="c1">0</td>
+      <td align="right" class="c1">0</td>
+      <td align="right" class="c1">0</td>
       <td align="right" class="d5">30</td>
       <td align="right" class="d4">24</td>
       <td align="right" class="d3">20</td>
       <td align="right" class="d2">15</td>
       <td align="right" class="d1">4</td>
-      <td align="center" bgcolor="lightgreen" colspan="5">none</td>
+      <td align="center" class="c1" colspan="5">none</td>
     </tr>
     <tr>
-      <td align="left" bgcolor="wheat">Dock</td>
-      <td align="center" bgcolor="wheat">3&#215;3</td>
-      <td align="right" bgcolor="wheat">12</td>
+      <td align="left" class="c2">Dock</td>
+      <td align="center" class="c2">3&#215;3</td>
+      <td align="right" class="c2">12</td>
       <td align="right" class="d5">150</td>
       <td align="right" class="d4">120</td>
       <td align="right" class="d3">100</td>
       <td align="right" class="d2">80</td>
       <td align="right" class="d1">20</td>
-      <td align="right" bgcolor="wheat">-12</td>
-      <td align="right" bgcolor="wheat">-12</td>
-      <td align="right" bgcolor="wheat">-10</td>
-      <td align="right" bgcolor="wheat">-10</td>
-      <td align="right" bgcolor="wheat">-8</td>
-      <td align="right" bgcolor="wheat">-8</td>
+      <td align="right" class="c2">-12</td>
+      <td align="right" class="c2">-12</td>
+      <td align="right" class="c2">-10</td>
+      <td align="right" class="c2">-10</td>
+      <td align="right" class="c2">-8</td>
+      <td align="right" class="c2">-8</td>
       <td align="right" class="d5">30</td>
       <td align="right" class="d4">24</td>
       <td align="right" class="d3">20</td>
@@ -2114,114 +2132,114 @@ Each rating level must meet all the coverage requirements.
       <td align="right" class="d1">1</td>
     </tr>
     <tr>
-      <td align="left" bgcolor="lightgreen">Farm, Floodplain</td>
-      <td align="center" bgcolor="lightgreen">3&#215;3</td>
-      <td align="right" bgcolor="lightgreen">0</td>
+      <td align="left" class="c1">Farm, Floodplain</td>
+      <td align="center" class="c1">3&#215;3</td>
+      <td align="right" class="c1">0</td>
       <td align="right" class="d5">60</td>
       <td align="right" class="d4">48</td>
       <td align="right" class="d3">40</td>
       <td align="right" class="d2">32</td>
       <td align="right" class="d1">8</td>
-      <td align="right" bgcolor="lightgreen">-2</td>
-      <td align="right" bgcolor="lightgreen">-1</td>
-      <td align="right" bgcolor="lightgreen">0</td>
-      <td align="right" bgcolor="lightgreen">0</td>
-      <td align="right" bgcolor="lightgreen">0</td>
-      <td align="right" bgcolor="lightgreen">0</td>
-      <td align="center" bgcolor="lightgreen" colspan="5">none</td>
-      <td align="center" bgcolor="lightgreen" colspan="5">none</td>
+      <td align="right" class="c1">-2</td>
+      <td align="right" class="c1">-1</td>
+      <td align="right" class="c1">0</td>
+      <td align="right" class="c1">0</td>
+      <td align="right" class="c1">0</td>
+      <td align="right" class="c1">0</td>
+      <td align="center" class="c1" colspan="5">none</td>
+      <td align="center" class="c1" colspan="5">none</td>
     </tr>
     <tr>
-      <td align="left" bgcolor="wheat">Farm, Meadow</td>
-      <td align="center" bgcolor="wheat">3&#215;3</td>
-      <td align="right" bgcolor="wheat">10</td>
+      <td align="left" class="c2">Farm, Meadow</td>
+      <td align="center" class="c2">3&#215;3</td>
+      <td align="right" class="c2">10</td>
       <td align="right" class="d5">60</td>
       <td align="right" class="d4">48</td>
       <td align="right" class="d3">40</td>
       <td align="right" class="d2">32</td>
       <td align="right" class="d1">8</td>
-      <td align="right" bgcolor="wheat">-2</td>
-      <td align="right" bgcolor="wheat">-1</td>
-      <td align="right" bgcolor="wheat">0</td>
-      <td align="right" bgcolor="wheat">0</td>
-      <td align="right" bgcolor="wheat">0</td>
-      <td align="right" bgcolor="wheat">0</td>
-      <td align="center" bgcolor="wheat" colspan="5">none</td>
-      <td align="center" bgcolor="wheat" colspan="5">none</td>
+      <td align="right" class="c2">-2</td>
+      <td align="right" class="c2">-1</td>
+      <td align="right" class="c2">0</td>
+      <td align="right" class="c2">0</td>
+      <td align="right" class="c2">0</td>
+      <td align="right" class="c2">0</td>
+      <td align="center" class="c2" colspan="5">none</td>
+      <td align="center" class="c2" colspan="5">none</td>
     </tr>
     <tr>
-      <td align="left" bgcolor="lightgreen">Ferry Terminal</td>
-      <td align="center" bgcolor="lightgreen">2&#215;2</td>
-      <td align="right" bgcolor="lightgreen">5</td>
+      <td align="left" class="c1">Ferry Terminal</td>
+      <td align="center" class="c1">2&#215;2</td>
+      <td align="right" class="c1">5</td>
       <td align="right" class="d5">60</td>
       <td align="right" class="d4">48</td>
       <td align="right" class="d3">40</td>
       <td align="right" class="d2">32</td>
       <td align="right" class="d1">8</td>
-      <td align="right" bgcolor="lightgreen">-5</td>
-      <td align="right" bgcolor="lightgreen">-5</td>
-      <td align="right" bgcolor="lightgreen">-3</td>
-      <td align="right" bgcolor="lightgreen">-3</td>
-      <td align="right" bgcolor="lightgreen">0</td>
-      <td align="right" bgcolor="lightgreen">0</td>
-      <td align="center" bgcolor="lightgreen" colspan="5">none</td>
-      <td align="center" bgcolor="lightgreen" colspan="5">none</td>
+      <td align="right" class="c1">-5</td>
+      <td align="right" class="c1">-5</td>
+      <td align="right" class="c1">-3</td>
+      <td align="right" class="c1">-3</td>
+      <td align="right" class="c1">0</td>
+      <td align="right" class="c1">0</td>
+      <td align="center" class="c1" colspan="5">none</td>
+      <td align="center" class="c1" colspan="5">none</td>
     </tr>
     <tr>
-      <td align="left" bgcolor="wheat">Festival Pavilion</td>
-      <td align="center" bgcolor="wheat">5&#215;5</td>
-      <td align="right" bgcolor="wheat">0</td>
+      <td align="left" class="c2">Festival Pavilion</td>
+      <td align="center" class="c2">5&#215;5</td>
+      <td align="right" class="c2">0</td>
       <td align="right" class="d5">750</td>
       <td align="right" class="d4">600</td>
       <td align="right" class="d3">500</td>
       <td align="right" class="d2">400</td>
       <td align="right" class="d1">100</td>
-      <td align="right" bgcolor="wheat">16</td>
-      <td align="right" bgcolor="wheat">16</td>
-      <td align="right" bgcolor="wheat">13</td>
-      <td align="right" bgcolor="wheat">13</td>
-      <td align="right" bgcolor="wheat">10</td>
-      <td align="right" bgcolor="wheat">0</td>
-      <td align="center" bgcolor="wheat" colspan="5">none</td>
-      <td align="center" bgcolor="wheat" colspan="5">none</td>
+      <td align="right" class="c2">16</td>
+      <td align="right" class="c2">16</td>
+      <td align="right" class="c2">13</td>
+      <td align="right" class="c2">13</td>
+      <td align="right" class="c2">10</td>
+      <td align="right" class="c2">0</td>
+      <td align="center" class="c2" colspan="5">none</td>
+      <td align="center" class="c2" colspan="5">none</td>
     </tr>
     <tr>
-      <td align="left" bgcolor="lightgreen">Firehouse</td>
-      <td align="center" bgcolor="lightgreen">1&#215;1</td>
-      <td align="right" bgcolor="lightgreen">6</td>
+      <td align="left" class="c1">Firehouse</td>
+      <td align="center" class="c1">1&#215;1</td>
+      <td align="right" class="c1">6</td>
       <td align="right" class="d5">45</td>
       <td align="right" class="d4">36</td>
       <td align="right" class="d3">30</td>
       <td align="right" class="d2">24</td>
       <td align="right" class="d1">6</td>
-      <td align="right" bgcolor="lightgreen">-2</td>
-      <td align="right" bgcolor="lightgreen">-1</td>
-      <td align="right" bgcolor="lightgreen">0</td>
-      <td align="right" bgcolor="lightgreen">0</td>
-      <td align="right" bgcolor="lightgreen">0</td>
-      <td align="right" bgcolor="lightgreen">0</td>
+      <td align="right" class="c1">-2</td>
+      <td align="right" class="c1">-1</td>
+      <td align="right" class="c1">0</td>
+      <td align="right" class="c1">0</td>
+      <td align="right" class="c1">0</td>
+      <td align="right" class="c1">0</td>
       <td align="right" class="d5">3</td>
       <td align="right" class="d4">2</td>
       <td align="right" class="d3">2</td>
       <td align="right" class="d2">1</td>
       <td align="right" class="d1">0</td>
-      <td align="center" bgcolor="lightgreen" colspan="5">none</td>
+      <td align="center" class="c1" colspan="5">none</td>
     </tr>
     <tr>
-      <td align="left" bgcolor="wheat">Fishing Wharf</td>
-      <td align="center" bgcolor="wheat">2&#215;2</td>
-      <td align="right" bgcolor="wheat">6</td>
+      <td align="left" class="c2">Fishing Wharf</td>
+      <td align="center" class="c2">2&#215;2</td>
+      <td align="right" class="c2">6</td>
       <td align="right" class="d5">90</td>
       <td align="right" class="d4">72</td>
       <td align="right" class="d3">60</td>
       <td align="right" class="d2">48</td>
       <td align="right" class="d1">12</td>
-      <td align="right" bgcolor="wheat">-8</td>
-      <td align="right" bgcolor="wheat">-8</td>
-      <td align="right" bgcolor="wheat">-6</td>
-      <td align="right" bgcolor="wheat">-6</td>
-      <td align="right" bgcolor="wheat">0</td>
-      <td align="right" bgcolor="wheat">0</td>
+      <td align="right" class="c2">-8</td>
+      <td align="right" class="c2">-8</td>
+      <td align="right" class="c2">-6</td>
+      <td align="right" class="c2">-6</td>
+      <td align="right" class="c2">0</td>
+      <td align="right" class="c2">0</td>
       <td align="right" class="d5">30</td>
       <td align="right" class="d4">24</td>
       <td align="right" class="d3">20</td>
@@ -2234,110 +2252,110 @@ Each rating level must meet all the coverage requirements.
       <td align="right" class="d1">1</td>
     </tr>
     <tr>
-      <td align="left" bgcolor="lightgreen">Fort, Archers</td>
-      <td align="center" bgcolor="lightgreen">7&#215;4</td>
-      <td align="right" bgcolor="lightgreen">0</td>
+      <td align="left" class="c1">Fort, Archers</td>
+      <td align="center" class="c1">7&#215;4</td>
+      <td align="right" class="c1">0</td>
       <td align="right" class="d5">1500</td>
       <td align="right" class="d4">1200</td>
       <td align="right" class="d3">1000</td>
       <td align="right" class="d2">800</td>
       <td align="right" class="d1">200</td>
-      <td align="right" bgcolor="lightgreen">-20</td>
-      <td align="right" bgcolor="lightgreen">-20</td>
-      <td align="right" bgcolor="lightgreen">-18</td>
-      <td align="right" bgcolor="lightgreen">-18</td>
-      <td align="right" bgcolor="lightgreen">-16</td>
-      <td align="right" bgcolor="lightgreen">-16</td>
-      <td align="center" bgcolor="lightgreen" colspan="5">none</td>
-      <td align="center" bgcolor="lightgreen" colspan="5">none</td>
+      <td align="right" class="c1">-20</td>
+      <td align="right" class="c1">-20</td>
+      <td align="right" class="c1">-18</td>
+      <td align="right" class="c1">-18</td>
+      <td align="right" class="c1">-16</td>
+      <td align="right" class="c1">-16</td>
+      <td align="center" class="c1" colspan="5">none</td>
+      <td align="center" class="c1" colspan="5">none</td>
     </tr>
     <tr>
-      <td align="left" bgcolor="wheat">Fort, Charioteers</td>
-      <td align="center" bgcolor="wheat">7&#215;4</td>
-      <td align="right" bgcolor="wheat">0</td>
+      <td align="left" class="c2">Fort, Charioteers</td>
+      <td align="center" class="c2">7&#215;4</td>
+      <td align="right" class="c2">0</td>
       <td align="right" class="d5">1500</td>
       <td align="right" class="d4">1200</td>
       <td align="right" class="d3">1000</td>
       <td align="right" class="d2">800</td>
       <td align="right" class="d1">500</td>
-      <td align="right" bgcolor="wheat">-20</td>
-      <td align="right" bgcolor="wheat">-20</td>
-      <td align="right" bgcolor="wheat">-18</td>
-      <td align="right" bgcolor="wheat">-18</td>
-      <td align="right" bgcolor="wheat">-16</td>
-      <td align="right" bgcolor="wheat">-16</td>
-      <td align="center" bgcolor="wheat" colspan="5">none</td>
-      <td align="center" bgcolor="wheat" colspan="5">none</td>
+      <td align="right" class="c2">-20</td>
+      <td align="right" class="c2">-20</td>
+      <td align="right" class="c2">-18</td>
+      <td align="right" class="c2">-18</td>
+      <td align="right" class="c2">-16</td>
+      <td align="right" class="c2">-16</td>
+      <td align="center" class="c2" colspan="5">none</td>
+      <td align="center" class="c2" colspan="5">none</td>
     </tr>
     <tr>
-      <td align="left" bgcolor="lightgreen">Fort, Infantry</td>
-      <td align="center" bgcolor="lightgreen">7&#215;4</td>
-      <td align="right" bgcolor="lightgreen">0</td>
+      <td align="left" class="c1">Fort, Infantry</td>
+      <td align="center" class="c1">7&#215;4</td>
+      <td align="right" class="c1">0</td>
       <td align="right" class="d5">1500</td>
       <td align="right" class="d4">1200</td>
       <td align="right" class="d3">1000</td>
       <td align="right" class="d2">800</td>
       <td align="right" class="d1">200</td>
-      <td align="right" bgcolor="lightgreen">-20</td>
-      <td align="right" bgcolor="lightgreen">-20</td>
-      <td align="right" bgcolor="lightgreen">-18</td>
-      <td align="right" bgcolor="lightgreen">-18</td>
-      <td align="right" bgcolor="lightgreen">-16</td>
-      <td align="right" bgcolor="lightgreen">-16</td>
-      <td align="center" bgcolor="lightgreen" colspan="5">none</td>
-      <td align="center" bgcolor="lightgreen" colspan="5">none</td>
+      <td align="right" class="c1">-20</td>
+      <td align="right" class="c1">-20</td>
+      <td align="right" class="c1">-18</td>
+      <td align="right" class="c1">-18</td>
+      <td align="right" class="c1">-16</td>
+      <td align="right" class="c1">-16</td>
+      <td align="center" class="c1" colspan="5">none</td>
+      <td align="center" class="c1" colspan="5">none</td>
     </tr>
     <tr>
-      <td align="left" bgcolor="wheat">Garden</td>
-      <td align="center" bgcolor="wheat">1&#215;1</td>
-      <td align="right" bgcolor="wheat">0</td>
+      <td align="left" class="c2">Garden</td>
+      <td align="center" class="c2">1&#215;1</td>
+      <td align="right" class="c2">0</td>
       <td align="right" class="d5">18</td>
       <td align="right" class="d4">14</td>
       <td align="right" class="d3">12</td>
       <td align="right" class="d2">10</td>
       <td align="right" class="d1">3</td>
-      <td align="right" bgcolor="wheat">3</td>
-      <td align="right" bgcolor="wheat">2</td>
-      <td align="right" bgcolor="wheat">1</td>
-      <td align="right" bgcolor="wheat">0</td>
-      <td align="right" bgcolor="wheat">0</td>
-      <td align="right" bgcolor="wheat">0</td>
-      <td align="center" bgcolor="wheat" colspan="5">none</td>
-      <td align="center" bgcolor="wheat" colspan="5">none</td>
+      <td align="right" class="c2">3</td>
+      <td align="right" class="c2">2</td>
+      <td align="right" class="c2">1</td>
+      <td align="right" class="c2">0</td>
+      <td align="right" class="c2">0</td>
+      <td align="right" class="c2">0</td>
+      <td align="center" class="c2" colspan="5">none</td>
+      <td align="center" class="c2" colspan="5">none</td>
     </tr>
     <tr>
-      <td align="left" bgcolor="lightgreen">Gatehouse</td>
-      <td align="center" bgcolor="lightgreen">5&#215;2</td>
-      <td align="right" bgcolor="lightgreen">0</td>
+      <td align="left" class="c1">Gatehouse</td>
+      <td align="center" class="c1">5&#215;2</td>
+      <td align="right" class="c1">0</td>
       <td align="right" class="d5">600</td>
       <td align="right" class="d4">480</td>
       <td align="right" class="d3">400</td>
       <td align="right" class="d2">320</td>
       <td align="right" class="d1">80</td>
-      <td align="right" bgcolor="lightgreen">-4</td>
-      <td align="right" bgcolor="lightgreen">-3</td>
-      <td align="right" bgcolor="lightgreen">-2</td>
-      <td align="right" bgcolor="lightgreen">-1</td>
-      <td align="right" bgcolor="lightgreen">0</td>
-      <td align="right" bgcolor="lightgreen">0</td>
-      <td align="center" bgcolor="lightgreen" colspan="5">none</td>
-      <td align="center" bgcolor="lightgreen" colspan="5">none</td>
+      <td align="right" class="c1">-4</td>
+      <td align="right" class="c1">-3</td>
+      <td align="right" class="c1">-2</td>
+      <td align="right" class="c1">-1</td>
+      <td align="right" class="c1">0</td>
+      <td align="right" class="c1">0</td>
+      <td align="center" class="c1" colspan="5">none</td>
+      <td align="center" class="c1" colspan="5">none</td>
     </tr>
     <tr>
-      <td align="left" bgcolor="wheat">Granary</td>
-      <td align="center" bgcolor="wheat">4&#215;4</td>
-      <td align="right" bgcolor="wheat">12</td>
+      <td align="left" class="c2">Granary</td>
+      <td align="center" class="c2">4&#215;4</td>
+      <td align="right" class="c2">12</td>
       <td align="right" class="d5">375</td>
       <td align="right" class="d4">300</td>
       <td align="right" class="d3">250</td>
       <td align="right" class="d2">200</td>
       <td align="right" class="d1">50</td>
-      <td align="right" bgcolor="wheat">-8</td>
-      <td align="right" bgcolor="wheat">-6</td>
-      <td align="right" bgcolor="wheat">-4</td>
-      <td align="right" bgcolor="wheat">-2</td>
-      <td align="right" bgcolor="wheat">0</td>
-      <td align="right" bgcolor="wheat">0</td>
+      <td align="right" class="c2">-8</td>
+      <td align="right" class="c2">-6</td>
+      <td align="right" class="c2">-4</td>
+      <td align="right" class="c2">-2</td>
+      <td align="right" class="c2">0</td>
+      <td align="right" class="c2">0</td>
       <td align="right" class="d5">30</td>
       <td align="right" class="d4">24</td>
       <td align="right" class="d3">20</td>
@@ -2350,20 +2368,20 @@ Each rating level must meet all the coverage requirements.
       <td align="right" class="d1">1</td>
     </tr>
     <tr>
-      <td align="left" bgcolor="lightgreen">Guild, Artisans*</td>
-      <td align="center" bgcolor="lightgreen">2&#215;2</td>
-      <td align="right" bgcolor="lightgreen">20</td>
+      <td align="left" class="c1">Guild, Artisans*</td>
+      <td align="center" class="c1">2&#215;2</td>
+      <td align="right" class="c1">20</td>
       <td align="right" class="d5">225</td>
       <td align="right" class="d4">180</td>
       <td align="right" class="d3">150</td>
       <td align="right" class="d2">120</td>
       <td align="right" class="d1">30</td>
-      <td align="right" bgcolor="lightgreen">-6</td>
-      <td align="right" bgcolor="lightgreen">-5</td>
-      <td align="right" bgcolor="lightgreen">-4</td>
-      <td align="right" bgcolor="lightgreen">-3</td>
-      <td align="right" bgcolor="lightgreen">0</td>
-      <td align="right" bgcolor="lightgreen">0</td>
+      <td align="right" class="c1">-6</td>
+      <td align="right" class="c1">-5</td>
+      <td align="right" class="c1">-4</td>
+      <td align="right" class="c1">-3</td>
+      <td align="right" class="c1">0</td>
+      <td align="right" class="c1">0</td>
       <td align="right" class="d5">15</td>
       <td align="right" class="d4">12</td>
       <td align="right" class="d3">10</td>
@@ -2376,20 +2394,20 @@ Each rating level must meet all the coverage requirements.
       <td align="right" class="d1">2</td>
     </tr>
     <tr>
-      <td align="left" bgcolor="wheat">Guild, Bricklayers</td>
-      <td align="center" bgcolor="wheat">2&#215;2</td>
-      <td align="right" bgcolor="wheat">10</td>
+      <td align="left" class="c2">Guild, Bricklayers</td>
+      <td align="center" class="c2">2&#215;2</td>
+      <td align="right" class="c2">10</td>
       <td align="right" class="d5">150</td>
       <td align="right" class="d4">120</td>
       <td align="right" class="d3">100</td>
       <td align="right" class="d2">80</td>
       <td align="right" class="d1">20</td>
-      <td align="right" bgcolor="wheat">-6</td>
-      <td align="right" bgcolor="wheat">-5</td>
-      <td align="right" bgcolor="wheat">-4</td>
-      <td align="right" bgcolor="wheat">-3</td>
-      <td align="right" bgcolor="wheat">0</td>
-      <td align="right" bgcolor="wheat">0</td>
+      <td align="right" class="c2">-6</td>
+      <td align="right" class="c2">-5</td>
+      <td align="right" class="c2">-4</td>
+      <td align="right" class="c2">-3</td>
+      <td align="right" class="c2">0</td>
+      <td align="right" class="c2">0</td>
       <td align="right" class="d5">15</td>
       <td align="right" class="d4">12</td>
       <td align="right" class="d3">10</td>
@@ -2402,43 +2420,43 @@ Each rating level must meet all the coverage requirements.
       <td align="right" class="d1">2</td>
     </tr>
     <tr>
-      <td align="left" bgcolor="lightgreen">Guild, Carpenters</td>
-      <td align="center" bgcolor="lightgreen">2&#215;2</td>
-      <td align="right" bgcolor="lightgreen">8</td>
+      <td align="left" class="c1">Guild, Carpenters</td>
+      <td align="center" class="c1">2&#215;2</td>
+      <td align="right" class="c1">8</td>
       <td align="right" class="d5">75</td>
       <td align="right" class="d4">60</td>
       <td align="right" class="d3">50</td>
       <td align="right" class="d2">40</td>
       <td align="right" class="d1">10</td>
-      <td align="right" bgcolor="lightgreen">-6</td>
-      <td align="right" bgcolor="lightgreen">-5</td>
-      <td align="right" bgcolor="lightgreen">-4</td>
-      <td align="right" bgcolor="lightgreen">-3</td>
-      <td align="right" bgcolor="lightgreen">0</td>
-      <td align="right" bgcolor="lightgreen">0</td>
+      <td align="right" class="c1">-6</td>
+      <td align="right" class="c1">-5</td>
+      <td align="right" class="c1">-4</td>
+      <td align="right" class="c1">-3</td>
+      <td align="right" class="c1">0</td>
+      <td align="right" class="c1">0</td>
       <td align="right" class="d5">30</td>
       <td align="right" class="d4">24</td>
       <td align="right" class="d3">20</td>
       <td align="right" class="d2">15</td>
       <td align="right" class="d1">4</td>
-      <td align="center" bgcolor="lightgreen" colspan="5">none</td>
+      <td align="center" class="c1" colspan="5">none</td>
     </tr>
     <tr>
-      <td align="left" bgcolor="wheat">Guild,Stonemasons</td>
-      <td align="center" bgcolor="wheat">2&#215;2</td>
-      <td align="right" bgcolor="wheat">12</td>
+      <td align="left" class="c2">Guild,Stonemasons</td>
+      <td align="center" class="c2">2&#215;2</td>
+      <td align="right" class="c2">12</td>
       <td align="right" class="d5">225</td>
       <td align="right" class="d4">180</td>
       <td align="right" class="d3">150</td>
       <td align="right" class="d2">120</td>
       <td align="right" class="d1">30</td>
-      <td align="right" bgcolor="wheat">-6</td>
-      <td align="right" bgcolor="wheat">-5</td>
-      <td align="right" bgcolor="wheat">-4</td>
-      <td align="right" bgcolor="wheat">-3</td>
-      <td align="right" bgcolor="wheat">0</td>
-      <td align="right" bgcolor="wheat">0</td>
-      <td align="center" bgcolor="wheat" colspan="5">none</td>
+      <td align="right" class="c2">-6</td>
+      <td align="right" class="c2">-5</td>
+      <td align="right" class="c2">-4</td>
+      <td align="right" class="c2">-3</td>
+      <td align="right" class="c2">0</td>
+      <td align="right" class="c2">0</td>
+      <td align="center" class="c2" colspan="5">none</td>
       <td align="right" class="d5">7</td>
       <td align="right" class="d4">6</td>
       <td align="right" class="d3">5</td>
@@ -2446,144 +2464,144 @@ Each rating level must meet all the coverage requirements.
       <td align="right" class="d1">1</td>
     </tr>
     <tr>
-      <td align="left" bgcolor="lightgreen">House**</td>
-      <td align="center" bgcolor="lightgreen">1&#215;1</td>
-      <td align="right" bgcolor="lightgreen">0</td>
+      <td align="left" class="c1">House**</td>
+      <td align="center" class="c1">1&#215;1</td>
+      <td align="right" class="c1">0</td>
       <td align="right" class="d5">15</td>
       <td align="right" class="d4">12</td>
       <td align="right" class="d3">10</td>
       <td align="right" class="d2">8</td>
       <td align="right" class="d1">2</td>
-      <td align="right" bgcolor="lightgreen">0</td>
-      <td align="right" bgcolor="lightgreen">0</td>
-      <td align="right" bgcolor="lightgreen">0</td>
-      <td align="right" bgcolor="lightgreen">0</td>
-      <td align="right" bgcolor="lightgreen">0</td>
-      <td align="right" bgcolor="lightgreen">0</td>
-      <td align="center" bgcolor="lightgreen" colspan="5">none</td>
-      <td align="center" bgcolor="lightgreen" colspan="5">none</td>
+      <td align="right" class="c1">0</td>
+      <td align="right" class="c1">0</td>
+      <td align="right" class="c1">0</td>
+      <td align="right" class="c1">0</td>
+      <td align="right" class="c1">0</td>
+      <td align="right" class="c1">0</td>
+      <td align="center" class="c1" colspan="5">none</td>
+      <td align="center" class="c1" colspan="5">none</td>
     </tr>
     <tr>
-      <td align="left" bgcolor="wheat">Hunting Lodge</td>
-      <td align="center" bgcolor="wheat">2&#215;2</td>
-      <td align="right" bgcolor="wheat">6</td>
+      <td align="left" class="c2">Hunting Lodge</td>
+      <td align="center" class="c2">2&#215;2</td>
+      <td align="right" class="c2">6</td>
       <td align="right" class="d5">37</td>
       <td align="right" class="d4">30</td>
       <td align="right" class="d3">25</td>
       <td align="right" class="d2">20</td>
       <td align="right" class="d1">5</td>
-      <td align="right" bgcolor="wheat">-4</td>
-      <td align="right" bgcolor="wheat">-2</td>
-      <td align="right" bgcolor="wheat">0</td>
-      <td align="right" bgcolor="wheat">2</td>
-      <td align="right" bgcolor="wheat">0</td>
-      <td align="right" bgcolor="wheat">0</td>
+      <td align="right" class="c2">-4</td>
+      <td align="right" class="c2">-2</td>
+      <td align="right" class="c2">0</td>
+      <td align="right" class="c2">2</td>
+      <td align="right" class="c2">0</td>
+      <td align="right" class="c2">0</td>
       <td align="right" class="d5">37</td>
       <td align="right" class="d4">30</td>
       <td align="right" class="d3">25</td>
       <td align="right" class="d2">20</td>
       <td align="right" class="d1">5</td>
-      <td align="center" bgcolor="wheat" colspan="5">none</td>
+      <td align="center" class="c2" colspan="5">none</td>
     </tr>
     <tr>
-      <td align="left" bgcolor="lightgreen">Irrigation Ditch</td>
-      <td align="center" bgcolor="lightgreen">1x</td>
-      <td align="right" bgcolor="lightgreen">0</td>
+      <td align="left" class="c1">Irrigation Ditch</td>
+      <td align="center" class="c1">1x</td>
+      <td align="right" class="c1">0</td>
       <td align="right" class="d5">12</td>
       <td align="right" class="d4">10</td>
       <td align="right" class="d3">8</td>
       <td align="right" class="d2">7</td>
       <td align="right" class="d1">2</td>
-      <td align="right" bgcolor="lightgreen">0</td>
-      <td align="right" bgcolor="lightgreen">0</td>
-      <td align="right" bgcolor="lightgreen">0</td>
-      <td align="right" bgcolor="lightgreen">0</td>
-      <td align="right" bgcolor="lightgreen">0</td>
-      <td align="right" bgcolor="lightgreen">0</td>
-      <td align="center" bgcolor="lightgreen" colspan="5">none</td>
-      <td align="center" bgcolor="lightgreen" colspan="5">none</td>
+      <td align="right" class="c1">0</td>
+      <td align="right" class="c1">0</td>
+      <td align="right" class="c1">0</td>
+      <td align="right" class="c1">0</td>
+      <td align="right" class="c1">0</td>
+      <td align="right" class="c1">0</td>
+      <td align="center" class="c1" colspan="5">none</td>
+      <td align="center" class="c1" colspan="5">none</td>
     </tr>
     <tr>
-      <td align="left" bgcolor="wheat">Jeweler</td>
-      <td align="center" bgcolor="wheat">2&#215;2</td>
-      <td align="right" bgcolor="wheat">12</td>
+      <td align="left" class="c2">Jeweler</td>
+      <td align="center" class="c2">2&#215;2</td>
+      <td align="right" class="c2">12</td>
       <td align="right" class="d5">135</td>
       <td align="right" class="d4">110</td>
       <td align="right" class="d3">90</td>
       <td align="right" class="d2">75</td>
       <td align="right" class="d1">18</td>
-      <td align="right" bgcolor="wheat">-2</td>
-      <td align="right" bgcolor="wheat">-1</td>
-      <td align="right" bgcolor="wheat">0</td>
-      <td align="right" bgcolor="wheat">0</td>
-      <td align="right" bgcolor="wheat">0</td>
-      <td align="right" bgcolor="wheat">0</td>
+      <td align="right" class="c2">-2</td>
+      <td align="right" class="c2">-1</td>
+      <td align="right" class="c2">0</td>
+      <td align="right" class="c2">0</td>
+      <td align="right" class="c2">0</td>
+      <td align="right" class="c2">0</td>
       <td align="right" class="d5">30</td>
       <td align="right" class="d4">24</td>
       <td align="right" class="d3">20</td>
       <td align="right" class="d2">15</td>
       <td align="right" class="d1">4</td>
-      <td align="center" bgcolor="wheat" colspan="5">none</td>
+      <td align="center" class="c2" colspan="5">none</td>
     </tr>
     <tr>
-      <td align="left" bgcolor="lightgreen">Juggler School</td>
-      <td align="center" bgcolor="lightgreen">2&#215;2</td>
-      <td align="right" bgcolor="lightgreen">5</td>
+      <td align="left" class="c1">Juggler School</td>
+      <td align="center" class="c1">2&#215;2</td>
+      <td align="right" class="c1">5</td>
       <td align="right" class="d5">75</td>
       <td align="right" class="d4">60</td>
       <td align="right" class="d3">50</td>
       <td align="right" class="d2">40</td>
       <td align="right" class="d1">10</td>
-      <td align="right" bgcolor="lightgreen">2</td>
-      <td align="right" bgcolor="lightgreen">1</td>
-      <td align="right" bgcolor="lightgreen">0</td>
-      <td align="right" bgcolor="lightgreen">0</td>
-      <td align="right" bgcolor="lightgreen">0</td>
-      <td align="right" bgcolor="lightgreen">0</td>
+      <td align="right" class="c1">2</td>
+      <td align="right" class="c1">1</td>
+      <td align="right" class="c1">0</td>
+      <td align="right" class="c1">0</td>
+      <td align="right" class="c1">0</td>
+      <td align="right" class="c1">0</td>
       <td align="right" class="d5">30</td>
       <td align="right" class="d4">24</td>
       <td align="right" class="d3">20</td>
       <td align="right" class="d2">17</td>
       <td align="right" class="d1">4</td>
-      <td align="center" bgcolor="lightgreen" colspan="5">none</td>
+      <td align="center" class="c1" colspan="5">none</td>
     </tr>
     <tr>
-      <td align="left" bgcolor="wheat">Lamp Maker*</td>
-      <td align="center" bgcolor="wheat">2&#215;2</td>
-      <td align="right" bgcolor="wheat">12</td>
+      <td align="left" class="c2">Lamp Maker*</td>
+      <td align="center" class="c2">2&#215;2</td>
+      <td align="right" class="c2">12</td>
       <td align="right" class="d5">150</td>
       <td align="right" class="d4">120</td>
       <td align="right" class="d3">100</td>
       <td align="right" class="d2">80</td>
       <td align="right" class="d1">20</td>
-      <td align="right" bgcolor="wheat">-4</td>
-      <td align="right" bgcolor="wheat">-3</td>
-      <td align="right" bgcolor="wheat">-2</td>
-      <td align="right" bgcolor="wheat">-1</td>
-      <td align="right" bgcolor="wheat">0</td>
-      <td align="right" bgcolor="wheat">0</td>
+      <td align="right" class="c2">-4</td>
+      <td align="right" class="c2">-3</td>
+      <td align="right" class="c2">-2</td>
+      <td align="right" class="c2">-1</td>
+      <td align="right" class="c2">0</td>
+      <td align="right" class="c2">0</td>
       <td align="right" class="d5">30</td>
       <td align="right" class="d4">24</td>
       <td align="right" class="d3">20</td>
       <td align="right" class="d2">15</td>
       <td align="right" class="d1">4</td>
-      <td align="center" bgcolor="wheat" colspan="5">none</td>
+      <td align="center" class="c2" colspan="5">none</td>
     </tr>
     <tr>
-      <td align="left" bgcolor="lightgreen">Library</td>
-      <td align="center" bgcolor="lightgreen">3&#215;3</td>
-      <td align="right" bgcolor="lightgreen">30</td>
+      <td align="left" class="c1">Library</td>
+      <td align="center" class="c1">3&#215;3</td>
+      <td align="right" class="c1">30</td>
       <td align="right" class="d5">675</td>
       <td align="right" class="d4">540</td>
       <td align="right" class="d3">450</td>
       <td align="right" class="d2">360</td>
       <td align="right" class="d1">90</td>
-      <td align="right" bgcolor="lightgreen">8</td>
-      <td align="right" bgcolor="lightgreen">8</td>
-      <td align="right" bgcolor="lightgreen">6</td>
-      <td align="right" bgcolor="lightgreen">6</td>
-      <td align="right" bgcolor="lightgreen">4</td>
-      <td align="right" bgcolor="lightgreen">4</td>
+      <td align="right" class="c1">8</td>
+      <td align="right" class="c1">8</td>
+      <td align="right" class="c1">6</td>
+      <td align="right" class="c1">6</td>
+      <td align="right" class="c1">4</td>
+      <td align="right" class="c1">4</td>
       <td align="right" class="d5">45</td>
       <td align="right" class="d4">36</td>
       <td align="right" class="d3">30</td>
@@ -2596,20 +2614,20 @@ Each rating level must meet all the coverage requirements.
       <td align="right" class="d1">1</td>
     </tr>
     <tr>
-      <td align="left" bgcolor="wheat">Mansion, Personal</td>
-      <td align="center" bgcolor="wheat">3&#215;3</td>
-      <td align="right" bgcolor="wheat">0</td>
+      <td align="left" class="c2">Mansion, Personal</td>
+      <td align="center" class="c2">3&#215;3</td>
+      <td align="right" class="c2">0</td>
       <td align="right" class="d5">225</td>
       <td align="right" class="d4">180</td>
       <td align="right" class="d3">150</td>
       <td align="right" class="d2">120</td>
       <td align="right" class="d1">30</td>
-      <td align="right" bgcolor="wheat">12</td>
-      <td align="right" bgcolor="wheat">12</td>
-      <td align="right" bgcolor="wheat">10</td>
-      <td align="right" bgcolor="wheat">10</td>
-      <td align="right" bgcolor="wheat">0</td>
-      <td align="right" bgcolor="wheat">0</td>
+      <td align="right" class="c2">12</td>
+      <td align="right" class="c2">12</td>
+      <td align="right" class="c2">10</td>
+      <td align="right" class="c2">10</td>
+      <td align="right" class="c2">0</td>
+      <td align="right" class="c2">0</td>
       <td align="right" class="d5">30</td>
       <td align="right" class="d4">24</td>
       <td align="right" class="d3">20</td>
@@ -2622,20 +2640,20 @@ Each rating level must meet all the coverage requirements.
       <td align="right" class="d1">1</td>
     </tr>
     <tr>
-      <td align="left" bgcolor="lightgreen">Mansion, Family</td>
-      <td align="center" bgcolor="lightgreen">4&#215;4</td>
-      <td align="right" bgcolor="lightgreen">0</td>
+      <td align="left" class="c1">Mansion, Family</td>
+      <td align="center" class="c1">4&#215;4</td>
+      <td align="right" class="c1">0</td>
       <td align="right" class="d5">600</td>
       <td align="right" class="d4">480</td>
       <td align="right" class="d3">400</td>
       <td align="right" class="d2">320</td>
       <td align="right" class="d1">80</td>
-      <td align="right" bgcolor="lightgreen">20</td>
-      <td align="right" bgcolor="lightgreen">20</td>
-      <td align="right" bgcolor="lightgreen">17</td>
-      <td align="right" bgcolor="lightgreen">17</td>
-      <td align="right" bgcolor="lightgreen">14</td>
-      <td align="right" bgcolor="lightgreen">0</td>
+      <td align="right" class="c1">20</td>
+      <td align="right" class="c1">20</td>
+      <td align="right" class="c1">17</td>
+      <td align="right" class="c1">17</td>
+      <td align="right" class="c1">14</td>
+      <td align="right" class="c1">0</td>
       <td align="right" class="d5">30</td>
       <td align="right" class="d4">24</td>
       <td align="right" class="d3">20</td>
@@ -2648,20 +2666,20 @@ Each rating level must meet all the coverage requirements.
       <td align="right" class="d1">1</td>
     </tr>
     <tr>
-      <td align="left" bgcolor="wheat">Mansion, Dynasty</td>
-      <td align="center" bgcolor="wheat">5&#215;5</td>
-      <td align="right" bgcolor="wheat">0</td>
+      <td align="left" class="c2">Mansion, Dynasty</td>
+      <td align="center" class="c2">5&#215;5</td>
+      <td align="right" class="c2">0</td>
       <td align="right" class="d5">1050</td>
       <td align="right" class="d4">840</td>
       <td align="right" class="d3">700</td>
       <td align="right" class="d2">560</td>
       <td align="right" class="d1">140</td>
-      <td align="right" bgcolor="wheat">28</td>
-      <td align="right" bgcolor="wheat">28</td>
-      <td align="right" bgcolor="wheat">24</td>
-      <td align="right" bgcolor="wheat">24</td>
-      <td align="right" bgcolor="wheat">20</td>
-      <td align="right" bgcolor="wheat">20</td>
+      <td align="right" class="c2">28</td>
+      <td align="right" class="c2">28</td>
+      <td align="right" class="c2">24</td>
+      <td align="right" class="c2">24</td>
+      <td align="right" class="c2">20</td>
+      <td align="right" class="c2">20</td>
       <td align="right" class="d5">30</td>
       <td align="right" class="d4">24</td>
       <td align="right" class="d3">20</td>
@@ -2674,21 +2692,21 @@ Each rating level must meet all the coverage requirements.
       <td align="right" class="d1">1</td>
     </tr>
     <tr>
-      <td align="left" bgcolor="lightgreen">Mine, Copper</td>
-      <td align="center" bgcolor="lightgreen">2&#215;2</td>
-      <td align="right" bgcolor="lightgreen">10</td>
+      <td align="left" class="c1">Mine, Copper</td>
+      <td align="center" class="c1">2&#215;2</td>
+      <td align="right" class="c1">10</td>
       <td align="right" class="d5">225</td>
       <td align="right" class="d4">180</td>
       <td align="right" class="d3">150</td>
       <td align="right" class="d2">120</td>
       <td align="right" class="d1">30</td>
-      <td align="right" bgcolor="lightgreen">-12</td>
-      <td align="right" bgcolor="lightgreen">-12</td>
-      <td align="right" bgcolor="lightgreen">-10</td>
-      <td align="right" bgcolor="lightgreen">-10</td>
-      <td align="right" bgcolor="lightgreen">-8</td>
-      <td align="right" bgcolor="lightgreen">-8</td>
-      <td align="center" bgcolor="lightgreen" colspan="5">none</td>
+      <td align="right" class="c1">-12</td>
+      <td align="right" class="c1">-12</td>
+      <td align="right" class="c1">-10</td>
+      <td align="right" class="c1">-10</td>
+      <td align="right" class="c1">-8</td>
+      <td align="right" class="c1">-8</td>
+      <td align="center" class="c1" colspan="5">none</td>
       <td align="right" class="d5">15</td>
       <td align="right" class="d4">12</td>
       <td align="right" class="d3">10</td>
@@ -2696,21 +2714,21 @@ Each rating level must meet all the coverage requirements.
       <td align="right" class="d1">2</td>
     </tr>
     <tr>
-      <td align="left" bgcolor="wheat">Mine, Gemstone</td>
-      <td align="center" bgcolor="wheat">2&#215;2</td>
-      <td align="right" bgcolor="wheat">8</td>
+      <td align="left" class="c2">Mine, Gemstone</td>
+      <td align="center" class="c2">2&#215;2</td>
+      <td align="right" class="c2">8</td>
       <td align="right" class="d5">600</td>
       <td align="right" class="d4">480</td>
       <td align="right" class="d3">400</td>
       <td align="right" class="d2">320</td>
       <td align="right" class="d1">80</td>
-      <td align="right" bgcolor="wheat">-12</td>
-      <td align="right" bgcolor="wheat">-12</td>
-      <td align="right" bgcolor="wheat">-10</td>
-      <td align="right" bgcolor="wheat">-10</td>
-      <td align="right" bgcolor="wheat">-8</td>
-      <td align="right" bgcolor="wheat">-8</td>
-      <td align="center" bgcolor="wheat" colspan="5">none</td>
+      <td align="right" class="c2">-12</td>
+      <td align="right" class="c2">-12</td>
+      <td align="right" class="c2">-10</td>
+      <td align="right" class="c2">-10</td>
+      <td align="right" class="c2">-8</td>
+      <td align="right" class="c2">-8</td>
+      <td align="center" class="c2" colspan="5">none</td>
       <td align="right" class="d5">15</td>
       <td align="right" class="d4">12</td>
       <td align="right" class="d3">10</td>
@@ -2718,21 +2736,21 @@ Each rating level must meet all the coverage requirements.
       <td align="right" class="d1">2</td>
     </tr>
     <tr>
-      <td align="left" bgcolor="lightgreen">Mine, Gold</td>
-      <td align="center" bgcolor="lightgreen">2&#215;2</td>
-      <td align="right" bgcolor="lightgreen">12</td>
+      <td align="left" class="c1">Mine, Gold</td>
+      <td align="center" class="c1">2&#215;2</td>
+      <td align="right" class="c1">12</td>
       <td align="right" class="d5">375</td>
       <td align="right" class="d4">300</td>
       <td align="right" class="d3">250</td>
       <td align="right" class="d2">200</td>
       <td align="right" class="d1">50</td>
-      <td align="right" bgcolor="lightgreen">-16</td>
-      <td align="right" bgcolor="lightgreen">-16</td>
-      <td align="right" bgcolor="lightgreen">-13</td>
-      <td align="right" bgcolor="lightgreen">-13</td>
-      <td align="right" bgcolor="lightgreen">-10</td>
-      <td align="right" bgcolor="lightgreen">-10</td>
-      <td align="center" bgcolor="lightgreen" colspan="5">none</td>
+      <td align="right" class="c1">-16</td>
+      <td align="right" class="c1">-16</td>
+      <td align="right" class="c1">-13</td>
+      <td align="right" class="c1">-13</td>
+      <td align="right" class="c1">-10</td>
+      <td align="right" class="c1">-10</td>
+      <td align="center" class="c1" colspan="5">none</td>
       <td align="right" class="d5">15</td>
       <td align="right" class="d4">12</td>
       <td align="right" class="d3">10</td>
@@ -2740,42 +2758,42 @@ Each rating level must meet all the coverage requirements.
       <td align="right" class="d1">2</td>
     </tr>
     <tr>
-      <td align="left" bgcolor="wheat">Mortuary</td>
-      <td align="center" bgcolor="wheat">2&#215;2</td>
-      <td align="right" bgcolor="wheat">8</td>
+      <td align="left" class="c2">Mortuary</td>
+      <td align="center" class="c2">2&#215;2</td>
+      <td align="right" class="c2">8</td>
       <td align="right" class="d5">150</td>
       <td align="right" class="d4">120</td>
       <td align="right" class="d3">100</td>
       <td align="right" class="d2">80</td>
       <td align="right" class="d1">20</td>
-      <td align="right" bgcolor="wheat">-3</td>
-      <td align="right" bgcolor="wheat">-3</td>
-      <td align="right" bgcolor="wheat">0</td>
-      <td align="right" bgcolor="wheat">0</td>
-      <td align="right" bgcolor="wheat">0</td>
-      <td align="right" bgcolor="wheat">0</td>
+      <td align="right" class="c2">-3</td>
+      <td align="right" class="c2">-3</td>
+      <td align="right" class="c2">0</td>
+      <td align="right" class="c2">0</td>
+      <td align="right" class="c2">0</td>
+      <td align="right" class="c2">0</td>
       <td align="right" class="d5">30</td>
       <td align="right" class="d4">24</td>
       <td align="right" class="d3">20</td>
       <td align="right" class="d2">17</td>
       <td align="right" class="d1">4</td>
-      <td align="center" bgcolor="wheat" colspan="5">none</td>
+      <td align="center" class="c2" colspan="5">none</td>
     </tr>
     <tr>
-      <td align="left" bgcolor="lightgreen">Paint Maker*</td>
-      <td align="center" bgcolor="lightgreen">2&#215;2</td>
-      <td align="right" bgcolor="lightgreen">12</td>
+      <td align="left" class="c1">Paint Maker*</td>
+      <td align="center" class="c1">2&#215;2</td>
+      <td align="right" class="c1">12</td>
       <td align="right" class="d5">150</td>
       <td align="right" class="d4">120</td>
       <td align="right" class="d3">100</td>
       <td align="right" class="d2">80</td>
       <td align="right" class="d1">20</td>
-      <td align="right" bgcolor="lightgreen">-4</td>
-      <td align="right" bgcolor="lightgreen">-3</td>
-      <td align="right" bgcolor="lightgreen">-2</td>
-      <td align="right" bgcolor="lightgreen">-1</td>
-      <td align="right" bgcolor="lightgreen">0</td>
-      <td align="right" bgcolor="lightgreen">0</td>
+      <td align="right" class="c1">-4</td>
+      <td align="right" class="c1">-3</td>
+      <td align="right" class="c1">-2</td>
+      <td align="right" class="c1">-1</td>
+      <td align="right" class="c1">0</td>
+      <td align="right" class="c1">0</td>
       <td align="right" class="d5">20</td>
       <td align="right" class="d4">18</td>
       <td align="right" class="d3">15</td>
@@ -2788,20 +2806,20 @@ Each rating level must meet all the coverage requirements.
       <td align="right" class="d1">1</td>
     </tr>
     <tr>
-      <td align="left" bgcolor="wheat">Palace, Village</td>
-      <td align="center" bgcolor="wheat">4&#215;4</td>
-      <td align="right" bgcolor="wheat">20</td>
+      <td align="left" class="c2">Palace, Village</td>
+      <td align="center" class="c2">4&#215;4</td>
+      <td align="right" class="c2">20</td>
       <td align="right" class="d5">1350</td>
       <td align="right" class="d4">1080</td>
       <td align="right" class="d3">900</td>
       <td align="right" class="d2">720</td>
       <td align="right" class="d1">180</td>
-      <td align="right" bgcolor="wheat">20</td>
-      <td align="right" bgcolor="wheat">20</td>
-      <td align="right" bgcolor="wheat">16</td>
-      <td align="right" bgcolor="wheat">16</td>
-      <td align="right" bgcolor="wheat">0</td>
-      <td align="right" bgcolor="wheat">0</td>
+      <td align="right" class="c2">20</td>
+      <td align="right" class="c2">20</td>
+      <td align="right" class="c2">16</td>
+      <td align="right" class="c2">16</td>
+      <td align="right" class="c2">0</td>
+      <td align="right" class="c2">0</td>
       <td align="right" class="d5">30</td>
       <td align="right" class="d4">24</td>
       <td align="right" class="d3">20</td>
@@ -2814,20 +2832,20 @@ Each rating level must meet all the coverage requirements.
       <td align="right" class="d1">1</td>
     </tr>
     <tr>
-      <td align="left" bgcolor="lightgreen">Palace, Town</td>
-      <td align="center" bgcolor="lightgreen">5&#215;5</td>
-      <td align="right" bgcolor="lightgreen">25</td>
+      <td align="left" class="c1">Palace, Town</td>
+      <td align="center" class="c1">5&#215;5</td>
+      <td align="right" class="c1">25</td>
       <td align="right" class="d5">1500</td>
       <td align="right" class="d4">1200</td>
       <td align="right" class="d3">1000</td>
       <td align="right" class="d2">800</td>
       <td align="right" class="d1">200</td>
-      <td align="right" bgcolor="lightgreen">22</td>
-      <td align="right" bgcolor="lightgreen">22</td>
-      <td align="right" bgcolor="lightgreen">17</td>
-      <td align="right" bgcolor="lightgreen">17</td>
-      <td align="right" bgcolor="lightgreen">12</td>
-      <td align="right" bgcolor="lightgreen">0</td>
+      <td align="right" class="c1">22</td>
+      <td align="right" class="c1">22</td>
+      <td align="right" class="c1">17</td>
+      <td align="right" class="c1">17</td>
+      <td align="right" class="c1">12</td>
+      <td align="right" class="c1">0</td>
       <td align="right" class="d5">30</td>
       <td align="right" class="d4">24</td>
       <td align="right" class="d3">20</td>
@@ -2840,20 +2858,20 @@ Each rating level must meet all the coverage requirements.
       <td align="right" class="d1">1</td>
     </tr>
     <tr>
-      <td align="left" bgcolor="wheat">Palace, City</td>
-      <td align="center" bgcolor="wheat">6&#215;6</td>
-      <td align="right" bgcolor="wheat">30</td>
+      <td align="left" class="c2">Palace, City</td>
+      <td align="center" class="c2">6&#215;6</td>
+      <td align="right" class="c2">30</td>
       <td align="right" class="d5">1800</td>
       <td align="right" class="d4">1440</td>
       <td align="right" class="d3">1200</td>
       <td align="right" class="d2">950</td>
       <td align="right" class="d1">240</td>
-      <td align="right" bgcolor="wheat">24</td>
-      <td align="right" bgcolor="wheat">24</td>
-      <td align="right" bgcolor="wheat">18</td>
-      <td align="right" bgcolor="wheat">18</td>
-      <td align="right" bgcolor="wheat">12</td>
-      <td align="right" bgcolor="wheat">12</td>
+      <td align="right" class="c2">24</td>
+      <td align="right" class="c2">24</td>
+      <td align="right" class="c2">18</td>
+      <td align="right" class="c2">18</td>
+      <td align="right" class="c2">12</td>
+      <td align="right" class="c2">12</td>
       <td align="right" class="d5">30</td>
       <td align="right" class="d4">24</td>
       <td align="right" class="d3">20</td>
@@ -2866,144 +2884,144 @@ Each rating level must meet all the coverage requirements.
       <td align="right" class="d1">1</td>
     </tr>
     <tr>
-      <td align="left" bgcolor="lightgreen">Papyrus Maker</td>
-      <td align="center" bgcolor="lightgreen">2&#215;2</td>
-      <td align="right" bgcolor="lightgreen">12</td>
+      <td align="left" class="c1">Papyrus Maker</td>
+      <td align="center" class="c1">2&#215;2</td>
+      <td align="right" class="c1">12</td>
       <td align="right" class="d5">150</td>
       <td align="right" class="d4">120</td>
       <td align="right" class="d3">100</td>
       <td align="right" class="d2">80</td>
       <td align="right" class="d1">20</td>
-      <td align="right" bgcolor="lightgreen">-4</td>
-      <td align="right" bgcolor="lightgreen">-3</td>
-      <td align="right" bgcolor="lightgreen">-2</td>
-      <td align="right" bgcolor="lightgreen">-1</td>
-      <td align="right" bgcolor="lightgreen">0</td>
-      <td align="right" bgcolor="lightgreen">0</td>
+      <td align="right" class="c1">-4</td>
+      <td align="right" class="c1">-3</td>
+      <td align="right" class="c1">-2</td>
+      <td align="right" class="c1">-1</td>
+      <td align="right" class="c1">0</td>
+      <td align="right" class="c1">0</td>
       <td align="right" class="d5">30</td>
       <td align="right" class="d4">24</td>
       <td align="right" class="d3">20</td>
       <td align="right" class="d2">15</td>
       <td align="right" class="d1">4</td>
-      <td align="center" bgcolor="lightgreen" colspan="5">none</td>
+      <td align="center" class="c1" colspan="5">none</td>
     </tr>
     <tr>
-      <td align="left" bgcolor="wheat">Pavilion</td>
-      <td align="center" bgcolor="wheat">4&#215;4</td>
-      <td align="right" bgcolor="wheat">20</td>
+      <td align="left" class="c2">Pavilion</td>
+      <td align="center" class="c2">4&#215;4</td>
+      <td align="right" class="c2">20</td>
       <td align="right" class="d5">750</td>
       <td align="right" class="d4">600</td>
       <td align="right" class="d3">500</td>
       <td align="right" class="d2">400</td>
       <td align="right" class="d1">100</td>
-      <td align="center" bgcolor="wheat" colspan="6">See Diagram on Page 4</td>
+      <td align="center" class="c2" colspan="6">See Diagram on Page 4</td>
       <td align="right" class="d5">30</td>
       <td align="right" class="d4">24</td>
       <td align="right" class="d3">20</td>
       <td align="right" class="d2">17</td>
       <td align="right" class="d1">4</td>
-      <td align="center" bgcolor="wheat" colspan="5">none</td>
+      <td align="center" class="c2" colspan="5">none</td>
     </tr>
     <tr>
-      <td align="left" bgcolor="lightgreen">Physician</td>
-      <td align="center" bgcolor="lightgreen">2&#215;2</td>
-      <td align="right" bgcolor="lightgreen">8</td>
+      <td align="left" class="c1">Physician</td>
+      <td align="center" class="c1">2&#215;2</td>
+      <td align="right" class="c1">8</td>
       <td align="right" class="d5">75</td>
       <td align="right" class="d4">60</td>
       <td align="right" class="d3">50</td>
       <td align="right" class="d2">40</td>
       <td align="right" class="d1">10</td>
-      <td align="right" bgcolor="lightgreen">2</td>
-      <td align="right" bgcolor="lightgreen">1</td>
-      <td align="right" bgcolor="lightgreen">0</td>
-      <td align="right" bgcolor="lightgreen">0</td>
-      <td align="right" bgcolor="lightgreen">0</td>
-      <td align="right" bgcolor="lightgreen">0</td>
+      <td align="right" class="c1">2</td>
+      <td align="right" class="c1">1</td>
+      <td align="right" class="c1">0</td>
+      <td align="right" class="c1">0</td>
+      <td align="right" class="c1">0</td>
+      <td align="right" class="c1">0</td>
       <td align="right" class="d5">22</td>
       <td align="right" class="d4">18</td>
       <td align="right" class="d3">15</td>
       <td align="right" class="d2">10</td>
       <td align="right" class="d1">3</td>
-      <td align="center" bgcolor="lightgreen" colspan="5">none</td>
+      <td align="center" class="c1" colspan="5">none</td>
     </tr>
     <tr>
-      <td align="left" bgcolor="wheat">Plaza</td>
-      <td align="center" bgcolor="wheat">1x</td>
-      <td align="right" bgcolor="wheat">0</td>
+      <td align="left" class="c2">Plaza</td>
+      <td align="center" class="c2">1x</td>
+      <td align="right" class="c2">0</td>
       <td align="right" class="d5">22</td>
       <td align="right" class="d4">18</td>
       <td align="right" class="d3">15</td>
       <td align="right" class="d2">12</td>
       <td align="right" class="d1">3</td>
-      <td align="right" bgcolor="wheat">4</td>
-      <td align="right" bgcolor="wheat">2</td>
-      <td align="right" bgcolor="wheat">0</td>
-      <td align="right" bgcolor="wheat">0</td>
-      <td align="right" bgcolor="wheat">0</td>
-      <td align="right" bgcolor="wheat">0</td>
-      <td align="center" bgcolor="wheat" colspan="5">none</td>
-      <td align="center" bgcolor="wheat" colspan="5">none</td>
+      <td align="right" class="c2">4</td>
+      <td align="right" class="c2">2</td>
+      <td align="right" class="c2">0</td>
+      <td align="right" class="c2">0</td>
+      <td align="right" class="c2">0</td>
+      <td align="right" class="c2">0</td>
+      <td align="center" class="c2" colspan="5">none</td>
+      <td align="center" class="c2" colspan="5">none</td>
     </tr>
     <tr>
-      <td align="left" bgcolor="lightgreen">Police Station</td>
-      <td align="center" bgcolor="lightgreen">1&#215;1</td>
-      <td align="right" bgcolor="lightgreen">6</td>
+      <td align="left" class="c1">Police Station</td>
+      <td align="center" class="c1">1&#215;1</td>
+      <td align="right" class="c1">6</td>
       <td align="right" class="d5">45</td>
       <td align="right" class="d4">36</td>
       <td align="right" class="d3">30</td>
       <td align="right" class="d2">24</td>
       <td align="right" class="d1">6</td>
-      <td align="right" bgcolor="lightgreen">-2</td>
-      <td align="right" bgcolor="lightgreen">-1</td>
-      <td align="right" bgcolor="lightgreen">0</td>
-      <td align="right" bgcolor="lightgreen">0</td>
-      <td align="right" bgcolor="lightgreen">0</td>
-      <td align="right" bgcolor="lightgreen">0</td>
+      <td align="right" class="c1">-2</td>
+      <td align="right" class="c1">-1</td>
+      <td align="right" class="c1">0</td>
+      <td align="right" class="c1">0</td>
+      <td align="right" class="c1">0</td>
+      <td align="right" class="c1">0</td>
       <td align="right" class="d5">15</td>
       <td align="right" class="d4">12</td>
       <td align="right" class="d3">10</td>
       <td align="right" class="d2">8</td>
       <td align="right" class="d1">2</td>
-      <td align="center" bgcolor="lightgreen" colspan="5">none</td>
+      <td align="center" class="c1" colspan="5">none</td>
     </tr>
     <tr>
-      <td align="left" bgcolor="wheat">Potter</td>
-      <td align="center" bgcolor="wheat">2&#215;2</td>
-      <td align="right" bgcolor="wheat">12</td>
+      <td align="left" class="c2">Potter</td>
+      <td align="center" class="c2">2&#215;2</td>
+      <td align="right" class="c2">12</td>
       <td align="right" class="d5">90</td>
       <td align="right" class="d4">72</td>
       <td align="right" class="d3">60</td>
       <td align="right" class="d2">48</td>
       <td align="right" class="d1">12</td>
-      <td align="right" bgcolor="wheat">-4</td>
-      <td align="right" bgcolor="wheat">-3</td>
-      <td align="right" bgcolor="wheat">-2</td>
-      <td align="right" bgcolor="wheat">-1</td>
-      <td align="right" bgcolor="wheat">0</td>
-      <td align="right" bgcolor="wheat">0</td>
+      <td align="right" class="c2">-4</td>
+      <td align="right" class="c2">-3</td>
+      <td align="right" class="c2">-2</td>
+      <td align="right" class="c2">-1</td>
+      <td align="right" class="c2">0</td>
+      <td align="right" class="c2">0</td>
       <td align="right" class="d5">30</td>
       <td align="right" class="d4">24</td>
       <td align="right" class="d3">20</td>
       <td align="right" class="d2">15</td>
       <td align="right" class="d1">4</td>
-      <td align="center" bgcolor="wheat" colspan="5">none</td>
+      <td align="center" class="c2" colspan="5">none</td>
     </tr>
     <tr>
-      <td align="left" bgcolor="lightgreen">Quarry, Granite</td>
-      <td align="center" bgcolor="lightgreen">2&#215;2</td>
-      <td align="right" bgcolor="lightgreen">12</td>
+      <td align="left" class="c1">Quarry, Granite</td>
+      <td align="center" class="c1">2&#215;2</td>
+      <td align="right" class="c1">12</td>
       <td align="right" class="d5">150</td>
       <td align="right" class="d4">120</td>
       <td align="right" class="d3">100</td>
       <td align="right" class="d2">80</td>
       <td align="right" class="d1">20</td>
-      <td align="right" bgcolor="lightgreen">-6</td>
-      <td align="right" bgcolor="lightgreen">-5</td>
-      <td align="right" bgcolor="lightgreen">-4</td>
-      <td align="right" bgcolor="lightgreen">-3</td>
-      <td align="right" bgcolor="lightgreen">-2</td>
-      <td align="right" bgcolor="lightgreen">-1</td>
-      <td align="center" bgcolor="lightgreen" colspan="5">none</td>
+      <td align="right" class="c1">-6</td>
+      <td align="right" class="c1">-5</td>
+      <td align="right" class="c1">-4</td>
+      <td align="right" class="c1">-3</td>
+      <td align="right" class="c1">-2</td>
+      <td align="right" class="c1">-1</td>
+      <td align="center" class="c1" colspan="5">none</td>
       <td align="right" class="d5">7</td>
       <td align="right" class="d4">6</td>
       <td align="right" class="d3">5</td>
@@ -3011,21 +3029,21 @@ Each rating level must meet all the coverage requirements.
       <td align="right" class="d1">1</td>
     </tr>
     <tr>
-      <td align="left" bgcolor="wheat">Quarry, Limestone</td>
-      <td align="center" bgcolor="wheat">2&#215;2</td>
-      <td align="right" bgcolor="wheat">12</td>
+      <td align="left" class="c2">Quarry, Limestone</td>
+      <td align="center" class="c2">2&#215;2</td>
+      <td align="right" class="c2">12</td>
       <td align="right" class="d5">112</td>
       <td align="right" class="d4">90</td>
       <td align="right" class="d3">75</td>
       <td align="right" class="d2">60</td>
       <td align="right" class="d1">15</td>
-      <td align="right" bgcolor="wheat">-6</td>
-      <td align="right" bgcolor="wheat">-5</td>
-      <td align="right" bgcolor="wheat">-4</td>
-      <td align="right" bgcolor="wheat">-3</td>
-      <td align="right" bgcolor="wheat">-2</td>
-      <td align="right" bgcolor="wheat">-1</td>
-      <td align="center" bgcolor="wheat" colspan="5">none</td>
+      <td align="right" class="c2">-6</td>
+      <td align="right" class="c2">-5</td>
+      <td align="right" class="c2">-4</td>
+      <td align="right" class="c2">-3</td>
+      <td align="right" class="c2">-2</td>
+      <td align="right" class="c2">-1</td>
+      <td align="center" class="c2" colspan="5">none</td>
       <td align="right" class="d5">7</td>
       <td align="right" class="d4">6</td>
       <td align="right" class="d3">5</td>
@@ -3033,21 +3051,21 @@ Each rating level must meet all the coverage requirements.
       <td align="right" class="d1">1</td>
     </tr>
     <tr>
-      <td align="left" bgcolor="lightgreen">Quarry, Plain Stone</td>
-      <td align="center" bgcolor="lightgreen">2&#215;2</td>
-      <td align="right" bgcolor="lightgreen">12</td>
+      <td align="left" class="c1">Quarry, Plain Stone</td>
+      <td align="center" class="c1">2&#215;2</td>
+      <td align="right" class="c1">12</td>
       <td align="right" class="d5">112</td>
       <td align="right" class="d4">90</td>
       <td align="right" class="d3">75</td>
       <td align="right" class="d2">60</td>
       <td align="right" class="d1">15</td>
-      <td align="right" bgcolor="lightgreen">-6</td>
-      <td align="right" bgcolor="lightgreen">-5</td>
-      <td align="right" bgcolor="lightgreen">-4</td>
-      <td align="right" bgcolor="lightgreen">-3</td>
-      <td align="right" bgcolor="lightgreen">-2</td>
-      <td align="right" bgcolor="lightgreen">-1</td>
-      <td align="center" bgcolor="lightgreen" colspan="5">none</td>
+      <td align="right" class="c1">-6</td>
+      <td align="right" class="c1">-5</td>
+      <td align="right" class="c1">-4</td>
+      <td align="right" class="c1">-3</td>
+      <td align="right" class="c1">-2</td>
+      <td align="right" class="c1">-1</td>
+      <td align="center" class="c1" colspan="5">none</td>
       <td align="right" class="d5">7</td>
       <td align="right" class="d4">6</td>
       <td align="right" class="d3">5</td>
@@ -3055,21 +3073,21 @@ Each rating level must meet all the coverage requirements.
       <td align="right" class="d1">1</td>
     </tr>
     <tr>
-      <td align="left" bgcolor="wheat">Quarry, Sandstone</td>
-      <td align="center" bgcolor="wheat">2&#215;2</td>
-      <td align="right" bgcolor="wheat">12</td>
+      <td align="left" class="c2">Quarry, Sandstone</td>
+      <td align="center" class="c2">2&#215;2</td>
+      <td align="right" class="c2">12</td>
       <td align="right" class="d5">75</td>
       <td align="right" class="d4">60</td>
       <td align="right" class="d3">50</td>
       <td align="right" class="d2">40</td>
       <td align="right" class="d1">10</td>
-      <td align="right" bgcolor="wheat">-6</td>
-      <td align="right" bgcolor="wheat">-5</td>
-      <td align="right" bgcolor="wheat">-4</td>
-      <td align="right" bgcolor="wheat">-3</td>
-      <td align="right" bgcolor="wheat">-2</td>
-      <td align="right" bgcolor="wheat">-1</td>
-      <td align="center" bgcolor="wheat" colspan="5">none</td>
+      <td align="right" class="c2">-6</td>
+      <td align="right" class="c2">-5</td>
+      <td align="right" class="c2">-4</td>
+      <td align="right" class="c2">-3</td>
+      <td align="right" class="c2">-2</td>
+      <td align="right" class="c2">-1</td>
+      <td align="center" class="c2" colspan="5">none</td>
       <td align="right" class="d5">7</td>
       <td align="right" class="d4">6</td>
       <td align="right" class="d3">5</td>
@@ -3077,20 +3095,20 @@ Each rating level must meet all the coverage requirements.
       <td align="right" class="d1">1</td>
     </tr>
     <tr>
-      <td align="left" bgcolor="lightgreen">Recruiter</td>
-      <td align="center" bgcolor="lightgreen">3&#215;3</td>
-      <td align="right" bgcolor="lightgreen">10</td>
+      <td align="left" class="c1">Recruiter</td>
+      <td align="center" class="c1">3&#215;3</td>
+      <td align="right" class="c1">10</td>
       <td align="right" class="d5">225</td>
       <td align="right" class="d4">180</td>
       <td align="right" class="d3">150</td>
       <td align="right" class="d2">120</td>
       <td align="right" class="d1">30</td>
-      <td align="right" bgcolor="lightgreen">-6</td>
-      <td align="right" bgcolor="lightgreen">-5</td>
-      <td align="right" bgcolor="lightgreen">-4</td>
-      <td align="right" bgcolor="lightgreen">0</td>
-      <td align="right" bgcolor="lightgreen">0</td>
-      <td align="right" bgcolor="lightgreen">0</td>
+      <td align="right" class="c1">-6</td>
+      <td align="right" class="c1">-5</td>
+      <td align="right" class="c1">-4</td>
+      <td align="right" class="c1">0</td>
+      <td align="right" class="c1">0</td>
+      <td align="right" class="c1">0</td>
       <td align="right" class="d5">30</td>
       <td align="right" class="d4">24</td>
       <td align="right" class="d3">20</td>
@@ -3103,100 +3121,100 @@ Each rating level must meet all the coverage requirements.
       <td align="right" class="d1">1</td>
     </tr>
     <tr>
-      <td align="left" bgcolor="wheat">Reed Gatherer</td>
-      <td align="center" bgcolor="wheat">2&#215;2</td>
-      <td align="right" bgcolor="wheat">8</td>
+      <td align="left" class="c2">Reed Gatherer</td>
+      <td align="center" class="c2">2&#215;2</td>
+      <td align="right" class="c2">8</td>
       <td align="right" class="d5">75</td>
       <td align="right" class="d4">60</td>
       <td align="right" class="d3">50</td>
       <td align="right" class="d2">40</td>
       <td align="right" class="d1">10</td>
-      <td align="right" bgcolor="wheat">-2</td>
-      <td align="right" bgcolor="wheat">-1</td>
-      <td align="right" bgcolor="wheat">0</td>
-      <td align="right" bgcolor="wheat">0</td>
-      <td align="right" bgcolor="wheat">0</td>
-      <td align="right" bgcolor="wheat">0</td>
+      <td align="right" class="c2">-2</td>
+      <td align="right" class="c2">-1</td>
+      <td align="right" class="c2">0</td>
+      <td align="right" class="c2">0</td>
+      <td align="right" class="c2">0</td>
+      <td align="right" class="c2">0</td>
       <td align="right" class="d5">15</td>
       <td align="right" class="d4">12</td>
       <td align="right" class="d3">10</td>
       <td align="right" class="d2">8</td>
       <td align="right" class="d1">2</td>
-      <td align="center" bgcolor="wheat" colspan="5">none</td>
+      <td align="center" class="c2" colspan="5">none</td>
     </tr>
     <tr>
-      <td align="left" bgcolor="lightgreen">Road</td>
-      <td align="center" bgcolor="lightgreen">1x</td>
-      <td align="right" bgcolor="lightgreen">0</td>
+      <td align="left" class="c1">Road</td>
+      <td align="center" class="c1">1x</td>
+      <td align="right" class="c1">0</td>
       <td align="right" class="d5">6</td>
       <td align="right" class="d4">5</td>
       <td align="right" class="d3">4</td>
       <td align="right" class="d2">3</td>
       <td align="right" class="d1">1</td>
-      <td align="right" bgcolor="lightgreen">0</td>
-      <td align="right" bgcolor="lightgreen">0</td>
-      <td align="right" bgcolor="lightgreen">0</td>
-      <td align="right" bgcolor="lightgreen">0</td>
-      <td align="right" bgcolor="lightgreen">0</td>
-      <td align="right" bgcolor="lightgreen">0</td>
-      <td align="center" bgcolor="lightgreen" colspan="5">none</td>
-      <td align="center" bgcolor="lightgreen" colspan="5">none</td>
+      <td align="right" class="c1">0</td>
+      <td align="right" class="c1">0</td>
+      <td align="right" class="c1">0</td>
+      <td align="right" class="c1">0</td>
+      <td align="right" class="c1">0</td>
+      <td align="right" class="c1">0</td>
+      <td align="center" class="c1" colspan="5">none</td>
+      <td align="center" class="c1" colspan="5">none</td>
     </tr>
     <tr>
-      <td align="left" bgcolor="wheat">Roadblock</td>
-      <td align="center" bgcolor="wheat">1&#215;1</td>
-      <td align="right" bgcolor="wheat">0</td>
+      <td align="left" class="c2">Roadblock</td>
+      <td align="center" class="c2">1&#215;1</td>
+      <td align="right" class="c2">0</td>
       <td align="right" class="d5">6</td>
       <td align="right" class="d4">5</td>
       <td align="right" class="d3">4</td>
       <td align="right" class="d2">4</td>
       <td align="right" class="d1">1</td>
-      <td align="right" bgcolor="wheat">0</td>
-      <td align="right" bgcolor="wheat">0</td>
-      <td align="right" bgcolor="wheat">0</td>
-      <td align="right" bgcolor="wheat">0</td>
-      <td align="right" bgcolor="wheat">0</td>
-      <td align="right" bgcolor="wheat">0</td>
-      <td align="center" bgcolor="wheat" colspan="5">none</td>
-      <td align="center" bgcolor="wheat" colspan="5">none</td>
+      <td align="right" class="c2">0</td>
+      <td align="right" class="c2">0</td>
+      <td align="right" class="c2">0</td>
+      <td align="right" class="c2">0</td>
+      <td align="right" class="c2">0</td>
+      <td align="right" class="c2">0</td>
+      <td align="center" class="c2" colspan="5">none</td>
+      <td align="center" class="c2" colspan="5">none</td>
     </tr>
     <tr>
-      <td align="left" bgcolor="lightgreen">Scribe School</td>
-      <td align="center" bgcolor="lightgreen">2&#215;2</td>
-      <td align="right" bgcolor="lightgreen">10</td>
+      <td align="left" class="c1">Scribe School</td>
+      <td align="center" class="c1">2&#215;2</td>
+      <td align="right" class="c1">10</td>
       <td align="right" class="d5">225</td>
       <td align="right" class="d4">180</td>
       <td align="right" class="d3">150</td>
       <td align="right" class="d2">120</td>
       <td align="right" class="d1">30</td>
-      <td align="right" bgcolor="lightgreen">4</td>
-      <td align="right" bgcolor="lightgreen">3</td>
-      <td align="right" bgcolor="lightgreen">2</td>
-      <td align="right" bgcolor="lightgreen">1</td>
-      <td align="right" bgcolor="lightgreen">0</td>
-      <td align="right" bgcolor="lightgreen">0</td>
+      <td align="right" class="c1">4</td>
+      <td align="right" class="c1">3</td>
+      <td align="right" class="c1">2</td>
+      <td align="right" class="c1">1</td>
+      <td align="right" class="c1">0</td>
+      <td align="right" class="c1">0</td>
       <td align="right" class="d5">45</td>
       <td align="right" class="d4">36</td>
       <td align="right" class="d3">30</td>
       <td align="right" class="d2">25</td>
       <td align="right" class="d1">6</td>
-      <td align="center" bgcolor="lightgreen" colspan="5">none</td>
+      <td align="center" class="c1" colspan="5">none</td>
     </tr>
     <tr>
-      <td align="left" bgcolor="wheat">Senet House</td>
-      <td align="center" bgcolor="wheat">4&#215;4</td>
-      <td align="right" bgcolor="wheat">25</td>
+      <td align="left" class="c2">Senet House</td>
+      <td align="center" class="c2">4&#215;4</td>
+      <td align="right" class="c2">25</td>
       <td align="right" class="d5">2250</td>
       <td align="right" class="d4">1800</td>
       <td align="right" class="d3">1500</td>
       <td align="right" class="d2">1200</td>
       <td align="right" class="d1">300</td>
-      <td align="right" bgcolor="wheat">-6</td>
-      <td align="right" bgcolor="wheat">-4</td>
-      <td align="right" bgcolor="wheat">-2</td>
-      <td align="right" bgcolor="wheat">0</td>
-      <td align="right" bgcolor="wheat">0</td>
-      <td align="right" bgcolor="wheat">0</td>
+      <td align="right" class="c2">-6</td>
+      <td align="right" class="c2">-4</td>
+      <td align="right" class="c2">-2</td>
+      <td align="right" class="c2">0</td>
+      <td align="right" class="c2">0</td>
+      <td align="right" class="c2">0</td>
       <td align="right" class="d5">7</td>
       <td align="right" class="d4">6</td>
       <td align="right" class="d3">5</td>
@@ -3209,20 +3227,20 @@ Each rating level must meet all the coverage requirements.
       <td align="right" class="d1">1</td>
     </tr>
     <tr>
-      <td align="left" bgcolor="lightgreen">Shipwright</td>
-      <td align="center" bgcolor="lightgreen">3&#215;3</td>
-      <td align="right" bgcolor="lightgreen">20</td>
+      <td align="left" class="c1">Shipwright</td>
+      <td align="center" class="c1">3&#215;3</td>
+      <td align="right" class="c1">20</td>
       <td align="right" class="d5">525</td>
       <td align="right" class="d4">420</td>
       <td align="right" class="d3">350</td>
       <td align="right" class="d2">280</td>
       <td align="right" class="d1">70</td>
-      <td align="right" bgcolor="lightgreen">-12</td>
-      <td align="right" bgcolor="lightgreen">-12</td>
-      <td align="right" bgcolor="lightgreen">-10</td>
-      <td align="right" bgcolor="lightgreen">-10</td>
-      <td align="right" bgcolor="lightgreen">-8</td>
-      <td align="right" bgcolor="lightgreen">-8</td>
+      <td align="right" class="c1">-12</td>
+      <td align="right" class="c1">-12</td>
+      <td align="right" class="c1">-10</td>
+      <td align="right" class="c1">-10</td>
+      <td align="right" class="c1">-8</td>
+      <td align="right" class="c1">-8</td>
       <td align="right" class="d5">30</td>
       <td align="right" class="d4">24</td>
       <td align="right" class="d3">20</td>
@@ -3235,21 +3253,21 @@ Each rating level must meet all the coverage requirements.
       <td align="right" class="d1">1</td>
     </tr>
     <tr>
-      <td align="left" bgcolor="wheat">Shrine</td>
-      <td align="center" bgcolor="wheat">1&#215;1</td>
-      <td align="right" bgcolor="wheat">0</td>
+      <td align="left" class="c2">Shrine</td>
+      <td align="center" class="c2">1&#215;1</td>
+      <td align="right" class="c2">0</td>
       <td align="right" class="d5">150</td>
       <td align="right" class="d4">120</td>
       <td align="right" class="d3">100</td>
       <td align="right" class="d2">80</td>
       <td align="right" class="d1">20</td>
-      <td align="right" bgcolor="wheat">4</td>
-      <td align="right" bgcolor="wheat">3</td>
-      <td align="right" bgcolor="wheat">2</td>
-      <td align="right" bgcolor="wheat">1</td>
-      <td align="right" bgcolor="wheat">0</td>
-      <td align="right" bgcolor="wheat">0</td>
-      <td align="center" bgcolor="wheat" colspan="5">none</td>
+      <td align="right" class="c2">4</td>
+      <td align="right" class="c2">3</td>
+      <td align="right" class="c2">2</td>
+      <td align="right" class="c2">1</td>
+      <td align="right" class="c2">0</td>
+      <td align="right" class="c2">0</td>
+      <td align="center" class="c2" colspan="5">none</td>
       <td align="right" class="d5">7</td>
       <td align="right" class="d4">6</td>
       <td align="right" class="d3">5</td>
@@ -3257,69 +3275,69 @@ Each rating level must meet all the coverage requirements.
       <td align="right" class="d1">1</td>
     </tr>
     <tr>
-      <td align="left" bgcolor="lightgreen">Statue, Small</td>
-      <td align="center" bgcolor="lightgreen">1&#215;1</td>
-      <td align="right" bgcolor="lightgreen">0</td>
+      <td align="left" class="c1">Statue, Small</td>
+      <td align="center" class="c1">1&#215;1</td>
+      <td align="right" class="c1">0</td>
       <td align="right" class="d5">18</td>
       <td align="right" class="d4">14</td>
       <td align="right" class="d3">12</td>
       <td align="right" class="d2">10</td>
       <td align="right" class="d1">3</td>
-      <td align="right" bgcolor="lightgreen">3</td>
-      <td align="right" bgcolor="lightgreen">2</td>
-      <td align="right" bgcolor="lightgreen">1</td>
-      <td align="right" bgcolor="lightgreen">0</td>
-      <td align="right" bgcolor="lightgreen">0</td>
-      <td align="right" bgcolor="lightgreen">0</td>
-      <td align="center" bgcolor="lightgreen" colspan="5">none</td>
-      <td align="center" bgcolor="lightgreen" colspan="5">none</td>
+      <td align="right" class="c1">3</td>
+      <td align="right" class="c1">2</td>
+      <td align="right" class="c1">1</td>
+      <td align="right" class="c1">0</td>
+      <td align="right" class="c1">0</td>
+      <td align="right" class="c1">0</td>
+      <td align="center" class="c1" colspan="5">none</td>
+      <td align="center" class="c1" colspan="5">none</td>
     </tr>
     <tr>
-      <td align="left" bgcolor="wheat">Statue, Medium</td>
-      <td align="center" bgcolor="wheat">2&#215;2</td>
-      <td align="right" bgcolor="wheat">0</td>
+      <td align="left" class="c2">Statue, Medium</td>
+      <td align="center" class="c2">2&#215;2</td>
+      <td align="right" class="c2">0</td>
       <td align="right" class="d5">90</td>
       <td align="right" class="d4">72</td>
       <td align="right" class="d3">60</td>
       <td align="right" class="d2">48</td>
       <td align="right" class="d1">12</td>
-      <td align="right" bgcolor="wheat">10</td>
-      <td align="right" bgcolor="wheat">8</td>
-      <td align="right" bgcolor="wheat">6</td>
-      <td align="right" bgcolor="wheat">4</td>
-      <td align="right" bgcolor="wheat">0</td>
-      <td align="right" bgcolor="wheat">0</td>
-      <td align="center" bgcolor="wheat" colspan="5">none</td>
-      <td align="center" bgcolor="wheat" colspan="5">none</td>
+      <td align="right" class="c2">10</td>
+      <td align="right" class="c2">8</td>
+      <td align="right" class="c2">6</td>
+      <td align="right" class="c2">4</td>
+      <td align="right" class="c2">0</td>
+      <td align="right" class="c2">0</td>
+      <td align="center" class="c2" colspan="5">none</td>
+      <td align="center" class="c2" colspan="5">none</td>
     </tr>
     <tr>
-      <td align="left" bgcolor="lightgreen">Statue, Large</td>
-      <td align="center" bgcolor="lightgreen">3&#215;3</td>
-      <td align="right" bgcolor="lightgreen">0</td>
+      <td align="left" class="c1">Statue, Large</td>
+      <td align="center" class="c1">3&#215;3</td>
+      <td align="right" class="c1">0</td>
       <td align="right" class="d5">225</td>
       <td align="right" class="d4">180</td>
       <td align="right" class="d3">150</td>
       <td align="right" class="d2">120</td>
       <td align="right" class="d1">30</td>
-      <td align="right" bgcolor="lightgreen">14</td>
-      <td align="right" bgcolor="lightgreen">14</td>
-      <td align="right" bgcolor="lightgreen">12</td>
-      <td align="right" bgcolor="lightgreen">12</td>
-      <td align="right" bgcolor="lightgreen">10</td>
-      <td align="right" bgcolor="lightgreen">0</td>
-      <td align="center" bgcolor="lightgreen" colspan="5">none</td>
-      <td align="center" bgcolor="lightgreen" colspan="5">none</td>
+      <td align="right" class="c1">14</td>
+      <td align="right" class="c1">14</td>
+      <td align="right" class="c1">12</td>
+      <td align="right" class="c1">12</td>
+      <td align="right" class="c1">10</td>
+      <td align="right" class="c1">0</td>
+      <td align="center" class="c1" colspan="5">none</td>
+      <td align="center" class="c1" colspan="5">none</td>
     </tr>
     <tr>
-      <td align="left" bgcolor="wheat">Storage Yard</td>
-      <td align="center" bgcolor="wheat">3&#215;3</td>
-      <td align="right" bgcolor="wheat">6</td>
+      <td align="left" class="c2">Storage Yard</td>
+      <td align="center" class="c2">3&#215;3</td>
+      <td align="right" class="c2">6</td>
       <td align="right" class="d5">105</td>
       <td align="right" class="d4">84</td>
       <td align="right" class="d3">70</td>
       <td align="right" class="d2">56</td>
       <td align="right" class="d1">14</td>
-      <td align="center" bgcolor="wheat" colspan="6">See Diagram on Page 3</td>
+      <td align="center" class="c2" colspan="6">See Diagram on Page 3</td>
       <td align="right" class="d5">30</td>
       <td align="right" class="d4">24</td>
       <td align="right" class="d3">20</td>
@@ -3332,43 +3350,43 @@ Each rating level must meet all the coverage requirements.
       <td align="right" class="d1">1</td>
     </tr>
     <tr>
-      <td align="left" bgcolor="lightgreen">Tax Collector</td>
-      <td align="center" bgcolor="lightgreen">2&#215;2</td>
-      <td align="right" bgcolor="lightgreen">6</td>
+      <td align="left" class="c1">Tax Collector</td>
+      <td align="center" class="c1">2&#215;2</td>
+      <td align="right" class="c1">6</td>
       <td align="right" class="d5">112</td>
       <td align="right" class="d4">90</td>
       <td align="right" class="d3">75</td>
       <td align="right" class="d2">60</td>
       <td align="right" class="d1">15</td>
-      <td align="right" bgcolor="lightgreen">3</td>
-      <td align="right" bgcolor="lightgreen">2</td>
-      <td align="right" bgcolor="lightgreen">1</td>
-      <td align="right" bgcolor="lightgreen">0</td>
-      <td align="right" bgcolor="lightgreen">0</td>
-      <td align="right" bgcolor="lightgreen">0</td>
+      <td align="right" class="c1">3</td>
+      <td align="right" class="c1">2</td>
+      <td align="right" class="c1">1</td>
+      <td align="right" class="c1">0</td>
+      <td align="right" class="c1">0</td>
+      <td align="right" class="c1">0</td>
       <td align="right" class="d5">30</td>
       <td align="right" class="d4">24</td>
       <td align="right" class="d3">20</td>
       <td align="right" class="d2">15</td>
       <td align="right" class="d1">4</td>
-      <td align="center" bgcolor="lightgreen" colspan="5">none</td>
+      <td align="center" class="c1" colspan="5">none</td>
     </tr>
     <tr>
-      <td align="left" bgcolor="wheat">Temple</td>
-      <td align="center" bgcolor="wheat">3&#215;3</td>
-      <td align="right" bgcolor="wheat">8</td>
+      <td align="left" class="c2">Temple</td>
+      <td align="center" class="c2">3&#215;3</td>
+      <td align="right" class="c2">8</td>
       <td align="right" class="d5">225</td>
       <td align="right" class="d4">180</td>
       <td align="right" class="d3">150</td>
       <td align="right" class="d2">120</td>
       <td align="right" class="d1">30</td>
-      <td align="right" bgcolor="wheat">6</td>
-      <td align="right" bgcolor="wheat">6</td>
-      <td align="right" bgcolor="wheat">4</td>
-      <td align="right" bgcolor="wheat">4</td>
-      <td align="right" bgcolor="wheat">2</td>
-      <td align="right" bgcolor="wheat">2</td>
-      <td align="center" bgcolor="wheat" colspan="5">none</td>
+      <td align="right" class="c2">6</td>
+      <td align="right" class="c2">6</td>
+      <td align="right" class="c2">4</td>
+      <td align="right" class="c2">4</td>
+      <td align="right" class="c2">2</td>
+      <td align="right" class="c2">2</td>
+      <td align="center" class="c2" colspan="5">none</td>
       <td align="right" class="d5">15</td>
       <td align="right" class="d4">12</td>
       <td align="right" class="d3">10</td>
@@ -3376,16 +3394,16 @@ Each rating level must meet all the coverage requirements.
       <td align="right" class="d1">2</td>
     </tr>
     <tr>
-      <td align="left" bgcolor="lightgreen">Temple Complex</td>
-      <td align="center" bgcolor="lightgreen">13&#215;7</td>
-      <td align="right" bgcolor="lightgreen">50</td>
+      <td align="left" class="c1">Temple Complex</td>
+      <td align="center" class="c1">13&#215;7</td>
+      <td align="right" class="c1">50</td>
       <td align="right" class="d5">3000</td>
       <td align="right" class="d4">2400</td>
       <td align="right" class="d3">2000</td>
       <td align="right" class="d2">1600</td>
       <td align="right" class="d1">400</td>
-      <td align="center" bgcolor="lightgreen" colspan="6">See Diagram on Page 3</td>
-      <td align="center" bgcolor="lightgreen" colspan="5">none</td>
+      <td align="center" class="c1" colspan="6">See Diagram on Page 3</td>
+      <td align="center" class="c1" colspan="5">none</td>
       <td align="right" class="d5">15</td>
       <td align="right" class="d4">12</td>
       <td align="right" class="d3">10</td>
@@ -3393,60 +3411,60 @@ Each rating level must meet all the coverage requirements.
       <td align="right" class="d1">2</td>
     </tr>
     <tr>
-      <td align="left" bgcolor="wheat">(T.C.) Altar</td>
-      <td align="center" bgcolor="wheat">&#8211;</td>
-      <td align="right" bgcolor="wheat">0</td>
+      <td align="left" class="c2">(T.C.) Altar</td>
+      <td align="center" class="c2">&#8211;</td>
+      <td align="right" class="c2">0</td>
       <td align="right" class="d5">1350</td>
       <td align="right" class="d4">1080</td>
       <td align="right" class="d3">900</td>
       <td align="right" class="d2">720</td>
       <td align="right" class="d1">180</td>
-      <td align="center" bgcolor="wheat" colspan="16">The Altar Addition does not affect these values.</td>
+      <td align="center" class="c2" colspan="16">The Altar Addition does not affect these values.</td>
     </tr>
     <tr>
-      <td align="left" bgcolor="lightgreen">(T.C.) Oracle</td>
-      <td align="center" bgcolor="lightgreen">&#8211;</td>
-      <td align="right" bgcolor="lightgreen">0</td>
+      <td align="left" class="c1">(T.C.) Oracle</td>
+      <td align="center" class="c1">&#8211;</td>
+      <td align="right" class="c1">0</td>
       <td align="right" class="d5">1350</td>
       <td align="right" class="d4">1080</td>
       <td align="right" class="d3">900</td>
       <td align="right" class="d2">720</td>
       <td align="right" class="d1">180</td>
-      <td align="center" bgcolor="lightgreen" colspan="16">The Oracle Addition does not affect these values.</td>
+      <td align="center" class="c1" colspan="16">The Oracle Addition does not affect these values.</td>
     </tr>
     <tr>
-      <td align="left" bgcolor="wheat">Tower</td>
-      <td align="center" bgcolor="wheat">2&#215;2</td>
-      <td align="right" bgcolor="wheat">6</td>
+      <td align="left" class="c2">Tower</td>
+      <td align="center" class="c2">2&#215;2</td>
+      <td align="right" class="c2">6</td>
       <td align="right" class="d5">525</td>
       <td align="right" class="d4">420</td>
       <td align="right" class="d3">350</td>
       <td align="right" class="d2">270</td>
       <td align="right" class="d1">70</td>
-      <td align="right" bgcolor="wheat">-6</td>
-      <td align="right" bgcolor="wheat">-5</td>
-      <td align="right" bgcolor="wheat">-4</td>
-      <td align="right" bgcolor="wheat">-3</td>
-      <td align="right" bgcolor="wheat">-2</td>
-      <td align="right" bgcolor="wheat">-1</td>
-      <td align="center" bgcolor="wheat" colspan="5">none</td>
-      <td align="center" bgcolor="wheat" colspan="5">none</td>
+      <td align="right" class="c2">-6</td>
+      <td align="right" class="c2">-5</td>
+      <td align="right" class="c2">-4</td>
+      <td align="right" class="c2">-3</td>
+      <td align="right" class="c2">-2</td>
+      <td align="right" class="c2">-1</td>
+      <td align="center" class="c2" colspan="5">none</td>
+      <td align="center" class="c2" colspan="5">none</td>
     </tr>
     <tr>
-      <td align="left" bgcolor="lightgreen">Transport Wharf</td>
-      <td align="center" bgcolor="lightgreen">2&#215;2</td>
-      <td align="right" bgcolor="lightgreen">5</td>
+      <td align="left" class="c1">Transport Wharf</td>
+      <td align="center" class="c1">2&#215;2</td>
+      <td align="right" class="c1">5</td>
       <td align="right" class="d5">300</td>
       <td align="right" class="d4">240</td>
       <td align="right" class="d3">200</td>
       <td align="right" class="d2">160</td>
       <td align="right" class="d1">40</td>
-      <td align="right" bgcolor="lightgreen">-2</td>
-      <td align="right" bgcolor="lightgreen">-1</td>
-      <td align="right" bgcolor="lightgreen">0</td>
-      <td align="right" bgcolor="lightgreen">0</td>
-      <td align="right" bgcolor="lightgreen">0</td>
-      <td align="right" bgcolor="lightgreen">0</td>
+      <td align="right" class="c1">-2</td>
+      <td align="right" class="c1">-1</td>
+      <td align="right" class="c1">0</td>
+      <td align="right" class="c1">0</td>
+      <td align="right" class="c1">0</td>
+      <td align="right" class="c1">0</td>
       <td align="right" class="d5">7</td>
       <td align="right" class="d4">6</td>
       <td align="right" class="d3">5</td>
@@ -3459,38 +3477,38 @@ Each rating level must meet all the coverage requirements.
       <td align="right" class="d1">1</td>
     </tr>
     <tr>
-      <td align="left" bgcolor="wheat">Wall</td>
-      <td align="center" bgcolor="wheat">1x</td>
-      <td align="right" bgcolor="wheat">0</td>
+      <td align="left" class="c2">Wall</td>
+      <td align="center" class="c2">1x</td>
+      <td align="right" class="c2">0</td>
       <td align="right" class="d5">52</td>
       <td align="right" class="d4">42</td>
       <td align="right" class="d3">35</td>
       <td align="right" class="d2">28</td>
       <td align="right" class="d1">7</td>
-      <td align="right" bgcolor="wheat">0</td>
-      <td align="right" bgcolor="wheat">0</td>
-      <td align="right" bgcolor="wheat">0</td>
-      <td align="right" bgcolor="wheat">0</td>
-      <td align="right" bgcolor="wheat">0</td>
-      <td align="right" bgcolor="wheat">0</td>
-      <td align="center" bgcolor="wheat" colspan="5">none</td>
-      <td align="center" bgcolor="wheat" colspan="5">none</td>
+      <td align="right" class="c2">0</td>
+      <td align="right" class="c2">0</td>
+      <td align="right" class="c2">0</td>
+      <td align="right" class="c2">0</td>
+      <td align="right" class="c2">0</td>
+      <td align="right" class="c2">0</td>
+      <td align="center" class="c2" colspan="5">none</td>
+      <td align="center" class="c2" colspan="5">none</td>
     </tr>
     <tr>
-      <td align="left" bgcolor="lightgreen">Warship Wharf</td>
-      <td align="center" bgcolor="lightgreen">3&#215;3</td>
-      <td align="right" bgcolor="lightgreen">15</td>
+      <td align="left" class="c1">Warship Wharf</td>
+      <td align="center" class="c1">3&#215;3</td>
+      <td align="right" class="c1">15</td>
       <td align="right" class="d5">900</td>
       <td align="right" class="d4">720</td>
       <td align="right" class="d3">600</td>
       <td align="right" class="d2">480</td>
       <td align="right" class="d1">120</td>
-      <td align="right" bgcolor="lightgreen">-4</td>
-      <td align="right" bgcolor="lightgreen">-3</td>
-      <td align="right" bgcolor="lightgreen">-2</td>
-      <td align="right" bgcolor="lightgreen">-1</td>
-      <td align="right" bgcolor="lightgreen">0</td>
-      <td align="right" bgcolor="lightgreen">0</td>
+      <td align="right" class="c1">-4</td>
+      <td align="right" class="c1">-3</td>
+      <td align="right" class="c1">-2</td>
+      <td align="right" class="c1">-1</td>
+      <td align="right" class="c1">0</td>
+      <td align="right" class="c1">0</td>
       <td align="right" class="d5">7</td>
       <td align="right" class="d4">6</td>
       <td align="right" class="d3">5</td>
@@ -3503,162 +3521,162 @@ Each rating level must meet all the coverage requirements.
       <td align="right" class="d1">1</td>
     </tr>
     <tr>
-      <td align="left" bgcolor="wheat">Water Lift</td>
-      <td align="center" bgcolor="wheat">2&#215;2</td>
-      <td align="right" bgcolor="wheat">5</td>
+      <td align="left" class="c2">Water Lift</td>
+      <td align="center" class="c2">2&#215;2</td>
+      <td align="right" class="c2">5</td>
       <td align="right" class="d5">45</td>
       <td align="right" class="d4">36</td>
       <td align="right" class="d3">30</td>
       <td align="right" class="d2">24</td>
       <td align="right" class="d1">6</td>
-      <td align="right" bgcolor="wheat">-3</td>
-      <td align="right" bgcolor="wheat">-2</td>
-      <td align="right" bgcolor="wheat">-1</td>
-      <td align="right" bgcolor="wheat">0</td>
-      <td align="right" bgcolor="wheat">0</td>
-      <td align="right" bgcolor="wheat">0</td>
-      <td align="center" bgcolor="wheat" colspan="5">none</td>
-      <td align="center" bgcolor="wheat" colspan="5">none</td>
+      <td align="right" class="c2">-3</td>
+      <td align="right" class="c2">-2</td>
+      <td align="right" class="c2">-1</td>
+      <td align="right" class="c2">0</td>
+      <td align="right" class="c2">0</td>
+      <td align="right" class="c2">0</td>
+      <td align="center" class="c2" colspan="5">none</td>
+      <td align="center" class="c2" colspan="5">none</td>
     </tr>
     <tr>
-      <td align="left" bgcolor="lightgreen">Water Supply</td>
-      <td align="center" bgcolor="lightgreen">2&#215;2</td>
-      <td align="right" bgcolor="lightgreen">5</td>
+      <td align="left" class="c1">Water Supply</td>
+      <td align="center" class="c1">2&#215;2</td>
+      <td align="right" class="c1">5</td>
       <td align="right" class="d5">75</td>
       <td align="right" class="d4">60</td>
       <td align="right" class="d3">50</td>
       <td align="right" class="d2">40</td>
       <td align="right" class="d1">10</td>
-      <td align="right" bgcolor="lightgreen">4</td>
-      <td align="right" bgcolor="lightgreen">3</td>
-      <td align="right" bgcolor="lightgreen">2</td>
-      <td align="right" bgcolor="lightgreen">1</td>
-      <td align="right" bgcolor="lightgreen">0</td>
-      <td align="right" bgcolor="lightgreen">0</td>
-      <td align="center" bgcolor="lightgreen" colspan="5">none</td>
-      <td align="center" bgcolor="lightgreen" colspan="5">none</td>
+      <td align="right" class="c1">4</td>
+      <td align="right" class="c1">3</td>
+      <td align="right" class="c1">2</td>
+      <td align="right" class="c1">1</td>
+      <td align="right" class="c1">0</td>
+      <td align="right" class="c1">0</td>
+      <td align="center" class="c1" colspan="5">none</td>
+      <td align="center" class="c1" colspan="5">none</td>
     </tr>
     <tr>
-      <td align="left" bgcolor="wheat">Weaponsmith</td>
-      <td align="center" bgcolor="wheat">2&#215;2</td>
-      <td align="right" bgcolor="wheat">12</td>
+      <td align="left" class="c2">Weaponsmith</td>
+      <td align="center" class="c2">2&#215;2</td>
+      <td align="right" class="c2">12</td>
       <td align="right" class="d5">180</td>
       <td align="right" class="d4">145</td>
       <td align="right" class="d3">120</td>
       <td align="right" class="d2">100</td>
       <td align="right" class="d1">24</td>
-      <td align="right" bgcolor="wheat">-3</td>
-      <td align="right" bgcolor="wheat">-2</td>
-      <td align="right" bgcolor="wheat">-1</td>
-      <td align="right" bgcolor="wheat">0</td>
-      <td align="right" bgcolor="wheat">0</td>
-      <td align="right" bgcolor="wheat">0</td>
+      <td align="right" class="c2">-3</td>
+      <td align="right" class="c2">-2</td>
+      <td align="right" class="c2">-1</td>
+      <td align="right" class="c2">0</td>
+      <td align="right" class="c2">0</td>
+      <td align="right" class="c2">0</td>
       <td align="right" class="d5">30</td>
       <td align="right" class="d4">24</td>
       <td align="right" class="d3">20</td>
       <td align="right" class="d2">15</td>
       <td align="right" class="d1">4</td>
-      <td align="center" bgcolor="wheat" colspan="5">none</td>
+      <td align="center" class="c2" colspan="5">none</td>
     </tr>
     <tr>
-      <td align="left" bgcolor="lightgreen">Weaver</td>
-      <td align="center" bgcolor="lightgreen">2&#215;2</td>
-      <td align="right" bgcolor="lightgreen">12</td>
+      <td align="left" class="c1">Weaver</td>
+      <td align="center" class="c1">2&#215;2</td>
+      <td align="right" class="c1">12</td>
       <td align="right" class="d5">120</td>
       <td align="right" class="d4">96</td>
       <td align="right" class="d3">80</td>
       <td align="right" class="d2">64</td>
       <td align="right" class="d1">16</td>
-      <td align="right" bgcolor="lightgreen">-3</td>
-      <td align="right" bgcolor="lightgreen">-2</td>
-      <td align="right" bgcolor="lightgreen">-1</td>
-      <td align="right" bgcolor="lightgreen">0</td>
-      <td align="right" bgcolor="lightgreen">0</td>
-      <td align="right" bgcolor="lightgreen">0</td>
+      <td align="right" class="c1">-3</td>
+      <td align="right" class="c1">-2</td>
+      <td align="right" class="c1">-1</td>
+      <td align="right" class="c1">0</td>
+      <td align="right" class="c1">0</td>
+      <td align="right" class="c1">0</td>
       <td align="right" class="d5">30</td>
       <td align="right" class="d4">24</td>
       <td align="right" class="d3">20</td>
       <td align="right" class="d2">15</td>
       <td align="right" class="d1">4</td>
-      <td align="center" bgcolor="lightgreen" colspan="5">none</td>
+      <td align="center" class="c1" colspan="5">none</td>
     </tr>
     <tr>
-      <td align="left" bgcolor="wheat">Well</td>
-      <td align="center" bgcolor="wheat">1&#215;1</td>
-      <td align="right" bgcolor="wheat">0</td>
+      <td align="left" class="c2">Well</td>
+      <td align="center" class="c2">1&#215;1</td>
+      <td align="right" class="c2">0</td>
       <td align="right" class="d5">7</td>
       <td align="right" class="d4">6</td>
       <td align="right" class="d3">5</td>
       <td align="right" class="d2">4</td>
       <td align="right" class="d1">1</td>
-      <td align="right" bgcolor="wheat">1</td>
-      <td align="right" bgcolor="wheat">0</td>
-      <td align="right" bgcolor="wheat">0</td>
-      <td align="right" bgcolor="wheat">0</td>
-      <td align="right" bgcolor="wheat">0</td>
-      <td align="right" bgcolor="wheat">0</td>
-      <td align="center" bgcolor="wheat" colspan="5">none</td>
-      <td align="center" bgcolor="wheat" colspan="5">none</td>
+      <td align="right" class="c2">1</td>
+      <td align="right" class="c2">0</td>
+      <td align="right" class="c2">0</td>
+      <td align="right" class="c2">0</td>
+      <td align="right" class="c2">0</td>
+      <td align="right" class="c2">0</td>
+      <td align="center" class="c2" colspan="5">none</td>
+      <td align="center" class="c2" colspan="5">none</td>
     </tr>
     <tr>
-      <td align="left" bgcolor="lightgreen">Wood Cutter</td>
-      <td align="center" bgcolor="lightgreen">2&#215;2</td>
-      <td align="right" bgcolor="lightgreen">8</td>
+      <td align="left" class="c1">Wood Cutter</td>
+      <td align="center" class="c1">2&#215;2</td>
+      <td align="right" class="c1">8</td>
       <td align="right" class="d5">75</td>
       <td align="right" class="d4">60</td>
       <td align="right" class="d3">50</td>
       <td align="right" class="d2">40</td>
       <td align="right" class="d1">10</td>
-      <td align="right" bgcolor="lightgreen">-4</td>
-      <td align="right" bgcolor="lightgreen">-3</td>
-      <td align="right" bgcolor="lightgreen">-2</td>
-      <td align="right" bgcolor="lightgreen">0</td>
-      <td align="right" bgcolor="lightgreen">0</td>
-      <td align="right" bgcolor="lightgreen">0</td>
+      <td align="right" class="c1">-4</td>
+      <td align="right" class="c1">-3</td>
+      <td align="right" class="c1">-2</td>
+      <td align="right" class="c1">0</td>
+      <td align="right" class="c1">0</td>
+      <td align="right" class="c1">0</td>
       <td align="right" class="d5">30</td>
       <td align="right" class="d4">24</td>
       <td align="right" class="d3">20</td>
       <td align="right" class="d2">15</td>
       <td align="right" class="d1">4</td>
-      <td align="center" bgcolor="lightgreen" colspan="5">none</td>
+      <td align="center" class="c1" colspan="5">none</td>
     </tr>
     <tr>
-      <td align="left" bgcolor="wheat">Work Camp</td>
-      <td align="center" bgcolor="wheat">2&#215;2</td>
-      <td align="right" bgcolor="wheat">20</td>
+      <td align="left" class="c2">Work Camp</td>
+      <td align="center" class="c2">2&#215;2</td>
+      <td align="right" class="c2">20</td>
       <td align="right" class="d5">90</td>
       <td align="right" class="d4">72</td>
       <td align="right" class="d3">60</td>
       <td align="right" class="d2">48</td>
       <td align="right" class="d1">12</td>
-      <td align="right" bgcolor="wheat">-3</td>
-      <td align="right" bgcolor="wheat">-2</td>
-      <td align="right" bgcolor="wheat">-1</td>
-      <td align="right" bgcolor="wheat">0</td>
-      <td align="right" bgcolor="wheat">0</td>
-      <td align="right" bgcolor="wheat">0</td>
+      <td align="right" class="c2">-3</td>
+      <td align="right" class="c2">-2</td>
+      <td align="right" class="c2">-1</td>
+      <td align="right" class="c2">0</td>
+      <td align="right" class="c2">0</td>
+      <td align="right" class="c2">0</td>
       <td align="right" class="d5">30</td>
       <td align="right" class="d4">24</td>
       <td align="right" class="d3">20</td>
       <td align="right" class="d2">15</td>
       <td align="right" class="d1">4</td>
-      <td align="center" bgcolor="wheat" colspan="5">none</td>
+      <td align="center" class="c2" colspan="5">none</td>
     </tr>
     <tr>
-      <td align="left" bgcolor="lightgreen">Zoo*</td>
-      <td align="center" bgcolor="lightgreen">6&#215;6</td>
-      <td align="right" bgcolor="lightgreen">30</td>
+      <td align="left" class="c1">Zoo*</td>
+      <td align="center" class="c1">6&#215;6</td>
+      <td align="right" class="c1">30</td>
       <td align="right" class="d5">2600</td>
       <td align="right" class="d4">2200</td>
       <td align="right" class="d3">2000</td>
       <td align="right" class="d2">1500</td>
       <td align="right" class="d1">500</td>
-      <td align="right" bgcolor="lightgreen">-6</td>
-      <td align="right" bgcolor="lightgreen">-4</td>
-      <td align="right" bgcolor="lightgreen">-2</td>
-      <td align="right" bgcolor="lightgreen">0</td>
-      <td align="right" bgcolor="lightgreen">0</td>
-      <td align="right" bgcolor="lightgreen">0</td>
+      <td align="right" class="c1">-6</td>
+      <td align="right" class="c1">-4</td>
+      <td align="right" class="c1">-2</td>
+      <td align="right" class="c1">0</td>
+      <td align="right" class="c1">0</td>
+      <td align="right" class="c1">0</td>
       <td align="right" class="d5">7</td>
       <td align="right" class="d4">5</td>
       <td align="right" class="d3">5</td>
@@ -3671,52 +3689,52 @@ Each rating level must meet all the coverage requirements.
       <td align="right" class="d1">5</td>
     </tr>
     <tr>
-      <td align="left" bgcolor="wheat">Burning Structure</td>
-      <td align="center" bgcolor="wheat">&#8211;</td>
-      <td align="center" bgcolor="wheat">&#8211;</td>
-      <td align="center" bgcolor="wheat" colspan="5">none</td>
-      <td align="right" bgcolor="wheat">-3</td>
-      <td align="right" bgcolor="wheat">-2</td>
-      <td align="right" bgcolor="wheat">-1</td>
-      <td align="right" bgcolor="wheat">0</td>
-      <td align="right" bgcolor="wheat">0</td>
-      <td align="right" bgcolor="wheat">0</td>
-      <td align="center" bgcolor="wheat" colspan="5">none</td>
-      <td align="center" bgcolor="wheat" colspan="5">none</td>
+      <td align="left" class="c2">Burning Structure</td>
+      <td align="center" class="c2">&#8211;</td>
+      <td align="center" class="c2">&#8211;</td>
+      <td align="center" class="c2" colspan="5">none</td>
+      <td align="right" class="c2">-3</td>
+      <td align="right" class="c2">-2</td>
+      <td align="right" class="c2">-1</td>
+      <td align="right" class="c2">0</td>
+      <td align="right" class="c2">0</td>
+      <td align="right" class="c2">0</td>
+      <td align="center" class="c2" colspan="5">none</td>
+      <td align="center" class="c2" colspan="5">none</td>
     </tr>
     <tr>
-      <td align="left" bgcolor="lightgreen">Collapsed Rubble</td>
-      <td align="center" bgcolor="lightgreen">&#8211;</td>
-      <td align="center" bgcolor="lightgreen">&#8211;</td>
-      <td align="center" bgcolor="lightgreen" colspan="5">none</td>
-      <td align="right" bgcolor="lightgreen">-3</td>
-      <td align="right" bgcolor="lightgreen">-2</td>
-      <td align="right" bgcolor="lightgreen">-1</td>
-      <td align="right" bgcolor="lightgreen">0</td>
-      <td align="right" bgcolor="lightgreen">0</td>
-      <td align="right" bgcolor="lightgreen">0</td>
-      <td align="center" bgcolor="lightgreen" colspan="5">none</td>
-      <td align="center" bgcolor="lightgreen" colspan="5">none</td>
+      <td align="left" class="c1">Collapsed Rubble</td>
+      <td align="center" class="c1">&#8211;</td>
+      <td align="center" class="c1">&#8211;</td>
+      <td align="center" class="c1" colspan="5">none</td>
+      <td align="right" class="c1">-3</td>
+      <td align="right" class="c1">-2</td>
+      <td align="right" class="c1">-1</td>
+      <td align="right" class="c1">0</td>
+      <td align="right" class="c1">0</td>
+      <td align="right" class="c1">0</td>
+      <td align="center" class="c1" colspan="5">none</td>
+      <td align="center" class="c1" colspan="5">none</td>
     </tr>
     <tr>
-      <td align="left" bgcolor="wheat">Clear / Demolish</td>
-      <td align="center" bgcolor="wheat">&#8211;</td>
-      <td align="center" bgcolor="wheat">&#8211;</td>
+      <td align="left" class="c2">Clear / Demolish</td>
+      <td align="center" class="c2">&#8211;</td>
+      <td align="center" class="c2">&#8211;</td>
       <td align="right" class="d5">3</td>
       <td align="right" class="d4">3</td>
       <td align="right" class="d3">2</td>
       <td align="right" class="d2">2</td>
       <td align="right" class="d1">1</td>
-      <td align="center" bgcolor="wheat" colspan="6">none</td>
-      <td align="center" bgcolor="wheat" colspan="5">none</td>
-      <td align="center" bgcolor="wheat" colspan="5">none</td>
+      <td align="center" class="c2" colspan="6">none</td>
+      <td align="center" class="c2" colspan="5">none</td>
+      <td align="center" class="c2" colspan="5">none</td>
     </tr>
     <tr>
-      <td align="left" bgcolor="silver" colspan="24">*
+      <td align="left" class="c0" colspan="24">*
       Only available inthe Cleopatra Expansion.</td>
     </tr>
     <tr>
-      <td align="left" bgcolor="silver" colspan="24">**
+      <td align="left" class="c0" colspan="24">**
       This is the cost for placing a housing tile (typically referred to as a &#8220;Vacant Lot&#8221; or &#8220;For Sale&#8221; sign).</td>
     </tr>
 </table>
@@ -4260,7 +4278,7 @@ The roads provide no desirability, as if they were not plazas.
         <td>4</td>
         <td>9</td>
         <td>15</td>
-        <td bgcolor="lightgreen">G</td>
+        <td class="c1">G</td>
         <td bgcolor="plum"></td>
         <td bgcolor="lightblue">D</td>
         <td bgcolor="lightblue">D</td>
@@ -4276,7 +4294,7 @@ The roads provide no desirability, as if they were not plazas.
         <td>4</td>
         <td>9</td>
         <td>14</td>
-        <td bgcolor="lightgreen">G</td>
+        <td class="c1">G</td>
         <td bgcolor="plum"></td>
         <td bgcolor="yellow">M</td>
         <td bgcolor="yellow">M</td>
@@ -4422,7 +4440,7 @@ The roads provide no desirability, as if they were not plazas.
     <td>1</td>
     <td>5</td>
     <td>9</td>
-    <td bgcolor="lightgreen">G</td>
+    <td class="c1">G</td>
     <td bgcolor="plum"></td>
     <td bgcolor="yellow">M</td>
     <td>9</td>
@@ -4820,7 +4838,110 @@ dist   = floor(ticks*1.7)
 <a href="https://caesar3.heavengames.com/cgi-bin/caeforumscgi/display.cgi?action=ct&f=25,2579,,all">Preferred order of foodstuff</a>,
 <a href="https://caesar3.heavengames.com/cgi-bin/caeforumscgi/display.cgi?action=ct&f=25,2579,,all">People in Pharaoh eat half as much food as in Caesar III</a>.
 
-<table border="1" CELLSPACING="1" CELLPADDING="1" WIDTH="595" x="font-size: 10px;"> <wbr><CAPTION> <wbr><font SIZE="3"> <wbr><b>Consumption of Goods by Structures</b> </FONT> </CAPTION> <wbr><TR> <wbr><TD ALIGN="LEFT" VALIGN="TOP" BGCOLOR="SILVER" ROWSPAN="2" WIDTH="55">Good Consumed</TD> <wbr><TD ALIGN="LEFT" VALIGN="TOP" BGCOLOR="LIGHTGREEN" ROWSPAN="2">Consumer of Good</TD> <wbr><TD ALIGN="CENTER" VALIGN="TOP" BGCOLOR="SILVER" ROWSPAN="2" WIDTH="55">Stockpile (6)</TD> <wbr><TD ALIGN="CENTER" BGCOLOR="LIGHTGREEN" COLSPAN="5" WIDTH="120">Per Trip (1)</TD> <wbr><TD ALIGN="CENTER" BGCOLOR="SILVER" COLSPAN="5" WIDTH="120">Per Month (2)</TD> <wbr><TD ALIGN="CENTER" BGCOLOR="LIGHTGREEN" COLSPAN="5" WIDTH="120">Per Year (3)</TD> </TR> <wbr><TR> <wbr><TD ALIGN="CENTER" class="d5">VH</TD> <wbr><TD ALIGN="CENTER" class="d4">H</TD> <wbr><TD ALIGN="CENTER" class="d3">N</TD> <wbr><TD ALIGN="CENTER" class="d2">E</TD> <wbr><TD ALIGN="CENTER" class="d1">VE</TD> <wbr><TD ALIGN="CENTER" class="d5">VH</TD> <wbr><TD ALIGN="CENTER" class="d4">H</TD> <wbr><TD ALIGN="CENTER" class="d3">N</TD> <wbr><TD ALIGN="CENTER" class="d2">E</TD> <wbr><TD ALIGN="CENTER" class="d1">VE</TD> <wbr><TD ALIGN="CENTER" class="d5">VH</TD> <wbr><TD ALIGN="CENTER" class="d4">H</TD> <wbr><TD ALIGN="CENTER" class="d3">N</TD> <wbr><TD ALIGN="CENTER" class="d2">E</TD> <wbr><TD ALIGN="CENTER" class="d1">VE</TD> </TR> <wbr><TR> <wbr><TD BGCOLOR="WHEAT" ROWSPAN="2">Papyrus</TD> <wbr><TD BGCOLOR="WHEAT" ROWSPAN="2">Scribe School</TD> <wbr><TD ALIGN="CENTER" BGCOLOR="WHEAT" ROWSPAN="2">300</TD> <wbr><TD ALIGN="RIGHT" class="d5" ROWSPAN="2">40</TD> <wbr><TD ALIGN="RIGHT" class="d4" ROWSPAN="2">20</TD> <wbr><TD ALIGN="RIGHT" class="d3" ROWSPAN="2">10</TD> <wbr><TD ALIGN="RIGHT" class="d2" ROWSPAN="2">5</TD> <wbr><TD ALIGN="RIGHT" class="d1" ROWSPAN="2">2</TD> <wbr><TD ALIGN="LEFT" class="d5">30</TD> <wbr><TD ALIGN="LEFT" class="d4">15</TD> <wbr><TD ALIGN="LEFT" class="d3">8</TD> <wbr><TD ALIGN="LEFT" class="d2">4</TD> <wbr><TD ALIGN="LEFT" class="d1">2</TD> <wbr><TD ALIGN="LEFT" class="d5">360</TD> <wbr><TD ALIGN="LEFT" class="d4">180</TD> <wbr><TD ALIGN="LEFT" class="d3">90</TD> <wbr><TD ALIGN="LEFT" class="d2">45</TD> <wbr><TD ALIGN="LEFT" class="d1">18</TD> </TR> <wbr><TR> <wbr><TD ALIGN="RIGHT" class="d5">40</TD> <wbr><TD ALIGN="RIGHT" class="d4">20</TD> <wbr><TD ALIGN="RIGHT" class="d3">10</TD> <wbr><TD ALIGN="RIGHT" class="d2">5</TD> <wbr><TD ALIGN="RIGHT" class="d1">2</TD> <wbr><TD ALIGN="RIGHT" class="d5">480</TD> <wbr><TD ALIGN="RIGHT" class="d4">240</TD> <wbr><TD ALIGN="RIGHT" class="d3">120</TD> <wbr><TD ALIGN="RIGHT" class="d2">60</TD> <wbr><TD ALIGN="RIGHT" class="d1">24</TD> </TR> <wbr><TR> <wbr><TD BGCOLOR="WHEAT" ROWSPAN="2">Papyrus</TD> <wbr><TD BGCOLOR="WHEAT" ROWSPAN="2">Scribe School with Oracle of Thoth (4)</TD> <wbr><TD ALIGN="CENTER" BGCOLOR="WHEAT" ROWSPAN="2">300</TD> <wbr><TD ALIGN="RIGHT" class="d5" ROWSPAN="2">36</TD> <wbr><TD ALIGN="RIGHT" class="d4" ROWSPAN="2">14</TD> <wbr><TD ALIGN="RIGHT" class="d3" ROWSPAN="2">6</TD> <wbr><TD ALIGN="RIGHT" class="d2" ROWSPAN="2">3</TD> <wbr><TD ALIGN="RIGHT" class="d1" ROWSPAN="2">0</TD> <wbr><TD ALIGN="LEFT" class="d5">27</TD> <wbr><TD ALIGN="LEFT" class="d4">11</TD> <wbr><TD ALIGN="LEFT" class="d3">5</TD> <wbr><TD ALIGN="LEFT" class="d2">2</TD> <wbr><TD ALIGN="LEFT" class="d1">0</TD> <wbr><TD ALIGN="LEFT" class="d5">324</TD> <wbr><TD ALIGN="LEFT" class="d4">126</TD> <wbr><TD ALIGN="LEFT" class="d3">54</TD> <wbr><TD ALIGN="LEFT" class="d2">27</TD> <wbr><TD ALIGN="LEFT" class="d1">0</TD> </TR> <wbr><TR> <wbr><TD ALIGN="RIGHT" class="d5">36</TD> <wbr><TD ALIGN="RIGHT" class="d4">14</TD> <wbr><TD ALIGN="RIGHT" class="d3">6</TD> <wbr><TD ALIGN="RIGHT" class="d2">3</TD> <wbr><TD ALIGN="RIGHT" class="d1">0</TD> <wbr><TD ALIGN="RIGHT" class="d5">432</TD> <wbr><TD ALIGN="RIGHT" class="d4">168</TD> <wbr><TD ALIGN="RIGHT" class="d3">72</TD> <wbr><TD ALIGN="RIGHT" class="d2">36</TD> <wbr><TD ALIGN="RIGHT" class="d1">0</TD> </TR> <wbr><TR> <wbr><TD BGCOLOR="LIGHTGREEN" ROWSPAN="2">Papyrus</TD> <wbr><TD BGCOLOR="LIGHTGREEN" ROWSPAN="2">Library</TD> <wbr><TD ALIGN="CENTER" BGCOLOR="LIGHTGREEN" ROWSPAN="2">500</TD> <wbr><TD ALIGN="RIGHT" class="d5" ROWSPAN="2">60</TD> <wbr><TD ALIGN="RIGHT" class="d4" ROWSPAN="2">40</TD> <wbr><TD ALIGN="RIGHT" class="d3" ROWSPAN="2">20</TD> <wbr><TD ALIGN="RIGHT" class="d2" ROWSPAN="2">10</TD> <wbr><TD ALIGN="RIGHT" class="d1" ROWSPAN="2">5</TD> <wbr><TD ALIGN="LEFT" class="d5">45</TD> <wbr><TD ALIGN="LEFT" class="d4">30</TD> <wbr><TD ALIGN="LEFT" class="d3">15</TD> <wbr><TD ALIGN="LEFT" class="d2">8</TD> <wbr><TD ALIGN="LEFT" class="d1">4</TD> <wbr><TD ALIGN="LEFT" class="d5">540</TD> <wbr><TD ALIGN="LEFT" class="d4">360</TD> <wbr><TD ALIGN="LEFT" class="d3">180</TD> <wbr><TD ALIGN="LEFT" class="d2">90</TD> <wbr><TD ALIGN="LEFT" class="d1">45</TD> </TR> <wbr><TR> <wbr><TD ALIGN="RIGHT" class="d5">60</TD> <wbr><TD ALIGN="RIGHT" class="d4">40</TD> <wbr><TD ALIGN="RIGHT" class="d3">20</TD> <wbr><TD ALIGN="RIGHT" class="d2">10</TD> <wbr><TD ALIGN="RIGHT" class="d1">5</TD> <wbr><TD ALIGN="RIGHT" class="d5">720</TD> <wbr><TD ALIGN="RIGHT" class="d4">480</TD> <wbr><TD ALIGN="RIGHT" class="d3">240</TD> <wbr><TD ALIGN="RIGHT" class="d2">120</TD> <wbr><TD ALIGN="RIGHT" class="d1">60</TD> </TR> <wbr><TR> <wbr><TD BGCOLOR="LIGHTGREEN" ROWSPAN="2">Papyrus</TD> <wbr><TD BGCOLOR="LIGHTGREEN" ROWSPAN="2">Library with Oracle of Thoth (4)</TD> <wbr><TD ALIGN="CENTER" BGCOLOR="LIGHTGREEN" ROWSPAN="2">500</TD> <wbr><TD ALIGN="RIGHT" class="d5" ROWSPAN="2">54</TD> <wbr><TD ALIGN="RIGHT" class="d4" ROWSPAN="2">28</TD> <wbr><TD ALIGN="RIGHT" class="d3" ROWSPAN="2">12</TD> <wbr><TD ALIGN="RIGHT" class="d2" ROWSPAN="2">6</TD> <wbr><TD ALIGN="RIGHT" class="d1" ROWSPAN="2">0</TD> <wbr><TD ALIGN="LEFT" class="d5">41</TD> <wbr><TD ALIGN="LEFT" class="d4">21</TD> <wbr><TD ALIGN="LEFT" class="d3">9</TD> <wbr><TD ALIGN="LEFT" class="d2">5</TD> <wbr><TD ALIGN="LEFT" class="d1">0</TD> <wbr><TD ALIGN="LEFT" class="d5">486</TD> <wbr><TD ALIGN="LEFT" class="d4">252</TD> <wbr><TD ALIGN="LEFT" class="d3">108</TD> <wbr><TD ALIGN="LEFT" class="d2">54</TD> <wbr><TD ALIGN="LEFT" class="d1">0</TD> </TR> <wbr><TR> <wbr><TD ALIGN="RIGHT" class="d5">54</TD> <wbr><TD ALIGN="RIGHT" class="d4">28</TD> <wbr><TD ALIGN="RIGHT" class="d3">12</TD> <wbr><TD ALIGN="RIGHT" class="d2">6</TD> <wbr><TD ALIGN="RIGHT" class="d1">0</TD> <wbr><TD ALIGN="RIGHT" class="d5">648</TD> <wbr><TD ALIGN="RIGHT" class="d4">336</TD> <wbr><TD ALIGN="RIGHT" class="d3">144</TD> <wbr><TD ALIGN="RIGHT" class="d2">72</TD> <wbr><TD ALIGN="RIGHT" class="d1">0</TD> </TR> <wbr><TR> <wbr><TD BGCOLOR="WHEAT" ROWSPAN="2">Linen</TD> <wbr><TD BGCOLOR="WHEAT" ROWSPAN="2">Mortuary</TD> <wbr><TD ALIGN="CENTER" BGCOLOR="WHEAT" ROWSPAN="2">500</TD> <wbr><TD ALIGN="RIGHT" class="d5" ROWSPAN="2">60</TD> <wbr><TD ALIGN="RIGHT" class="d4" ROWSPAN="2">40</TD> <wbr><TD ALIGN="RIGHT" class="d3" ROWSPAN="2">20</TD> <wbr><TD ALIGN="RIGHT" class="d2" ROWSPAN="2">10</TD> <wbr><TD ALIGN="RIGHT" class="d1" ROWSPAN="2">5</TD> <wbr><TD ALIGN="LEFT" class="d5">45</TD> <wbr><TD ALIGN="LEFT" class="d4">30</TD> <wbr><TD ALIGN="LEFT" class="d3">15</TD> <wbr><TD ALIGN="LEFT" class="d2">8</TD> <wbr><TD ALIGN="LEFT" class="d1">4</TD> <wbr><TD ALIGN="LEFT" class="d5">540</TD> <wbr><TD ALIGN="LEFT" class="d4">360</TD> <wbr><TD ALIGN="LEFT" class="d3">180</TD> <wbr><TD ALIGN="LEFT" class="d2">90</TD> <wbr><TD ALIGN="LEFT" class="d1">45</TD> </TR> <wbr><TR> <wbr><TD ALIGN="RIGHT" class="d5">60</TD> <wbr><TD ALIGN="RIGHT" class="d4">40</TD> <wbr><TD ALIGN="RIGHT" class="d3">20</TD> <wbr><TD ALIGN="RIGHT" class="d2">10</TD> <wbr><TD ALIGN="RIGHT" class="d1">5</TD> <wbr><TD ALIGN="RIGHT" class="d5">720</TD> <wbr><TD ALIGN="RIGHT" class="d4">480</TD> <wbr><TD ALIGN="RIGHT" class="d3">240</TD> <wbr><TD ALIGN="RIGHT" class="d2">120</TD> <wbr><TD ALIGN="RIGHT" class="d1">60</TD> </TR> <wbr><TR> <wbr><TD BGCOLOR="WHEAT" ROWSPAN="2">Linen</TD> <wbr><TD BGCOLOR="WHEAT" ROWSPAN="2">Mortuary with Altar of Anubis (5)</TD> <wbr><TD ALIGN="CENTER" BGCOLOR="WHEAT" ROWSPAN="2">500</TD> <wbr><TD ALIGN="RIGHT" class="d5" ROWSPAN="2">54</TD> <wbr><TD ALIGN="RIGHT" class="d4" ROWSPAN="2">28</TD> <wbr><TD ALIGN="RIGHT" class="d3" ROWSPAN="2">12</TD> <wbr><TD ALIGN="RIGHT" class="d2" ROWSPAN="2">6</TD> <wbr><TD ALIGN="RIGHT" class="d1" ROWSPAN="2">0</TD> <wbr><TD ALIGN="LEFT" class="d5">41</TD> <wbr><TD ALIGN="LEFT" class="d4">21</TD> <wbr><TD ALIGN="LEFT" class="d3">9</TD> <wbr><TD ALIGN="LEFT" class="d2">5</TD> <wbr><TD ALIGN="LEFT" class="d1">0</TD> <wbr><TD ALIGN="LEFT" class="d5">486</TD> <wbr><TD ALIGN="LEFT" class="d4">252</TD> <wbr><TD ALIGN="LEFT" class="d3">108</TD> <wbr><TD ALIGN="LEFT" class="d2">54</TD> <wbr><TD ALIGN="LEFT" class="d1">0</TD> </TR> <wbr><TR> <wbr><TD ALIGN="RIGHT" class="d5">54</TD> <wbr><TD ALIGN="RIGHT" class="d4">28</TD> <wbr><TD ALIGN="RIGHT" class="d3">12</TD> <wbr><TD ALIGN="RIGHT" class="d2">6</TD> <wbr><TD ALIGN="RIGHT" class="d1">0</TD> <wbr><TD ALIGN="RIGHT" class="d5">648</TD> <wbr><TD ALIGN="RIGHT" class="d4">336</TD> <wbr><TD ALIGN="RIGHT" class="d3">144</TD> <wbr><TD ALIGN="RIGHT" class="d2">72</TD> <wbr><TD ALIGN="RIGHT" class="d1">0</TD> </TR> <wbr><TR> <wbr><TD BGCOLOR="LIGHTGREEN" ROWSPAN="2">Beer</TD> <wbr><TD BGCOLOR="LIGHTGREEN" ROWSPAN="2">Senet House</TD> <wbr><TD ALIGN="CENTER" BGCOLOR="LIGHTGREEN" ROWSPAN="2">300</TD> <wbr><TD ALIGN="RIGHT" class="d5" ROWSPAN="2">60</TD> <wbr><TD ALIGN="RIGHT" class="d4" ROWSPAN="2">40</TD> <wbr><TD ALIGN="RIGHT" class="d3" ROWSPAN="2">20</TD> <wbr><TD ALIGN="RIGHT" class="d2" ROWSPAN="2">10</TD> <wbr><TD ALIGN="RIGHT" class="d1" ROWSPAN="2">5</TD> <wbr><TD ALIGN="LEFT" class="d5">45</TD> <wbr><TD ALIGN="LEFT" class="d4">30</TD> <wbr><TD ALIGN="LEFT" class="d3">15</TD> <wbr><TD ALIGN="LEFT" class="d2">8</TD> <wbr><TD ALIGN="LEFT" class="d1">4</TD> <wbr><TD ALIGN="LEFT" class="d5">540</TD> <wbr><TD ALIGN="LEFT" class="d4">360</TD> <wbr><TD ALIGN="LEFT" class="d3">180</TD> <wbr><TD ALIGN="LEFT" class="d2">90</TD> <wbr><TD ALIGN="LEFT" class="d1">45</TD> </TR> <wbr><TR> <wbr><TD ALIGN="RIGHT" class="d5">60</TD> <wbr><TD ALIGN="RIGHT" class="d4">40</TD> <wbr><TD ALIGN="RIGHT" class="d3">20</TD> <wbr><TD ALIGN="RIGHT" class="d2">10</TD> <wbr><TD ALIGN="RIGHT" class="d1">5</TD> <wbr><TD ALIGN="RIGHT" class="d5">720</TD> <wbr><TD ALIGN="RIGHT" class="d4">480</TD> <wbr><TD ALIGN="RIGHT" class="d3">240</TD> <wbr><TD ALIGN="RIGHT" class="d2">120</TD> <wbr><TD ALIGN="RIGHT" class="d1">60</TD> </TR> <wbr><TR> <wbr><TD BGCOLOR="WHEAT" ROWSPAN="2">Straw</TD> <wbr><TD BGCOLOR="WHEAT" ROWSPAN="2">Zoo</TD> <wbr><TD ALIGN="CENTER" BGCOLOR="WHEAT" ROWSPAN="2">200</TD> <wbr><TD ALIGN="RIGHT" class="d5" ROWSPAN="2">60</TD> <wbr><TD ALIGN="RIGHT" class="d4" ROWSPAN="2">40</TD> <wbr><TD ALIGN="RIGHT" class="d3" ROWSPAN="2">20</TD> <wbr><TD ALIGN="RIGHT" class="d2" ROWSPAN="2">20</TD> <wbr><TD ALIGN="RIGHT" class="d1" ROWSPAN="2">20</TD> <wbr><TD ALIGN="LEFT" class="d5">45</TD> <wbr><TD ALIGN="LEFT" class="d4">30</TD> <wbr><TD ALIGN="LEFT" class="d3">15</TD> <wbr><TD ALIGN="LEFT" class="d2">15</TD> <wbr><TD ALIGN="LEFT" class="d1">15</TD> <wbr><TD ALIGN="LEFT" class="d5">540</TD> <wbr><TD ALIGN="LEFT" class="d4">360</TD> <wbr><TD ALIGN="LEFT" class="d3">180</TD> <wbr><TD ALIGN="LEFT" class="d2">180</TD> <wbr><TD ALIGN="LEFT" class="d1">180</TD> </TR> <wbr><TR> <wbr><TD ALIGN="RIGHT" class="d5">60</TD> <wbr><TD ALIGN="RIGHT" class="d4">40</TD> <wbr><TD ALIGN="RIGHT" class="d3">20</TD> <wbr><TD ALIGN="RIGHT" class="d2">20</TD> <wbr><TD ALIGN="RIGHT" class="d1">20</TD> <wbr><TD ALIGN="RIGHT" class="d5">720</TD> <wbr><TD ALIGN="RIGHT" class="d4">480</TD> <wbr><TD ALIGN="RIGHT" class="d3">240</TD> <wbr><TD ALIGN="RIGHT" class="d2">240</TD> <wbr><TD ALIGN="RIGHT" class="d1">240</TD> </TR> <wbr><TR> <wbr><TD BGCOLOR="WHEAT" ROWSPAN="2">Game Meat</TD> <wbr><TD BGCOLOR="WHEAT" ROWSPAN="2">Zoo</TD> <wbr><TD ALIGN="CENTER" BGCOLOR="WHEAT" ROWSPAN="2">200</TD> <wbr><TD ALIGN="RIGHT" class="d5" ROWSPAN="2">60</TD> <wbr><TD ALIGN="RIGHT" class="d4" ROWSPAN="2">40</TD> <wbr><TD ALIGN="RIGHT" class="d3" ROWSPAN="2">20</TD> <wbr><TD ALIGN="RIGHT" class="d2" ROWSPAN="2">20</TD> <wbr><TD ALIGN="RIGHT" class="d1" ROWSPAN="2">20</TD> <wbr><TD ALIGN="LEFT" class="d5">45</TD> <wbr><TD ALIGN="LEFT" class="d4">30</TD> <wbr><TD ALIGN="LEFT" class="d3">15</TD> <wbr><TD ALIGN="LEFT" class="d2">15</TD> <wbr><TD ALIGN="LEFT" class="d1">15</TD> <wbr><TD ALIGN="LEFT" class="d5">540</TD> <wbr><TD ALIGN="LEFT" class="d4">360</TD> <wbr><TD ALIGN="LEFT" class="d3">180</TD> <wbr><TD ALIGN="LEFT" class="d2">180</TD> <wbr><TD ALIGN="LEFT" class="d1">180</TD> </TR> <wbr><TR> <wbr><TD ALIGN="RIGHT" class="d5">60</TD> <wbr><TD ALIGN="RIGHT" class="d4">40</TD> <wbr><TD ALIGN="RIGHT" class="d3">20</TD> <wbr><TD ALIGN="RIGHT" class="d2">20</TD> <wbr><TD ALIGN="RIGHT" class="d1">20</TD> <wbr><TD ALIGN="RIGHT" class="d5">720</TD> <wbr><TD ALIGN="RIGHT" class="d4">480</TD> <wbr><TD ALIGN="RIGHT" class="d3">240</TD> <wbr><TD ALIGN="RIGHT" class="d2">240</TD> <wbr><TD ALIGN="RIGHT" class="d1">240</TD> </TR> <wbr><TR> <wbr><TD BGCOLOR="SILVER" ALIGN="LEFT" COLSPAN="18">(1) Every time a walker is generated, this amount of goods is consumed by the structure.  A structure must be stocked with as least this minimum amount of goods for a walker to be generated.</TD> </TR> <wbr><TR> <wbr><TD BGCOLOR="LIGHTGREEN" ALIGN="LEFT" COLSPAN="18">(2) The numbers in this column represent the amount of goods consumed by a structure per month assuming a specific number of trips per year.  The upper number (left justified) is based on an average of 9 trips per year.  The lower number (right justified) is based on an average of 12 trips per year.</TD> </TR> <wbr><TR> <wbr><TD BGCOLOR="SILVER" ALIGN="LEFT" COLSPAN="18">(3) The numbers in this column represent the amount of goods consumed by a structure per year assuming a specific number of trips per year.  The upper number (left justified) is based on an average of 9 trips per year.  The lower number (right justified) is based on an average of 12 trips per year.</TD> </TR> <wbr><TR> <wbr><TD BGCOLOR="LIGHTGREEN" ALIGN="LEFT" COLSPAN="18">(4) The amount of papyrus consumed by this structure is reduced if you add the Oracle of Troth to Path’s Temple Complex.</TD> </TR> <wbr><TR> <wbr><TD BGCOLOR="SILVER" ALIGN="LEFT" COLSPAN="18">(5) The amount of linen consumed by this structure is reduced if you add the Altar of Anubis to Seth’s Temple Complex.</TD> </TR> <wbr><TR> <wbr><TD BGCOLOR="LIGHTGREEN" ALIGN="LEFT" COLSPAN="18">(6) The numbers in this column represent the maximum number of goods that a fully stocked structure can hold.</TD> </TR> </TABLE><p><wbr><b>Trips per Year</b>.<p>The number of walkers that will be generated in a year by a structure that consumes goods will vary.  First, a structure must have the minimum amount of goods required to generate a walker.  The second variable is the length of trip that the walker takes.  Assuming a fairly constant supply of goods and standard sized housing blocks, 9 trips per year is a reasonable number for planning purposes.  If you prefer to plan on the “safe side”, then 12 trips per year is the number that you should probably use.<p>With extreme micromanagement, by controlling delivery of goods to the structures, you should be able to minimize the number of walkers that will be generated and greatly reduce the number of goods required.  The numbers listed in the “Per Month” and “Per Year” columns are estimates based on extensive testing and game play.<p><br><wbr><TABLE BORDER="1" CELLSPACING="1" CELLPADDING="1" WIDTH="595" x="font-size: 10px;"> <wbr><CAPTION> <wbr><FONT SIZE="3"> <wbr><b>Consumption of Goods by Houses</b> </FONT> </CAPTION> </TABLE><p>Certain levels of housing require a supply of goods to evolve.  Once evolved, a stock of these goods must be maintained.  A list of the goods required to evolve and maintain each level of housing can be found in my <wbr><a href="http://pharaoh.heavengames.com/strategy/charts/hous1.shtml" target=_blank URL>Pharaoh / Cleopatra Housing Chart</a>.<p>The rate at which goods are consumed by 1x1 houses is <wbr><b>1 unit per month per house (12 units per year)</b>.  The rate at which goods are consumed by 2x2, 3x3 and 4x4 houses is <wbr><b>2 units per month per house (24 units per year)</b>.  This is the same for all housing levels that require goods, no matter what the population of the house is.<p><wbr><TABLE BORDER="1" CELLSPACING="1" CELLPADDING="1" WIDTH="595" x="font-size: 10px;"> <wbr><CAPTION> <wbr><FONT SIZE="3"> <wbr><b>Consumption of Food by Houses</b> </FONT> </CAPTION> </TABLE><p>All of the people living in your city, except for those living in Huts, consume food at the rate of <wbr><b>.25 (1/4) units per month per person (3 units per year)</b>.  Building a Temple Complex to Bast, or adding an Altar to Sebek to the Temple Complex to Osiris, reduces food consumption by 20%.  With a Temple Complex to Bast, or Altar to Sebek, the rate of food consumption is <wbr><b>.20 (1/5) units per month per person (2.4 units per year)</b>.<p>If a housing level requires 2 or 3 types of food, the total rate of consumption is the same.  A Spacious Residence with 80 occupants consumes a total of 20 units of food each month (without a Temple Complex to Bast or Altar to Sebek).  10 units will be one type of food and 10 units will be the second type of food. <p><wbr><b>The citizens of Pharaoh have a preference in the food types that they eat.</b>  They are, in order:<p>Grain<br>Meat<br>Lettuce<br>Chickpeas<br>Pomegranates<br>Figs<br>Fish<br>Game Meat <p>If a type of housing only requires one type of food, the residents in that housing will only eat the most preferred type of food until it is depleted. This is true no matter how many types of food the house contains. Once the most preferred food is entirely consumed, the residents will start eating the second most preferred food. It doesn’t matter which food was consumed or delivered first.<br> <br>If two types of food are required for a level of housing, the residents will only eat the two that are most preferred, no matter how many food types are available. They will consume the two types of food at an equal rate. The same is true for Palatial Estates, where three types of food are required. Even if there are four food types available, only the three most preferred will be eaten. These three types of food will be consumed at the same rate.<p>Example:  You have a Palatial Estate full to capacity with 200 occupants and 1200 units each of grain, lettuce, figs and fish. If you check the Palatial Estate one month later, you will find that it now contains 1184 units of grain, lettuce and figs. It still has 1200 units of fish. Fish is the least preferred food type of the four, so it will not be eaten until the house runs out of one of the other three. How the game arrived at this number is as follows:<br> <br>200 occupants x .25 units of food per month x 1 month / 3 different food types.<br>200 x .25 x 1 / 3 = 16.67, which the game rounds down to 16. 1200 – 16 = 1184.<br> <br>If you do have a Temple Complex to Bast, or Altar to Sebek, in you city, then the formula would be:<br> <br>200 x .20 x 1 / 3 = 13.33, which the game rounds down to 13.<p><br><wbr><TABLE BORDER="1" CELLSPACING="1" CELLPADDING="1" WIDTH="595" x="font-size: 10px;"> <wbr><CAPTION> <wbr><FONT SIZE="3"> <wbr><b>Storage Capacity of Foods and Goods in Houses</b> </FONT> </CAPTION> </TABLE><p>The maximum storage capacity of food in houses is <wbr><b>6 units per person</b> of each food type available.  At the standard rate of consumption (without a Temple Complex to Bast or Altar to Sebek), this equates to a 2-Year supply with one food type available.  A house can store up to four different types of food.  If a house has a maximum stock of two types of food, it holds a 4-Year supply.  A maximum stock of three types of food is a 6-Year supply, and four types of food provide an 8-Year stockpile of food.  With a Temple Complex to Bast or Altar to Sebek, one type of food = 2 ½ years, two types = 5 years, three types = 7 ½ years and 4 types = 10 years of stockpiled food.<p>The maximum storage capacity is 2 units of each type of good for 1x1 housing.  For all other types of housing (2x2, 3x3 and 4x4) the maximum storage is 8 units of each type of good.  A 1x1 house can hold 2 months supply of goods.  2x2, 3x3 and 4x4 houses can hold up to a four-month supply.
+<p>The yearly consumption will depend on the number of walkers generated,
+which in turn depends on your block size and city layout.
+Typically thereare between <strong>8 and 12 walks a year</strong>.
+The oracle of Toth reduces consumption of papyrus and
+the orable of Anubis reduces the consumption of linen.
+In the table below they are the lower set of numbers, in light gray.
+
+<table id="consumption-goods">
+    <tr>
+        <th class="c0" rowspan="2">Building</th>
+        <th class="c0" rowspan="2">Good</th>
+        <th class="c0" rowspan="2">Stock</th>
+        <th class="c0" colspan="5">Per Trip</th>
+    </tr>
+    <tr>
+        <td class="d5">VH</td>
+        <td class="d4">H</td>
+        <td class="d3">N</td>
+        <td class="d2">E</td>
+        <td class="d1">VE</td>
+    </tr>
+    <tr>
+        <td class="c2" rowspan="2">School</td>
+        <td class="c2" rowspan="2">Papyrus</td>
+        <td class="c2" rowspan="2">300</td>
+        <td class="d5">40</td>
+        <td class="d4">20</td>
+        <td class="d3">10</td>
+        <td class="d2">5</td>
+        <td class="d1">2</td>
+    </tr>
+    <tr class="oracle">
+        <td class="d5">36</td>
+        <td class="d4">14</td>
+        <td class="d3">6</td>
+        <td class="d2">3</td>
+        <td class="d1">0</td>
+    </tr>
+    <tr>
+        <td class="c1" rowspan="2">Library</td>
+        <td class="c1" rowspan="2">Papyrus</td>
+        <td class="c1" rowspan="2">500</td>
+        <td class="d5">60</td>
+        <td class="d4">40</td>
+        <td class="d3">20</td>
+        <td class="d2">10</td>
+        <td class="d1">5</td>
+    </tr>
+    <tr class="oracle">
+        <td class="d5">54</td>
+        <td class="d4">28</td>
+        <td class="d3">12</td>
+        <td class="d2">6</td>
+        <td class="d1">0</td>
+    </tr>
+    <tr>
+        <td class="c2" rowspan="2">Mortuary</td>
+        <td class="c2" rowspan="2">Linen</td>
+        <td class="c2" rowspan="2">500</td>
+        <td class="d5">60</td>
+        <td class="d4">40</td>
+        <td class="d3">20</td>
+        <td class="d2">10</td>
+        <td class="d1">5</td>
+    </tr>
+    <tr class="oracle">
+        <td class="d5">54</td>
+        <td class="d4">28</td>
+        <td class="d3">12</td>
+        <td class="d2">6</td>
+        <td class="d1">0</td>
+    </tr>
+    <tr>
+        <td class="c1">Senet</td>
+        <td class="c1">Beer</td>
+        <td class="c1">300</td>
+        <td class="d5">60</td>
+        <td class="d4">40</td>
+        <td class="d3">20</td>
+        <td class="d2">10</td>
+        <td class="d1">5</td>
+    </tr>
+    <tr>
+        <td class="c2" rowspan="2">Zoo</td>
+        <td class="c2">Straw</td>
+        <td class="c2">200</td>
+        <td class="d5">60</td>
+        <td class="d4">40</td>
+        <td class="d3">20</td>
+        <td class="d2">20</td>
+        <td class="d1">20</td>
+    </tr>
+    <tr>
+        <td class="c2">Meat</td>
+        <td class="c2">200</td>
+        <td class="d5">60</td>
+        <td class="d4">40</td>
+        <td class="d3">20</td>
+        <td class="d2">20</td>
+        <td class="d1">20</td>
+    </tr>
+</table>
+
+<table border="1" cellspacing="1" cellpadding="1" width="595" x="font-size: 10px;"> <caption> <font size="3"> <b>Consumption of Goods by Houses</b> </font> </caption> </table><p>Certain levels of housing require a supply of goods to evolve.  Once evolved, a stock of these goods must be maintained.  A list of the goods required to evolve and maintain each level of housing can be found in my <a href="http://pharaoh.heavengames.com/strategy/charts/hous1.shtml" target=_blank url>Pharaoh / Cleopatra Housing Chart</a>.<p>The rate at which goods are consumed by 1x1 houses is <b>1 unit per month per house (12 units per year)</b>.  The rate at which goods are consumed by 2x2, 3x3 and 4x4 houses is <b>2 units per month per house (24 units per year)</b>.  This is the same for all housing levels that require goods, no matter what the population of the house is.<p><table border="1" cellspacing="1" cellpadding="1" width="595" x="font-size: 10px;"> <caption> <font size="3"> <b>Consumption of Food by Houses</b> </font> </caption> </table><p>All of the people living in your city, except for those living in Huts, consume food at the rate of <b>.25 (1/4) units per month per person (3 units per year)</b>.  Building a Temple Complex to Bast, or adding an Altar to Sebek to the Temple Complex to Osiris, reduces food consumption by 20%.  With a Temple Complex to Bast, or Altar to Sebek, the rate of food consumption is <b>.20 (1/5) units per month per person (2.4 units per year)</b>.<p>If a housing level requires 2 or 3 types of food, the total rate of consumption is the same.  A Spacious Residence with 80 occupants consumes a total of 20 units of food each month (without a Temple Complex to Bast or Altar to Sebek).  10 units will be one type of food and 10 units will be the second type of food. <p><b>The citizens of Pharaoh have a preference in the food types that they eat.</b>  They are, in order:<p>Grain<br>Meat<br>Lettuce<br>Chickpeas<br>Pomegranates<br>Figs<br>Fish<br>Game Meat <p>If a type of housing only requires one type of food, the residents in that housing will only eat the most preferred type of food until it is depleted. This is true no matter how many types of food the house contains. Once the most preferred food is entirely consumed, the residents will start eating the second most preferred food. It doesn’t matter which food was consumed or delivered first.<br> <br>If two types of food are required for a level of housing, the residents will only eat the two that are most preferred, no matter how many food types are available. They will consume the two types of food at an equal rate. The same is true for Palatial Estates, where three types of food are required. Even if there are four food types available, only the three most preferred will be eaten. These three types of food will be consumed at the same rate.<p>Example:  You have a Palatial Estate full to capacity with 200 occupants and 1200 units each of grain, lettuce, figs and fish. If you check the Palatial Estate one month later, you will find that it now contains 1184 units of grain, lettuce and figs. It still has 1200 units of fish. Fish is the least preferred food type of the four, so it will not be eaten until the house runs out of one of the other three. How the game arrived at this number is as follows:<br> <br>200 occupants x .25 units of food per month x 1 month / 3 different food types.<br>200 x .25 x 1 / 3 = 16.67, which the game rounds down to 16. 1200 – 16 = 1184.<br> <br>If you do have a Temple Complex to Bast, or Altar to Sebek, in you city, then the formula would be:<br> <br>200 x .20 x 1 / 3 = 13.33, which the game rounds down to 13.<p><br><table border="1" cellspacing="1" cellpadding="1" width="595" x="font-size: 10px;"> <caption> <font size="3"> <b>Storage Capacity of Foods and Goods in Houses</b> </font> </caption> </table><p>The maximum storage capacity of food in houses is <b>6 units per person</b> of each food type available.  At the standard rate of consumption (without a Temple Complex to Bast or Altar to Sebek), this equates to a 2-Year supply with one food type available.  A house can store up to four different types of food.  If a house has a maximum stock of two types of food, it holds a 4-Year supply.  A maximum stock of three types of food is a 6-Year supply, and four types of food provide an 8-Year stockpile of food.  With a Temple Complex to Bast or Altar to Sebek, one type of food = 2 ½ years, two types = 5 years, three types = 7 ½ years and 4 types = 10 years of stockpiled food.<p>The maximum storage capacity is 2 units of each type of good for 1x1 housing.  For all other types of housing (2x2, 3x3 and 4x4) the maximum storage is 8 units of each type of good.  A 1x1 house can hold 2 months supply of goods.  2x2, 3x3 and 4x4 houses can hold up to a four-month supply.
 </div>
 
 </body>
