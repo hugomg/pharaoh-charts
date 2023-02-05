@@ -52,9 +52,7 @@
         table#production1 td:nth-child(n+2) { text-align:right; }
 
         table#production2 td:nth-child(n+3)  { min-width: 70px; }
-        table#production2 th:nth-child(-n+2) { text-align:left; }
         table#production2 td:nth-child(-n+2) { text-align:left; }
-        table#production2 th:nth-child(n+3)  { text-align:right; }
         table#production2 td:nth-child(n+3)  { text-align:right; }
 
         table#coverageidx th:nth-child(1) { text-align: left; }
@@ -4907,7 +4905,7 @@ dist   = floor(ticks*1.7)
 <table id="production1">
     <tr>
         <th colspan="3" style="text-align:center">Normal</th>
-        <th colspan="3" style="text-align:center">Enhanced</th>
+        <th colspan="3" style="text-align:center">With Ptah Bonus</th>
     </tr>
     <tr>
         <th>Speed</th>
@@ -4959,7 +4957,7 @@ dist   = floor(ticks*1.7)
     </tr>
 </table>
 
-<h3>Buildings</h3>
+<h3>Speeds</h3>
 <table id="production2">
     <tr>
         <th></th>
@@ -5016,8 +5014,14 @@ dist   = floor(ticks*1.7)
         <td>7.5%</td>
     </tr>
     <tr class="s600">
-        <td></td>
-        <td>Mine (Other)</td>
+        <td><img src="./data/sprites/gold.png" title="Gold" alt="Gold"></td>
+        <td>Mine (Gold)</td>
+        <td>6.0%</td>
+        <td>9.0%</td>
+    </tr>
+    <tr class="s600">
+        <td><img src="./data/sprites/stones.png" title="Stone" alt="Stone"></td>
+        <td>Quarry</td>
         <td>6.0%</td>
         <td>9.0%</td>
     </tr>
