@@ -46,25 +46,25 @@
 
         /* Individual tables */
         table#production1 td                { min-width: 70px; }
-        table#production1 th:nth-child(1)   { text-aligh:left; }
+        table#production1 th:nth-child(1)   { text-align:left; }
         table#production1 td:nth-child(1)   { text-align:left; }
         table#production1 th:nth-child(n+2) { text-align:right; }
         table#production1 td:nth-child(n+2) { text-align:right; }
 
         table#production2 td:nth-child(n+3)  { min-width: 70px; }
-        table#production2 th:nth-child(-n+2) { text-aligh:left; }
+        table#production2 th:nth-child(-n+2) { text-align:left; }
         table#production2 td:nth-child(-n+2) { text-align:left; }
         table#production2 th:nth-child(n+3)  { text-align:right; }
         table#production2 td:nth-child(n+3)  { text-align:right; }
 
-        table#coverageidx th:nth-child(1) { text-aligh: left; }
+        table#coverageidx th:nth-child(1) { text-align: left; }
         table#coverageidx td:nth-child(1) { text-align: left; }
         table#coverageidx th:nth-child(2) { text-align: right; }
         table#coverageidx td:nth-child(2) { text-align: right; }
 
-        table#entertainment-capacity th:nth-child(1)   { text-aligh: left; }
+        table#entertainment-capacity th:nth-child(1)   { text-align: left; }
         table#entertainment-capacity td:nth-child(1)   { text-align: left; }
-        table#entertainment-capacity th:nth-child(n+2) { text-aligh: right; }
+        table#entertainment-capacity th:nth-child(n+2) { text-align: right; }
         table#entertainment-capacity td:nth-child(n+2) { text-align: right; }
 
         table#religion-capacity th:nth-child(1)   { text-align: left; }
@@ -82,10 +82,10 @@
         table#culture-rating td:nth-child(1)   { text-align: right; padding-right: 15px;}
         table#culture-rating td:nth-child(n+2) { text-align: right; }
 
-        table.farm-production th:nth-child(1) { text-aligh: left; }
-        table.farm-production td:nth-child(1) { text-align: left; }
-        table.farm-production th:nth-child(2) { text-aligh: left; }
-        table.farm-production td:nth-child(2) { text-align: left; }
+        table#farm-production th:nth-child(1) { text-align: left; }
+        table#farm-production td:nth-child(1) { text-align: left; }
+        table#farm-production th:nth-child(2) { text-align: left; }
+        table#farm-production td:nth-child(2) { text-align: left; }
 
         table#housing-evolve td:nth-child(2) { text-align: right; }
 
@@ -1929,10 +1929,12 @@ Each rating level must meet all the coverage requirements.
 </table>
 
 
-<p><strong>Devolve</strong>: The desirability value at which the house will Devolve to the next lower level. This is a bit lower than the deseribility needed to evolve the house. It's possible to introduce additional desirability after the house has evolved, without causing it to devolve.
-<p><strong>Risk of Crime</strong>: In addition to the crime risk increment, which is shown here, there is a base crime risk, which we don't show.
-</div>
+<p><strong>Devolve</strong>: The desirability value at which the house will devolve to the next lower level.
+This is a bit lower than the desirability needed to evolve the house.
+It's possible to introduce additional desirability after the house has evolved, without causing it to devolve.
 
+<p><strong>Risk of Crime</strong>: In addition to the crime risk increment, which is shown here,
+there is also a base crime risk, which we don't show.
 
 <hr>
 <h1 id="Structures1">Structures Chart (Risks, Desirability)</h1>
@@ -4307,6 +4309,7 @@ It acts as three 3×3 units, each providing a desirability effect of
 in the north corner, where the worker stands.
 This means that if the storage yard is on the north side of a road,
 houses on the south side don't have their desirability affected.
+
 <table class="map">
 <tr><td width="20">-3</td>
         <td>-3</td>
@@ -4774,7 +4777,10 @@ The roads provide no desirability.
 <hr>
 <h1 id="Cheats">Cheats</h1>
 
-To bring up the cheat box, hold down Ctrl+Alt+C. Cheat codes are case-sentitive and you must capitalize the words as indicated. The cheat codes that are blessing from the gods require that you can worship that god in your city.
+<p>To bring up the cheat box, hold down Ctrl+Alt+C. Cheat codes are
+case-sensitive and you must capitalize the words as indicated. The cheat codes
+that are blessing from the gods require that you can worship that god in your
+city.
 
 Base game:
 <ul>
@@ -4834,7 +4840,7 @@ Question: Some curses / cheat codes became natural disasters in the expansion?
 At harvest time the actual amount is that number multiplied by the
 production complete percentage.
 
-<table class="farm-production">
+<table id="farm-production">
     <tr>
         <th>Foodplain</th>
         <th>Production</th>
@@ -5063,19 +5069,21 @@ dist   = floor(ticks*1.7)
 
 <h2>Services</h2>
 
-<p>The yearly consumption will depend on the number of walkers generated,
+<p>Libraries, mortuaries, etc, consume goods every time they generate a walker.
+The yearly consumption will depend on how many trips the walker makes,
 which in turn depends on your block size and city layout.
-Typically thereare between <strong>8 and 12 walks a year</strong>.
+For a standard-sized block, expect about <strong>9 walks per year</strong>.
+For the tiniest blocks, there can be up to <strong>12 walks per year</strong>.
 The oracle of Toth reduces consumption of papyrus and
-the orable of Anubis reduces the consumption of linen.
-In the table below they are the lower set of numbers, in light gray.
+the oracle of Anubis reduces the consumption of linen.
+In the table below they are the lower set of numbers, in light grey.
 
 <table id="consumption-goods">
     <tr>
         <th class="c0" rowspan="2">Building</th>
         <th class="c0" rowspan="2">Good</th>
         <th class="c0" rowspan="2">Stock</th>
-        <th class="c0" colspan="5">Per Trip</th>
+        <th class="c0" colspan="5">Per Walk</th>
     </tr>
     <tr>
         <td class="d5">VH</td>
