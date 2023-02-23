@@ -46,33 +46,23 @@
 
         /* Individual tables */
         table#production1 td                { min-width: 70px; }
-        table#production1 th:nth-child(1)   { text-align:left; }
         table#production1 td:nth-child(1)   { text-align:left; }
-        table#production1 th:nth-child(n+2) { text-align:right; }
         table#production1 td:nth-child(n+2) { text-align:right; }
 
         table#production2 td:nth-child(n+3)  { min-width: 70px; }
         table#production2 td:nth-child(-n+2) { text-align:left; }
         table#production2 td:nth-child(n+3)  { text-align:right; }
 
-        table#coverageidx th:nth-child(1) { text-align: left; }
         table#coverageidx td:nth-child(1) { text-align: left; }
-        table#coverageidx th:nth-child(2) { text-align: right; }
         table#coverageidx td:nth-child(2) { text-align: right; }
 
-        table#entertainment-capacity th:nth-child(1)   { text-align: left; }
         table#entertainment-capacity td:nth-child(1)   { text-align: left; }
-        table#entertainment-capacity th:nth-child(n+2) { text-align: right; }
         table#entertainment-capacity td:nth-child(n+2) { text-align: right; }
 
-        table#religion-capacity th:nth-child(1)   { text-align: left; }
         table#religion-capacity td:nth-child(1)   { text-align: left; }
-        table#religion-capacity th:nth-child(n+2) { text-align: right; }
         table#religion-capacity td:nth-child(n+2) { text-align: right; }
 
-        table#education-capacity th:nth-child(1)   { text-align: left; }
         table#education-capacity td:nth-child(1)   { text-align: left; }
-        table#education-capacity th:nth-child(n+2) { text-align: left; }
         table#education-capacity td:nth-child(n+2) { text-align: left; }
 
         table#culture-rating th                { vertical-align: top; }
@@ -221,7 +211,7 @@ account the number of service buildings built and don't care about how many hous
 have access to the service.
 
 <table id=coverageidx>
-    <tr><th>Overseer</th><th>Coverage</th></tr>
+    <tr><th>Overseer Says</th><th>Coverage</th></tr>
     <tr><td>None</td><td>0%</td></tr>
     <tr><td>Sparse</td><td>1%</td></tr>
     <tr><td>Very Poor</td><td>10%</td></tr>
